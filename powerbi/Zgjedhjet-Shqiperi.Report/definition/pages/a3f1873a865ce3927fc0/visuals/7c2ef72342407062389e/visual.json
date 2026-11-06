@@ -1,0 +1,223 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "7c2ef72342407062389e",
+  "position": {
+    "x": 1132.0837124658781,
+    "y": 457.72520473157414,
+    "z": 3000,
+    "height": 606.22383985441309,
+    "width": 766.95177434030938,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Partite"
+                    }
+                  },
+                  "Property": "Grupi"
+                }
+              },
+              "queryRef": "Dim_Partite.Grupi",
+              "nativeQueryRef": "PS + PSD bashkë",
+              "displayName": "PS + PSD bashkë"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Vota (QV)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Vota (QV)",
+              "nativeQueryRef": "Vota",
+              "displayName": "Vota të vlefshme"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% e votave (QV)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% e votave (QV)",
+              "nativeQueryRef": "%",
+              "displayName": "% e votave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Rezultatet Qarqe"
+                    }
+                  },
+                  "Property": "Mandate"
+                }
+              },
+              "queryRef": "Rezultatet Qarqe.Mandate",
+              "nativeQueryRef": "Mandate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Rezultatet Qarqe"
+                    }
+                  },
+                  "Property": "% e mandateve"
+                }
+              },
+              "queryRef": "Rezultatet Qarqe.% e mandateve",
+              "nativeQueryRef": "%1",
+              "displayName": "% e mandateve"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Vota diaspora (QV)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Vota diaspora (QV)",
+              "nativeQueryRef": "Vota nga diaspora",
+              "displayName": "Vota nga diaspora"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% diaspora (QV)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% diaspora (QV)",
+              "nativeQueryRef": "%2",
+              "displayName": "% nga diaspora"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Grupimi i partive"
+                    }
+                  },
+                  "Property": "Grupimi i partive"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113.86536139407706D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Votat per Partite sipas QV.Vota diaspora (QV)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rezultatet sipas subjekteve zgjedhore'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "source_page": "https://iemis.kqz.gov.al/results2025-finale/?lang=AL&v1=ALL",
+  "retrieved_at": "2026-07-22T08:34:00.192061+00:00",
+  "user_agent": "KQZElectionResultsResearch/1.0",
+  "raw_files": {
+    "national_party_results": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_all.txt",
+      "path": "raw/national_party_results.json",
+      "http_status": 200,
+      "content_length": 2570,
+      "sha256": "7e6f52f5bc1b7197060c56840e04ee97c8ce9d58a5d4bc1b6163e36a24f4d62e",
+      "etag": "\"a0a-68feaae3-7fa6e;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:35 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "regional_party_results": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_qarku.txt",
+      "path": "raw/regional_party_results.json",
+      "http_status": 200,
+      "content_length": 27300,
+      "sha256": "53683114ea34980ceb23c0431be98420153361b74530da326c88d8f8d6cbd6c8",
+      "etag": "\"6aa4-68feaae5-7fa76;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:37 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "municipality_party_results": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_bashkia.txt",
+      "path": "raw/municipality_party_results.json",
+      "http_status": 200,
+      "content_length": 75308,
+      "sha256": "c2d3285a8511a9cccedabeeb1ea01f66bc7a062bbf5667ef0ffe762d7139feec",
+      "etag": "\"1262c-68feaae3-7fa71;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:35 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "admin_unit_party_results": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_njesia.txt",
+      "path": "raw/admin_unit_party_results.json",
+      "http_status": 200,
+      "content_length": 538238,
+      "sha256": "abe77977b342e631a8e9af107285b822bbd3420011f5a1f8577be170cc9fde84",
+      "etag": "\"8367e-68feaae4-7fa73;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:36 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "polling_station_party_results": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_qv.txt",
+      "path": "raw/polling_station_party_results.json",
+      "http_status": 200,
+      "content_length": 3479094,
+      "sha256": "2601d7e3de523affef82f6b51993f251723dc28cd3687971eac1befd29498271",
+      "etag": "\"351636-68feaae6-7fa78;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:38 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "regional_candidate_preferences": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/results/json_qarku_lh.txt",
+      "path": "raw/regional_candidate_preferences.json",
+      "http_status": 200,
+      "content_length": 266648,
+      "sha256": "6e028620a0258e50befc78ae8bb4b666b325fdd8b2987e1b6667823abe3bb68a",
+      "etag": "\"41198-68feaae5-7fa77;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:37 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "cp1252",
+      "embedded_updated_at": [
+        "02/09/2025-09:45"
+      ]
+    },
+    "deputies": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/deputy/json_all.txt",
+      "path": "raw/deputies.json",
+      "http_status": 200,
+      "content_length": 20650,
+      "sha256": "c64e57372a3cc1a1826636a77edaf10ced86e8fae31eb410c15a6a3402efeb6c",
+      "etag": "\"50aa-68feaae2-7fa69;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:34 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "05/09/2025-11:00"
+      ]
+    },
+    "recount_winners": {
+      "url": "https://iemis.kqz.gov.al/results2025-finale/input/deputy/json_all_kandidate.txt",
+      "path": "raw/recount_winners.json",
+      "http_status": 200,
+      "content_length": 20651,
+      "sha256": "8319529d5b7497f74ef13926d67b13ff5f6bfe07fab318eefbaf31f47ace615b",
+      "etag": "\"50ab-68feaae2-7fa6a;;;\"",
+      "last_modified": "Sun, 26 Oct 2025 23:12:34 GMT",
+      "content_type": "text/plain",
+      "decoded_as": "utf-8-sig",
+      "embedded_updated_at": [
+        "05/09/2025-11:00"
+      ]
+    }
+  },
+  "normalized_files": {
+    "party_results.csv": {
+      "path": "normalized/party_results.csv",
+      "row_count": 62469,
+      "content_length": 9013446,
+      "sha256": "78acab7f75ab8e4334f6d77d90d4295c4f72355dc90ce67331034b12fa78f3d2"
+    },
+    "candidate_preferences_by_region.csv": {
+      "path": "normalized/candidate_preferences_by_region.csv",
+      "row_count": 2046,
+      "content_length": 125082,
+      "sha256": "8d91d7e51240c0ffd74d970d3ae0d6a67df602fe89d7f6c82bc6355488ef610a"
+    },
+    "deputies.csv": {
+      "path": "normalized/deputies.csv",
+      "row_count": 140,
+      "content_length": 14203,
+      "sha256": "f041474f7d7270d4046f8bd2f56b7683447b28e0cbb38bf6051df6e8ef8c17ab"
+    },
+    "recount_winners.csv": {
+      "path": "normalized/recount_winners.csv",
+      "row_count": 140,
+      "content_length": 14204,
+      "sha256": "09c5591b6d6420e62f7b35aa479c36aeb39ca4ddd4d4a6ca922b3a15314e5859"
+    }
+  },
+  "validated_national_totals": {
+    "votes_domestic": 1406097,
+    "votes_abroad": 199960,
+    "votes_total": 1606057,
+    "seats": 140
+  }
+}

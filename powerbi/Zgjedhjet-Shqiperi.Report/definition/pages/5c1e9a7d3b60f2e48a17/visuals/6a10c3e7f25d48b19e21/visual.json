@@ -1,0 +1,223 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "6a10c3e7f25d48b19e21",
+  "position": {
+    "x": 800,
+    "y": 350,
+    "z": 6000,
+    "height": 710,
+    "width": 1100,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.NjA",
+              "nativeQueryRef": "NjA",
+              "displayName": "Njësia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% Sheshi 2025"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
+              "nativeQueryRef": "% Sheshi 2025",
+              "displayName": "Sheshi 2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% Sheshi skenar"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% Sheshi skenar",
+              "nativeQueryRef": "% Sheshi skenar",
+              "displayName": "Sheshi skenar"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% PS PSD skenar"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% PS PSD skenar",
+              "nativeQueryRef": "% PS PSD skenar",
+              "displayName": "PS + PSD skenar"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% PD skenar"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% PD skenar",
+              "nativeQueryRef": "% PD skenar",
+              "displayName": "PD-ASHM skenar"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Diferenca e Sheshit"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Diferenca e Sheshit",
+              "nativeQueryRef": "Diferenca e Sheshit",
+              "displayName": "Diferenca (vota)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Fituesi skenar"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Fituesi skenar",
+              "nativeQueryRef": "Fituesi skenar",
+              "displayName": "I pari"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Votat per Partite sipas QV"
+                  }
+                },
+                "Property": "Diferenca e Sheshit"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ku del i pari Sheshi, sipas njësisë administrative'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "73ff3aca92f69b0847a1",
+  "position": {
+    "x": 10,
+    "y": 676.66666666666674,
+    "z": 8000,
+    "height": 378.33333333333337,
+    "width": 1881.6666666666667,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qarku"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qarku",
+              "nativeQueryRef": "Qarku",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Bashkia"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Bashkia",
+              "nativeQueryRef": "Bashkia",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qender Votimi"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qender Votimi",
+              "nativeQueryRef": "Qendra e votimit",
+              "active": false,
+              "displayName": "Qendra e votimit"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Gra % e zgjedhesve"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gra % e zgjedhesve",
+              "nativeQueryRef": "Gra % e listës",
+              "displayName": "Gra në listë (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja e grave"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja e grave",
+              "nativeQueryRef": "Pjesemarrja e grave",
+              "displayName": "Pjesëmarrja e grave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja e burrave"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja e burrave",
+              "nativeQueryRef": "Pjesemarrja e burrave",
+              "displayName": "Pjesëmarrja e burrave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Hendeku gjinor (pp)"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Hendeku gjinor (pp)",
+              "nativeQueryRef": "Hendeku gjinor (pp)",
+              "displayName": "Hendeku gjinor (p.p.)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Gra % e votuesve"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gra % e votuesve",
+              "nativeQueryRef": "Gra % e votuesve",
+              "displayName": "Gra ndër votues (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Mbulimi i te dhenave gjinore"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Mbulimi i te dhenave gjinore",
+              "nativeQueryRef": "Mbulimi i te dhenave gjinore",
+              "displayName": "Mbulimi i të dhënave gjinore"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Qarku"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qarku"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Bashkia"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Qender Votimi"
+            ],
+            "isCollapsed": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Hendeku gjinor: Qark › Bashki › QV'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

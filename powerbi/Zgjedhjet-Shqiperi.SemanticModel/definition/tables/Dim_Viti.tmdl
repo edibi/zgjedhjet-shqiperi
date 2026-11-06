@@ -1,0 +1,19 @@
+/// Vitet e zgjedhjeve; përdoret nga slicer-i Viti në të gjitha faqet.
+table Dim_Viti
+	lineageTag: 3733cd6f-0576-422a-9be3-d7abbfbd05bc
+
+	column Viti
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c652391-1051-46fd-b9ad-648abc3a75f4
+		summarizeBy: none
+		sourceColumn: [Viti]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Viti = calculated
+		mode: import
+		source = DATATABLE("Viti", INTEGER, { {2023}, {2025} })
+
+	annotation PBI_Id = 415d4718398c47ae900635d8e92282a5
+

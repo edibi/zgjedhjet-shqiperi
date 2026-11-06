@@ -1,0 +1,54 @@
+{
+  "source": "https://iemis.kqz.gov.al/results2023/results2023.htm?lang=AL",
+  "retrieved": "2026-11-05 12:01:47",
+  "files": [
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_0_bashki_lh.txt",
+      "file": "json_all_summary_0_bashki_lh.txt",
+      "bytes": 11587,
+      "sha256": "9eeb677288a743a061f67296573bcf772ffb5346e2e834feffdf380055be8822"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_0_njesi_lh.txt",
+      "file": "json_all_summary_0_njesi_lh.txt",
+      "bytes": 81974,
+      "sha256": "60ae7c860a9135699c7822875c5ffe332438948a398244ada1d8f61ceb747725"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_0_qv_lh.txt",
+      "file": "json_all_summary_0_qv_lh.txt",
+      "bytes": 1048681,
+      "sha256": "7772f4ccaee397c2859960b72022f62d0a1504cfa28ede8e3fc0c4ebb1bd53aa"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_1_bashki.txt",
+      "file": "json_all_summary_1_bashki.txt",
+      "bytes": 42538,
+      "sha256": "16d12767a79c9b90e5ac7f4b04b14ce76e1070d75fb988ee2834fda7b7a3d659"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_1_njesi.txt",
+      "file": "json_all_summary_1_njesi.txt",
+      "bytes": 275459,
+      "sha256": "3c10c10f9f45158ccd08f21b794f05ac93946b0812b7a63ea84525eb0ee31bc0"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/input/results/json_all_summary_1_qv.txt",
+      "file": "json_all_summary_1_qv.txt",
+      "bytes": 2975174,
+      "sha256": "07b62175de99b4892aaf16b068f81c60f2469b58b147a92f3ff91bae0d10f35c"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/js/json_strukture9.js",
+      "file": "json_strukture9.js",
+      "bytes": 419409,
+      "sha256": "93070a7191702b15c059941202d311f1f0044cb431f6e05c7d5627da181839fe"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2023/js/json_subjekte8.js",
+      "file": "json_subjekte8.js",
+      "bytes": 115909,
+      "sha256": "922fe96556a1f962aefca2448f7f4a67b7271085d1022c527952795022536980"
+    }
+  ]
+}

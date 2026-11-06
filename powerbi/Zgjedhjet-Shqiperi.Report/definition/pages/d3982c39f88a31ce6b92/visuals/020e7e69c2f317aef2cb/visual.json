@@ -1,0 +1,297 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "020e7e69c2f317aef2cb",
+  "position": {
+    "x": 20,
+    "y": 773.33333333333337,
+    "z": 3000,
+    "height": 288.33333333333337,
+    "width": 920,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Qarku"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Qarku",
+              "nativeQueryRef": "Gjeografia Qarku",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Bashkia"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Bashkia",
+              "nativeQueryRef": "Gjeografia Bashkia",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.NjA",
+              "nativeQueryRef": "Gjeografia NjA",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Qender Votimi"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Qender Votimi",
+              "nativeQueryRef": "Gjeografia Qender Votimi",
+              "active": false
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja",
+              "nativeQueryRef": "Pjesemarrja",
+              "displayName": "Pjesëmarrja në votime"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Qenderat e votimit"
+                      }
+                    },
+                    "Hierarchy": "Gjeografia"
+                  }
+                },
+                "Level": "Qarku"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Qenderat e votimit"
+                      }
+                    },
+                    "Hierarchy": "Gjeografia"
+                  }
+                },
+                "Level": "Bashkia"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Qenderat e votimit"
+                      }
+                    },
+                    "Hierarchy": "Gjeografia"
+                  }
+                },
+                "Level": "NjA"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Qenderat e votimit"
+                      }
+                    },
+                    "Hierarchy": "Gjeografia"
+                  }
+                },
+                "Level": "Qender Votimi"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A9FD8'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pjesëmarrja në votime: Qark › Bashki › QV'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

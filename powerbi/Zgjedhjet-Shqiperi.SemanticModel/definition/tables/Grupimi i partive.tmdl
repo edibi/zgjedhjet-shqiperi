@@ -1,0 +1,51 @@
+table 'Grupimi i partive'
+	lineageTag: e8d35dff-2137-4031-8b86-40dbc70d3b7d
+
+	column 'Grupimi i partive'
+		dataType: string
+		lineageTag: df1fcbd7-f4ca-43b3-8fc0-96f854800514
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Grupimi i partive Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Grupimi i partive Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupimi i partive Fields'
+		dataType: string
+		isHidden
+		lineageTag: df249997-201b-408c-afe8-6634fb03ee86
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Grupimi i partive Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupimi i partive Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1e1e98b5-62b5-4ecd-b1d9-849b298923dd
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Grupimi i partive' = calculated
+		mode: import
+		source =
+				{
+				    ("PS + PSD kualicion", NAMEOF('Dim_Partite'[Grupi]), 0),
+				    ("PS dhe PSD", NAMEOF('Dim_Partite'[Grupi i detajuar]), 1)
+				}
+
+	annotation PBI_Id = fa4ab28192a84365a13c3c19cd74d19b
+

@@ -1,0 +1,54 @@
+relationship 19e5680c-5e0f-4a70-b60a-3b86f66433b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: admin_unit_party_results.'data_main.dataora'
+	toColumn: LocalDateTable_7d0aff22-6ec5-403b-bf9e-62e07d8c7b3f.Date
+
+relationship AutoDetected_14b8e2a9-c8ff-4b2f-b749-48708a2b27ac
+	fromColumn: 'Votat per Partite sipas QV'.'Qender Votimi'
+	toColumn: 'Qenderat e votimit'.'Qender Votimi'
+
+relationship AutoDetected_0fedabb1-5f46-4a62-9415-503811aab36c
+	fromColumn: 'Votat per Partite sipas QV'.Partia
+	toColumn: Dim_Partite.Partia
+
+relationship 30da5d14-7e93-4eaf-80dc-5185ecb0d832
+	fromColumn: 'Rezultatet Qarqe'.Partia
+	toColumn: Dim_Partite.Partia
+
+relationship f848a616-632b-44a2-85c4-8be6034a2540
+	fromColumn: 'Rezultatet Qarqe'.Qarku
+	toColumn: Dim_Qarku.Qarku
+
+relationship 9475de5e-dc5c-4a18-9ebb-6c7022af9a59
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Qenderat e votimit'.Qarku
+	toColumn: Dim_Qarku.Qarku
+
+relationship f59ac64d-a39e-4999-bf66-3f2cdcd68d5a
+	fromColumn: 'Popullsia 2025'.Qarku
+	toColumn: Dim_Qarku.Qarku
+
+relationship 6c1f7a52-3b0e-4d8a-9e21-7f4a2c9d1b60
+	fromColumn: 'Qenderat e votimit'.NjA
+	toColumn: 'Adresat NjA'.NjA
+
+relationship d8052e3e-5522-4492-ab7f-180438d96ea2
+	fromColumn: 'Krahasimi 2023-2025'.NjA
+	toColumn: 'Adresat NjA'.NjA
+
+relationship f5833118-7ce3-4e04-9797-16fc5c9ba3cd
+	fromColumn: 'Pjesemarrja 2023-2025'.NjA
+	toColumn: 'Adresat NjA'.NjA
+
+relationship 746bde4e-8594-44e5-815d-453c6180540c
+	fromColumn: 'Krahasimi 2023-2025'.Viti
+	toColumn: Dim_Viti.Viti
+
+relationship 4b01bd0e-b2d2-4b6c-affb-a7cde773bf9b
+	fromColumn: 'Pjesemarrja 2023-2025'.Viti
+	toColumn: Dim_Viti.Viti
+
+relationship 61ae3278-ff9a-4de3-b554-cbade4545b75
+	fromColumn: 'Qenderat e votimit'.Viti
+	toColumn: Dim_Viti.Viti
+

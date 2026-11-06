@@ -1,0 +1,111 @@
+/// Tirana sipas njësive: këshilli bashkiak 2023 dhe zgjedhjet për Kuvend 2025, me grupimin e subjekteve.
+table 'Krahasimi 2023-2025'
+	lineageTag: 25024a55-9014-4fe1-aa77-5bd62600c706
+
+	measure 'Vota krahasim' = SUM('Krahasimi 2023-2025'[Vota])
+		formatString: #,0
+		lineageTag: 3ea72882-477f-44a2-bfdf-01aed1f67f47
+
+	measure '% krahasim' = DIVIDE([Vota krahasim], CALCULATE([Vota krahasim], REMOVEFILTERS('Krahasimi 2023-2025'[Grupi])))
+		formatString: 0.0%
+		lineageTag: 77f62ddb-2f6b-4aff-8a4b-03987d1c5067
+
+	measure '% 2023' = CALCULATE([% krahasim], REMOVEFILTERS(Dim_Viti), 'Krahasimi 2023-2025'[Viti] = 2023)
+		formatString: 0.0%
+		lineageTag: 28fbdf85-b662-481f-a3db-9d2c33e75a99
+
+	measure '% 2025' = CALCULATE([% krahasim], REMOVEFILTERS(Dim_Viti), 'Krahasimi 2023-2025'[Viti] = 2025)
+		formatString: 0.0%
+		lineageTag: c4e69936-0b20-45d4-b7c8-8b88553ccaa1
+
+	/// Ndryshimi nga 2023 në 2025 në pikë përqindjeje. Bosh kur subjekti mungon në njërin vit.
+	measure 'Ndryshimi (p.p.)' = IF(NOT ISBLANK([% 2023]) && NOT ISBLANK([% 2025]), ([% 2025] - [% 2023]) * 100)
+		formatString: +0.0;-0.0;0.0
+		lineageTag: 5fffa194-b2c0-4122-bf1f-3ffabb01f3a9
+
+	/// Përqindja e subjektit në njësi për secilin vit; injoron slicer-in Subjekti zgjedhor.
+	measure '% subjekti (viti)' = VAR g = SELECTEDVALUE('Grupet tooltip'[Grupi]) VAR detajuar = SELECTEDVALUE('Grupimi i partive'[Grupimi i partive Order], 0) = 1 VAR vota = IF(detajuar, CALCULATE([Vota krahasim], 'Krahasimi 2023-2025'[Grupi i detajuar] = g), CALCULATE([Vota krahasim], 'Krahasimi 2023-2025'[Grupi] = g)) RETURN DIVIDE(vota, [Vota krahasim])
+		formatString: 0.0%
+		lineageTag: 94ef0df7-8904-459b-be58-b5aca318c6e6
+
+	/// Si % subjekti (viti), por ndjek slicer-in Subjekti zgjedhor dhe slicer-in e njësive.
+	measure '% subjekti grafik' = VAR g = SELECTEDVALUE('Grupet tooltip'[Grupi]) VAR detajuar = SELECTEDVALUE('Grupimi i partive'[Grupimi i partive Order], 0) = 1 VAR zgjedhur = IF(detajuar, g IN VALUES(Dim_Partite[Grupi i detajuar]), g IN VALUES(Dim_Partite[Grupi])) VAR njesite = CALCULATETABLE(VALUES('Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) RETURN IF(zgjedhur, CALCULATE([% subjekti (viti)], KEEPFILTERS(TREATAS(njesite, 'Krahasimi 2023-2025'[NjA]))))
+		formatString: 0.0%
+		lineageTag: 353146b1-df10-48e1-9de5-1ab3325834b8
+
+	measure 'Vota 2023' = CALCULATE([Vota krahasim], REMOVEFILTERS(Dim_Viti), 'Krahasimi 2023-2025'[Viti] = 2023)
+		formatString: #,0
+		lineageTag: 01655c83-501e-48a6-a1be-155a6cc1a344
+
+	measure 'Vota 2025' = CALCULATE([Vota krahasim], REMOVEFILTERS(Dim_Viti), 'Krahasimi 2023-2025'[Viti] = 2025)
+		formatString: #,0
+		lineageTag: 6f14846c-b970-4134-ad4c-3568975aff38
+
+	measure 'Ndryshimi i votave' = [Vota 2025] - [Vota 2023]
+		formatString: +#,0;-#,0;0
+		lineageTag: ba0e6e17-f8fa-4515-a0c2-de5f8c26f2a4
+
+	measure 'NjA ne rritje' = IF(HASONEVALUE('Krahasimi 2023-2025'[Grupi]), COUNTROWS(FILTER(ADDCOLUMNS(VALUES('Adresat NjA'[NjA]), "Ndr", [Ndryshimi (p.p.)]), [Ndr] > 0)))
+		formatString: 0
+		lineageTag: eaab445f-463b-452b-ad62-31ed6698dee5
+
+	measure 'Rritja me e madhe' = IF(HASONEVALUE('Krahasimi 2023-2025'[Grupi]), MAXX(TOPN(1, FILTER(ADDCOLUMNS(VALUES('Adresat NjA'[NjA]), "Ndr", [Ndryshimi (p.p.)]), NOT ISBLANK([Ndr])), [Ndr], DESC), [NjA] & " (" & FORMAT([Ndr], "+0.0;-0.0") & ")"))
+		lineageTag: b06cb5df-4c61-4cb0-9b42-b3085b9a252c
+
+	measure 'Renia me e madhe' = IF(HASONEVALUE('Krahasimi 2023-2025'[Grupi]), MAXX(TOPN(1, FILTER(ADDCOLUMNS(VALUES('Adresat NjA'[NjA]), "Ndr", [Ndryshimi (p.p.)]), NOT ISBLANK([Ndr])), [Ndr], ASC), [NjA] & " (" & FORMAT([Ndr], "+0.0;-0.0") & ")"))
+		lineageTag: 6e64b40d-9589-40e2-a8ec-2cfd2bbdee02
+
+	column Viti
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b11c080-32e9-4825-ae94-11a3e7351523
+		summarizeBy: none
+		sourceColumn: Viti
+
+		annotation SummarizationSetBy = Automatic
+
+	column NjA
+		dataType: string
+		lineageTag: 3341e93d-1d2d-41a5-945c-6669c484e12b
+		summarizeBy: none
+		sourceColumn: Njesia administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupi
+		dataType: string
+		lineageTag: b69dce2f-3406-4d58-b253-34d71b21ba70
+		summarizeBy: none
+		sourceColumn: Grupi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupi i detajuar'
+		dataType: string
+		lineageTag: f4c774f2-4377-4764-b925-6589dfb494fa
+		summarizeBy: none
+		sourceColumn: Grupi i detajuar
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vota
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3605211a-4509-4069-9bf5-0c5c42d3cd1f
+		summarizeBy: none
+		sourceColumn: Vota
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Krahasimi 2023-2025' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "krahasime\krahasimi_tirane_2023_2025.csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Grupi", type text}, {"Grupi i detajuar", type text}, {"Vota", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

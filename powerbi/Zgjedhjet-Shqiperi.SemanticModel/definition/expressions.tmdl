@@ -1,0 +1,25 @@
+expression 'polling station' =
+		let
+		    Source = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\polling_station_party_results.json")),
+		    #"Converted to Table" = Table.FromRecords({Source}),
+		    #"Expanded data_main" = Table.ExpandListColumn(#"Converted to Table", "data_main"),
+		    #"Expanded data_main1" = Table.ExpandRecordColumn(#"Expanded data_main", "data_main", {"dataora", "strsql", "data"}, {"data_main.dataora", "data_main.strsql", "data_main.data"}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Expanded data_main1",{"data_main.dataora", "data_main.strsql"}),
+		    #"Added Index" = Table.AddIndexColumn(#"Removed Columns", "Index", 0, 1, Int64.Type),
+		    #"Expanded data_main.data" = Table.ExpandListColumn(#"Added Index", "data_main.data"),
+		    #"Expanded data_main.data1" = Table.ExpandRecordColumn(#"Expanded data_main.data", "data_main.data", Record.FieldNames(#"Expanded data_main.data"{0}[data_main.data]))
+		in
+		    #"Expanded data_main.data1"
+	lineageTag: d959c805-3334-492c-835e-33456da79a43
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DataFolder = "C:\zgjedhjet-shqiperi\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 26a9ff97-be66-4b78-83f0-e1af89aadac9
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,42 @@
+/// Qendra e secilës njësi administrative të Bashkisë Tiranë, llogaritur nga kufijtë në OpenStreetMap.
+table 'Adresat NjA'
+	lineageTag: 272dfd95-37f8-4205-b124-82f9299050bc
+
+	column NjA
+		dataType: string
+		lineageTag: 054227c4-8a79-4686-8e99-1c5677b83ed0
+		summarizeBy: none
+		sourceColumn: Njesia administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: 2bc3b5dd-d72c-461c-9243-379b0ddfbc2c
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: ec5319be-e7a9-4d19-a07a-87e98783f55c
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Adresat NjA' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "gjeografi\adresat_njesia_administrative.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Njesia administrative", type text}, {"Longitude", type number}, {"Latitude", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

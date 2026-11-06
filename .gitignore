@@ -1,0 +1,15 @@
+# Power BI local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Office temporary files
+~$*
+
+# Python
+__pycache__/
+*.pyc
+
+# Operating system files
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,23 @@
+/// Parametri Y: përqindja e votave të PD-ASHM që kalon te Kualicioni Sheshit (skenari 2027).
+table 'Skenari Y'
+	lineageTag: 7fd8d024-baed-463c-a20e-fc3fc60ac919
+
+	column 'Y (%)'
+		dataType: int64
+		formatString: 0
+		lineageTag: d28e1390-f178-4f7b-b478-9a243df6b11b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Y (%)]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Skenari Y' = calculated
+		mode: import
+		source = SELECTCOLUMNS(GENERATESERIES(0, 100, 1), "Y (%)", [Value])
+

@@ -1,0 +1,67 @@
+/// Votues dhe zgjedhës në listën e KQZ për njësitë e Tiranës, 2023 dhe 2025.
+table 'Pjesemarrja 2023-2025'
+	lineageTag: 08862c1e-b4da-4dba-bc8e-a70f216fecd9
+
+	measure 'Pjesemarrja krahasim' = DIVIDE(SUM('Pjesemarrja 2023-2025'[Votues]), SUM('Pjesemarrja 2023-2025'[Zgjedhes]))
+		formatString: 0.0%
+		lineageTag: c3e39576-e1b6-40a3-a149-4678d5eedc7f
+
+	measure 'Pjesemarrja 2023' = CALCULATE([Pjesemarrja krahasim], REMOVEFILTERS(Dim_Viti), 'Pjesemarrja 2023-2025'[Viti] = 2023)
+		formatString: 0.0%
+		lineageTag: 36858aa7-0fb8-4199-8b80-93305c581475
+
+	measure 'Pjesemarrja 2025' = CALCULATE([Pjesemarrja krahasim], REMOVEFILTERS(Dim_Viti), 'Pjesemarrja 2023-2025'[Viti] = 2025)
+		formatString: 0.0%
+		lineageTag: 0acf61ba-31a2-4f52-8b26-74717413e9a3
+
+	measure 'Ndryshimi i pjesemarrjes (p.p.)' = ([Pjesemarrja 2025] - [Pjesemarrja 2023]) * 100
+		formatString: +0.0;-0.0;0.0
+		lineageTag: 2d0a5eec-2ef5-4c46-83a9-3b634c46222d
+
+	column Viti
+		dataType: int64
+		formatString: 0
+		lineageTag: d2491266-47ea-4ea1-89c2-d3eaafb56ac7
+		summarizeBy: none
+		sourceColumn: Viti
+
+		annotation SummarizationSetBy = Automatic
+
+	column NjA
+		dataType: string
+		lineageTag: f614cf26-cdaa-4937-b481-a592e6a5c6d3
+		summarizeBy: none
+		sourceColumn: Njesia administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Votues
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5b89d5cb-35cd-477d-b44a-5cdae01a397f
+		summarizeBy: none
+		sourceColumn: Votues
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zgjedhes
+		dataType: int64
+		formatString: #,0
+		lineageTag: bc5f609d-e9e8-47a3-9555-8befb4448311
+		summarizeBy: none
+		sourceColumn: Zgjedhes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pjesemarrja 2023-2025' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "krahasime\pjesemarrja_tirane_2023_2025.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Votues", Int64.Type}, {"Zgjedhes", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

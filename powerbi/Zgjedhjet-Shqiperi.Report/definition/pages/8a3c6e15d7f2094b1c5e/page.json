@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "8a3c6e15d7f2094b1c5e",
+  "displayName": "Krahasimi 2023–2025",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "visualInteractions": [
+    {
+      "source": "2a8dab4f6c39e1f5b7d2",
+      "target": "4cafcd618e5ba3b7d9f4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2a8dab4f6c39e1f5b7d2",
+      "target": "6ec1ef83a07dc5d9fbb6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2a8dab4f6c39e1f5b7d2",
+      "target": "5db0de729f6cb4c8eaa5",
+      "type": "NoFilter"
+    }
+  ]
+}

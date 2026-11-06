@@ -1,0 +1,167 @@
+table admin_unit_party_results
+	lineageTag: a71c33d7-eb25-4f67-9afd-05d7a94430a9
+
+	column 'data_main.dataora'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91204e18-1678-4334-8726-4a931efa2daa
+		summarizeBy: none
+		sourceColumn: data_main.dataora
+
+		variation Variation
+			isDefault
+			relationship: 19e5680c-5e0f-4a70-b60a-3b86f66433b7
+			defaultHierarchy: LocalDateTable_7d0aff22-6ec5-403b-bf9e-62e07d8c7b3f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data_main.strsql'
+		dataType: string
+		lineageTag: 614b9d92-b3f5-4495-bb57-ff358eb32444
+		summarizeBy: none
+		sourceColumn: data_main.strsql
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data_main.data.v0'
+		dataType: string
+		lineageTag: 757823e2-b8a4-4eed-98de-146759a03840
+		summarizeBy: none
+		sourceColumn: data_main.data.v0
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qarku
+		dataType: string
+		lineageTag: 7f656388-0bdc-4165-9487-05c1f57bdb31
+		summarizeBy: none
+		sourceColumn: Qarku
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bashkia
+		dataType: string
+		lineageTag: 3311b0ed-c31d-42dd-aeb6-ea15b40701d2
+		summarizeBy: none
+		sourceColumn: Bashkia
+
+		annotation SummarizationSetBy = Automatic
+
+	column NjA
+		dataType: string
+		lineageTag: b4f6d63c-0ca0-4fc1-8a88-ea041988eaa6
+		summarizeBy: none
+		sourceColumn: Njesia administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data_main.data.v4'
+		dataType: string
+		lineageTag: 3aa328b9-64b3-48ca-bbaa-c86fa4ea7f68
+		summarizeBy: none
+		sourceColumn: data_main.data.v4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qender Votimi'
+		dataType: string
+		lineageTag: 89d40ff2-58be-4ad3-a0e1-4b29ab404d38
+		summarizeBy: none
+		sourceColumn: Qender Votimi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr total i zgjedhesve ne list'
+		dataType: int64
+		formatString: 0
+		lineageTag: 314ffb74-c896-4d92-b5d6-2002188025ea
+		summarizeBy: sum
+		sourceColumn: Nr total i zgjedhesve ne list
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr total i zgjedhesve gra ne list'
+		dataType: int64
+		formatString: 0
+		lineageTag: 523f3957-1275-4743-93b5-08a5888d95a7
+		summarizeBy: sum
+		sourceColumn: Nr total i zgjedhesve gra ne list
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr i votuesve ne qendrat e votimit te numeruara'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e5b217d-dd21-4e6f-92d0-db3fa4dee254
+		summarizeBy: sum
+		sourceColumn: Nr i votuesve ne qendrat e votimit te numeruara
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr i votueseve gra ne qendrat e votimit te numeruara'
+		dataType: int64
+		formatString: 0
+		lineageTag: 47a109ec-e44a-40e3-90fd-ed2f92f25d35
+		summarizeBy: sum
+		sourceColumn: Nr i votueseve gra ne qendrat e votimit te numeruara
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota te vlefshme'
+		dataType: int64
+		formatString: 0
+		lineageTag: 22ecef05-1b04-4566-bd00-c896718d1553
+		summarizeBy: sum
+		sourceColumn: Vota te vlefshme
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota te pavlefshme'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81236ed9-1ec6-46c8-bdc4-fc77d3f64fe4
+		summarizeBy: sum
+		sourceColumn: Vota te pavlefshme
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr i qendrave te votimit te numeruara'
+		dataType: int64
+		formatString: 0
+		lineageTag: 501a64b2-1a4f-44f6-8a0d-7e792f5b118c
+		summarizeBy: sum
+		sourceColumn: Nr i qendrave te votimit te numeruara
+
+		annotation SummarizationSetBy = Automatic
+
+	partition admin_unit_party_results = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\admin_unit_party_results.json")),
+				    #"Converted to Table" = Table.FromRecords({Source}),
+				    #"Expanded data_main" = Table.ExpandListColumn(#"Converted to Table", "data_main"),
+				    #"Expanded data_main1" = Table.ExpandRecordColumn(#"Expanded data_main", "data_main", {"dataora", "strsql", "data"}, {"data_main.dataora", "data_main.strsql", "data_main.data"}),
+				    #"Expanded data_main.data" = Table.ExpandListColumn(#"Expanded data_main1", "data_main.data"),
+				    #"Expanded data_main.data1" = Table.ExpandRecordColumn(#"Expanded data_main.data", "data_main.data", {"v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12"}, {"data_main.data.v0", "data_main.data.v1", "data_main.data.v2", "data_main.data.v3", "data_main.data.v4", "data_main.data.v5", "data_main.data.v6", "data_main.data.v7", "data_main.data.v8", "data_main.data.v9", "data_main.data.v10", "data_main.data.v11", "data_main.data.v12"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded data_main.data1",{{"data_main.dataora", type datetimezone}, {"data_main.strsql", type any}, {"data_main.data.v0", type any}, {"data_main.data.v1", type text}, {"data_main.data.v2", type text}, {"data_main.data.v3", type text}, {"data_main.data.v4", type any}, {"data_main.data.v5", type text}, {"data_main.data.v6", Int64.Type}, {"data_main.data.v7", Int64.Type}, {"data_main.data.v8", Int64.Type}, {"data_main.data.v9", Int64.Type}, {"data_main.data.v10", Int64.Type}, {"data_main.data.v11", Int64.Type}, {"data_main.data.v12", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{
+				    {"data_main.data.v1", "Qarku"},
+				    {"data_main.data.v10", "Vota te vlefshme"},
+				    {"data_main.data.v6", "Nr total i zgjedhesve ne list"},
+				    {"data_main.data.v7", "Nr total i zgjedhesve gra ne list"},
+				    {"data_main.data.v11", "Vota te pavlefshme"},
+				    {"data_main.data.v12", "Nr i qendrave te votimit te numeruara"},
+				    {"data_main.data.v8", "Nr i votuesve ne qendrat e votimit te numeruara"},
+				    {"data_main.data.v9", "Nr i votueseve gra ne qendrat e votimit te numeruara"},
+				    {"data_main.data.v2", "Bashkia"},
+				    {"data_main.data.v3", "Njesia administrative"},
+				    {"data_main.data.v5", "Qender Votimi"}
+				})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

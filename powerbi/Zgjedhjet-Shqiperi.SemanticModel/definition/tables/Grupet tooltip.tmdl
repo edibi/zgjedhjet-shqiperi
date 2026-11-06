@@ -1,0 +1,29 @@
+/// Etiketat e grafikut byrek në tooltip. Nuk lidhet me Dim_Partite, që slicer-i Grupi të mos fshehë grupet e tjera.
+table 'Grupet tooltip'
+	lineageTag: 095296ed-08f1-4a8d-88bf-0d9712cd66aa
+
+	column Grupi
+		dataType: string
+		lineageTag: 53a9e219-61a8-4c91-bd7a-c26b10b0f1cc
+		summarizeBy: none
+		sourceColumn: [Grupi]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f262ebd2-7336-4714-8914-fad07d350437
+		summarizeBy: none
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Grupet tooltip' = calculated
+		mode: import
+		source = DATATABLE("Grupi", STRING, "Order", INTEGER, { {"PS + PSD", 0}, {"PS", 1}, {"PSD", 2}, {"PD-ASHM", 3}, {"MUNDESIA", 4}, {"NISMA-SHB", 5}, {"BASHKE", 6}, {"Te tjeret", 7} })
+
+	annotation PBI_Id = bf2e70f429db4ce38a898016c92c1758
+

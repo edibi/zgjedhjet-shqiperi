@@ -1,0 +1,255 @@
+table 'Votat per Partite sipas QV'
+	lineageTag: c03c47d5-b5e6-4262-b751-e7357a468e33
+
+	measure 'Vota Kombëtare %' = DIVIDE(CALCULATE(SUM('Votat per Partite sipas QV'[Votat]), ALL('Qenderat e votimit')), CALCULATE(SUM('Votat per Partite sipas QV'[Votat]), ALL('Qenderat e votimit'), ALL('Votat per Partite sipas QV'[Partia])))
+		formatString: 0.0%
+		lineageTag: aed39752-c1f7-4700-9e97-3cfcfe4ec24a
+
+	measure 'Vota (QV)' = SUM('Votat per Partite sipas QV'[Votat])
+		formatString: #,0
+		lineageTag: 2a05d0d4-baef-45ec-9d85-b80261cb75e4
+
+	measure '% e votave (QV)' = DIVIDE([Vota (QV)], CALCULATE([Vota (QV)], ALL(Dim_Partite)))
+		formatString: 0.0%
+		lineageTag: 094d250e-a046-43e5-a4ce-b62f76c4c857
+
+	measure 'Vota diaspora (QV)' = CALCULATE([Vota (QV)], 'Qenderat e votimit'[Vendi i votimit] = "Diaspora")
+		formatString: #,0
+		lineageTag: 3d323e7e-0792-48d7-951a-b03d17dde95c
+
+	measure '% diaspora (QV)' = DIVIDE([Vota diaspora (QV)], [Vota (QV)])
+		formatString: 0.0%
+		lineageTag: 015d399a-a76e-4006-80ab-a35033d7cc80
+
+	/// Votat për etiketën e byrekut në tooltip; ndjek Grupimi i partive dhe injoron slicer-in Grupi.
+	measure 'Vota tooltip' = VAR g = SELECTEDVALUE('Grupet tooltip'[Grupi]) VAR detajuar = SELECTEDVALUE('Grupimi i partive'[Grupimi i partive Order], 0) = 1 RETURN IF(detajuar, CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Grupi i detajuar] = g), CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Grupi] = g))
+		formatString: #,0
+		lineageTag: e73bc67e-2d43-47a0-ace5-63c3259f16e5
+
+	measure 'Titulli tooltip' = SELECTEDVALUE('Adresat NjA'[NjA]) & " · " & FORMAT(CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), REMOVEFILTERS(Dim_Viti)), "#,0") & " vota të vlefshme (2025)"
+		lineageTag: 57a032eb-2672-4c68-b5ba-1f0382d6e0af
+
+	measure 'Nentitulli tooltip' = "Pjesëmarrja në votime 2025: " & FORMAT(CALCULATE([Pjesemarrja], REMOVEFILTERS(Dim_Viti)), "0.0%") & IF(SELECTEDVALUE('Baza e zgjedhesve'[Baza], "Rezidentë (INSTAT)") = "Lista e KQZ", " (lista e KQZ)", " (rezidentë)")
+		lineageTag: 15e31afd-a44d-413f-906a-48d67affd39f
+
+	/// Përqindja e subjektit në totalin e votave të vlefshme të njësisë; injoron slicer-in Subjekti zgjedhor.
+	measure '% tooltip' = DIVIDE([Vota tooltip], CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite)))
+		formatString: 0.0%
+		lineageTag: 9a590c9e-f708-4d6a-903d-7820752e97d8
+
+	/// Pjesa e votave të PS + PSD që kalon te Kualicioni Sheshit. Vlera e parazgjedhur 0%.
+	measure 'Skenar X' = SELECTEDVALUE('Skenari X'[X (%)], 0) / 100
+		formatString: 0%
+		displayFolder: Skenari 2027
+		lineageTag: 1adc407a-3397-41b5-babe-b3a70fed08e7
+
+	/// Pjesa e votave të PD-ASHM që kalon te Kualicioni Sheshit. Vlera e parazgjedhur 0%.
+	measure 'Skenar Y' = SELECTEDVALUE('Skenari Y'[Y (%)], 0) / 100
+		formatString: 0%
+		displayFolder: Skenari 2027
+		lineageTag: 295badd0-8d37-4cb7-9cea-1ffd34be268f
+
+	measure 'Vota baze PS PSD' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Subjekti skenar] = "PS + PSD")
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: 59debf53-6ed3-4fc1-aa4f-678a1fa1dd41
+
+	measure 'Vota baze PD' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Partia] = "PD-ASHM")
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: f0c6f4e5-5277-4736-801e-8d2afb791567
+
+	/// Votat 2025 të NISMA-SHB + MUNDESIA + BASHKE.
+	measure 'Vota baze Sheshi' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: fa8e9fb2-fd7d-4c3c-8dcd-81e47b5a29e2
+
+	/// Votat pas kalimit: Sheshi merr X të PS + PSD dhe Y të PD-ASHM; totali i votave nuk ndryshon.
+	measure 'Vota skenar' =
+			VAR x = [Skenar X]
+			VAR y = [Skenar Y]
+			VAR ps = [Vota baze PS PSD]
+			VAR pd = [Vota baze PD]
+			RETURN
+			    SUMX(
+			        VALUES(Dim_Partite[Subjekti skenar]),
+			        VAR s = Dim_Partite[Subjekti skenar]
+			        VAR v = CALCULATE([Vota (QV)])
+			        RETURN
+			            SWITCH(
+			                s,
+			                "Kualicioni Sheshit", v + x * ps + y * pd,
+			                "PS + PSD", v * (1 - x),
+			                "PD-ASHM", v * (1 - y),
+			                v
+			            )
+			    )
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: ed60bf41-40a5-41a3-a8cd-0b9c88e830cb
+
+	measure '% skenar' = DIVIDE([Vota skenar], CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite)))
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 2839fc7a-7025-47fc-bd9d-07e8601696d8
+
+	measure '% Sheshi 2025' = DIVIDE([Vota baze Sheshi], CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite)))
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 0d4d1f55-85bb-4af0-b4fd-fb71bfb0e234
+
+	measure 'Vota Sheshi skenar' = CALCULATE([Vota skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: 40d15457-e8dc-4d30-9545-353502400864
+
+	measure '% Sheshi skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 0b1fedb9-4e76-4067-9fae-e6435f79b4bc
+
+	measure '% PS PSD skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "PS + PSD")
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 1d561c2d-ee18-4ca6-84a3-55d155b727e5
+
+	measure '% PD skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "PD-ASHM")
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: b3ede81e-1159-405e-9828-250fc6e1816f
+
+	/// Subjekti me më shumë vota përveç Sheshit.
+	measure 'Kundershtari kryesor' =
+			VAR t = ADDCOLUMNS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit"), "@v", [Vota skenar])
+			RETURN MAXX(TOPN(1, t, [@v], DESC), Dim_Partite[Subjekti skenar])
+		displayFolder: Skenari 2027
+		lineageTag: a4fec957-553a-43d1-8ef2-47098f148bbc
+
+	measure 'Vota kundershtari' = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit"), [Vota skenar])
+		formatString: #,0
+		displayFolder: Skenari 2027
+		lineageTag: 08189afd-04fe-42f1-8462-aab2350a9672
+
+	/// Votat e Sheshit minus votat e kundërshtarit kryesor. Pozitive = Sheshi i pari.
+	measure 'Diferenca e Sheshit' = [Vota Sheshi skenar] - [Vota kundershtari]
+		formatString: +#,0;-#,0;0
+		displayFolder: Skenari 2027
+		lineageTag: e990c081-d689-44da-b5ae-3fcafe9bd65f
+
+	measure 'Renditja e Sheshit' =
+			VAR b = [Vota Sheshi skenar]
+			RETURN 1 + COUNTROWS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit" && [Vota skenar] >= b))
+		formatString: 0
+		displayFolder: Skenari 2027
+		lineageTag: e7760025-8f6e-4da1-86f1-0fdb6a008c25
+
+	measure 'Fituesi skenar' = IF([Diferenca e Sheshit] > 0, "Kualicioni Sheshit", [Kundershtari kryesor])
+		displayFolder: Skenari 2027
+		lineageTag: 4f5c3fb6-7d04-457e-82e8-04605f7d51ca
+
+	/// Sa njësi administrative fiton Sheshi, nga totali i njësive në filtër.
+	measure 'NjA ku Sheshi del i pari' =
+			VAR n = COUNTROWS(FILTER(VALUES('Qenderat e votimit'[NjA]), [Diferenca e Sheshit] > 0))
+			RETURN COALESCE(n, 0) & " nga " & DISTINCTCOUNT('Qenderat e votimit'[NjA])
+		displayFolder: Skenari 2027
+		lineageTag: e94c9ea3-0860-4e5a-91e1-b7578a199c7a
+
+	/// X më e vogël që e çon Sheshin të parin me Y-në aktuale.
+	measure 'X minimale' =
+			VAR y = [Skenar Y]
+			VAR ps = [Vota baze PS PSD]
+			VAR pd = [Vota baze PD]
+			VAR b = [Vota baze Sheshi] + y * pd
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni Sheshit", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR x1 = DIVIDE(ps - b, 2 * ps)
+			VAR x2 = DIVIDE(pd * (1 - y) - b, ps)
+			VAR x3 = DIVIDE(tjeret - b, ps)
+			RETURN MAX(0, MAX(x1, MAX(x2, x3)))
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 2d5e0dea-127a-409b-b4c6-44020c50ea84
+
+	/// Y më e vogël që e çon Sheshin të parin me X-in aktual. Mbi 100% = e pamundur.
+	measure 'Y minimale' =
+			VAR x = [Skenar X]
+			VAR ps = [Vota baze PS PSD]
+			VAR pd = [Vota baze PD]
+			VAR b = [Vota baze Sheshi] + x * ps
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni Sheshit", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR y1 = DIVIDE(ps * (1 - x) - b, pd)
+			VAR y2 = DIVIDE(pd - b, 2 * pd)
+			VAR y3 = DIVIDE(tjeret - b, pd)
+			RETURN MAX(0, MAX(y1, MAX(y2, y3)))
+		formatString: 0.0%
+		displayFolder: Skenari 2027
+		lineageTag: 91ee8a6f-2e14-4605-8af3-50c11456059c
+
+	measure 'X minimale teksti' = FORMAT([X minimale], "0.0%")
+		displayFolder: Skenari 2027
+		lineageTag: 18d286ca-538f-4133-b1d1-c57e16b4d775
+
+	measure 'Y minimale teksti' = IF([Y minimale] > 1, "E pamundur", FORMAT([Y minimale], "0.0%"))
+		displayFolder: Skenari 2027
+		lineageTag: 97405fe0-6680-4d46-ae8f-c85e97b6c550
+
+	measure Verdikti =
+			VAR d = [Diferenca e Sheshit]
+			VAR r = [Kundershtari kryesor]
+			RETURN IF(d > 0, "PO: Kualicioni Sheshit del i pari, " & FORMAT(d, "#,0") & " vota mbi " & r, "JO: Kualicioni Sheshit del i " & [Renditja e Sheshit] & "-ti, " & FORMAT(-d, "#,0") & " vota pas " & r)
+		displayFolder: Skenari 2027
+		lineageTag: d49ef7de-24a6-453d-8bde-55438fbfb2c1
+
+	measure 'Ngjyra Verdikti' = IF([Diferenca e Sheshit] > 0, "#2E9E6B", "#D64550")
+		displayFolder: Skenari 2027
+		lineageTag: 0a379b42-b1b4-40dd-9144-96203c27e804
+
+	column 'Qender Votimi'
+		dataType: string
+		lineageTag: e3f9aa67-22fa-483e-acd6-2042829487ca
+		summarizeBy: none
+		sourceColumn: Qender Votimi
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partia
+		dataType: string
+		lineageTag: 3163b3b2-cc89-4aa8-a4fd-b00844d79d27
+		summarizeBy: none
+		sourceColumn: Partia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Votat
+		dataType: int64
+		formatString: #,0
+		lineageTag: d3b85a4d-6622-4d32-94cf-2a726b2d989d
+		summarizeBy: sum
+		sourceColumn: Votat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition 'Votat per Partite sipas QV' = m
+		mode: import
+		source =
+				let
+				    Source = #"polling station",
+				    #"Filtered Rows" = Table.SelectRows(Source, each [Index] = 1),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Index"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Columns",{"v1", "v3", "v5"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"v1", "Qender Votimi"}, {"v3", "Partia"}, {"v5", "Votat"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Qender Votimi", type text}, {"Partia", type text}, {"Votat", Int64.Type}}),
+				    Reg = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\regional_party_results.json")),
+				    DiaVotes = Table.FromRecords(List.Transform(Reg[data_main]{1}[data], each
+				        [#"Qender Votimi" = "DIA-" & Text.Upper(Text.Replace(Text.Replace(Text.Replace(Text.Replace([v1], "&Euml;", "Ë"), "&euml;", "ë"), "&Ccedil;", "Ç"), "&ccedil;", "ç")), Partia = [v3], Votat = Number.From([v5_1])])),
+				    Combined = Table.Combine({#"Changed Type", DiaVotes}),
+				    Typed = Table.TransformColumnTypes(Combined, {{"Qender Votimi", type text}, {"Partia", type text}, {"Votat", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

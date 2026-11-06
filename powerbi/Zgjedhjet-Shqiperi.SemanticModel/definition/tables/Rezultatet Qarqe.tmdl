@@ -1,0 +1,108 @@
+table 'Rezultatet Qarqe'
+	lineageTag: 3c38c053-f669-4e15-9e55-099ad93246bd
+
+	measure Vota = SUM('Rezultatet Qarqe'[Vota gjithsej])
+		formatString: #,0
+		lineageTag: 7a5b7630-3ccf-4381-9e37-7fa871cf465a
+
+	measure 'Vota ne Shqiperi' = SUM('Rezultatet Qarqe'[Vota brenda])
+		formatString: #,0
+		lineageTag: 2b7f31c9-0d59-4e45-904d-f13349c1a4e0
+
+	measure 'Vota diaspora' = SUM('Rezultatet Qarqe'[Vota nga diaspora])
+		formatString: #,0
+		lineageTag: 52029ac8-0dad-487c-ac67-0936a82507f4
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Mandate = SUM('Rezultatet Qarqe'[Nr mandatesh])
+		formatString: 0
+		lineageTag: bfc18d0f-e777-4a2b-b390-c273dcc95a9c
+
+	measure '% e votave' = DIVIDE([Vota], CALCULATE([Vota], ALL(Dim_Partite)))
+		formatString: 0.0%
+		lineageTag: 2d580f22-c7bd-4083-94a7-74e6916799b6
+
+	measure '% e mandateve' = DIVIDE([Mandate], CALCULATE([Mandate], ALL(Dim_Partite)))
+		formatString: 0.0%
+		lineageTag: 48cbb41e-0f9c-4ddb-81c5-50124479534a
+
+	measure '% diaspora' = DIVIDE([Vota diaspora], [Vota])
+		formatString: 0.0%
+		lineageTag: 22c2660c-7f99-4fae-9779-2f730ad65980
+
+	measure 'Mandate Title' = "Gjithsej mandate: " & COALESCE([Mandate], 0)
+		lineageTag: 0d286e5e-9527-4233-a637-3d76f02fbd0d
+
+	column Qarku
+		dataType: string
+		lineageTag: 8351290d-32fd-41c3-9a1c-9d241a2b134f
+		summarizeBy: none
+		sourceColumn: Qarku
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partia
+		dataType: string
+		lineageTag: c9489b5d-59cc-4dc1-b474-bc10fb84ecce
+		summarizeBy: none
+		sourceColumn: Partia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota brenda'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 23905bee-8024-4daf-9b6d-929f016fe320
+		summarizeBy: none
+		sourceColumn: Vota brenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota nga diaspora'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 424f023d-1a5e-47a0-99ef-da351cbf749a
+		summarizeBy: none
+		sourceColumn: Vota nga diaspora
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota gjithsej'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 49db7724-822c-44c0-9c83-48ed940c5608
+		summarizeBy: none
+		sourceColumn: Vota gjithsej
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nr mandatesh'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ca8706ab-18f2-4240-90a1-0123bbe16e43
+		summarizeBy: none
+		sourceColumn: Nr mandatesh
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rezultatet Qarqe' = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\regional_party_results.json")),
+				    Rows = Table.FromRecords(Source[data_main]{1}[data]),
+				    Selected = Table.SelectColumns(Rows, {"v1", "v3", "v5", "v5_1", "v5_2", "v6"}),
+				    Decoded = Table.TransformColumns(Selected, {{"v1", each Text.Upper(Text.Replace(Text.Replace(Text.Replace(Text.Replace(_, "&Euml;", "Ë"), "&euml;", "ë"), "&Ccedil;", "Ç"), "&ccedil;", "ç")), type text}}),
+				    Seats = Table.TransformColumns(Decoded, {{"v6", each if _ = null or _ = "" then 0 else Number.From(_), Int64.Type}}),
+				    Typed = Table.TransformColumnTypes(Seats, {{"v3", type text}, {"v5", Int64.Type}, {"v5_1", Int64.Type}, {"v5_2", Int64.Type}}),
+				    Renamed = Table.RenameColumns(Typed, {{"v1", "Qarku"}, {"v3", "Partia"}, {"v5", "Vota brenda"}, {"v5_1", "Vota nga diaspora"}, {"v5_2", "Vota gjithsej"}, {"v6", "Nr mandatesh"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table
+

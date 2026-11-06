@@ -1,0 +1,196 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "385b08bb20c49c3f0671",
+  "position": {
+    "x": 25,
+    "y": 236.66666666666669,
+    "z": 6000,
+    "height": 420,
+    "width": 1111.6666666666667,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qarku"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qarku",
+              "nativeQueryRef": "Qarku",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Bashkia"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Bashkia",
+              "nativeQueryRef": "Bashkia",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qender Votimi"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qender Votimi",
+              "nativeQueryRef": "Qendra e votimit",
+              "active": false,
+              "displayName": "Qendra e votimit"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja e grave"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja e grave",
+              "nativeQueryRef": "Pjesemarrja e grave",
+              "displayName": "Pjesëmarrja e grave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja e burrave"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja e burrave",
+              "nativeQueryRef": "Pjesemarrja e burrave",
+              "displayName": "Pjesëmarrja e burrave"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qenderat e votimit"
+                  }
+                },
+                "Property": "Qarku"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D16BA5'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qenderat e votimit.Pjesemarrja e grave"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A9FD8'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qenderat e votimit.Pjesemarrja e burrave"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pjesëmarrja e grave dhe e burrave (Qark › Bashki › QV)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

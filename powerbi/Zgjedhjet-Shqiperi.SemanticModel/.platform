@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Zgjedhjet-Shqiperi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9f383909-865d-4ae3-a219-e893109cb0bb"
+  }
+}

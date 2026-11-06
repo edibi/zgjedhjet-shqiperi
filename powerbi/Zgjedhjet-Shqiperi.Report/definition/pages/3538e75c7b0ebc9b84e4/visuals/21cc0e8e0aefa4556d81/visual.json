@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "21cc0e8e0aefa4556d81",
+  "position": {
+    "x": 20,
+    "y": 8.5714285714285712,
+    "z": 0,
+    "height": 94.285714285714292,
+    "width": 342.85714285714289,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Analiza gjinore",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Vetëm votimi brenda vendit. Tirana dhe Fieri nuk kanë të dhëna për votueset gra; përfshihen vetëm QV-të me të dhëna të plota.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#c8c6c4"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

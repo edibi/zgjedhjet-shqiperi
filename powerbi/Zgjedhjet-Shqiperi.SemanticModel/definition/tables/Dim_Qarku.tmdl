@@ -1,0 +1,66 @@
+table Dim_Qarku
+	lineageTag: cae381e5-71bd-4e8b-a61b-15dc0635a0a9
+
+	column Qarku
+		dataType: string
+		lineageTag: 59ea213d-8aae-47bf-b543-a08ab7108902
+		summarizeBy: none
+		sourceColumn: Qarku
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zgjedhes ne liste'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 7e438be3-30dc-48eb-bc13-6135424e1460
+		summarizeBy: none
+		sourceColumn: Zgjedhes ne liste
+
+		annotation SummarizationSetBy = Automatic
+
+	column Votues
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 1aaa2331-f065-4635-932d-445f21497a3d
+		summarizeBy: none
+		sourceColumn: Votues
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota te vlefshme brenda'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 4179a8ef-6358-4870-880e-a4aea6f42e55
+		summarizeBy: none
+		sourceColumn: Vota te vlefshme brenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vota te vlefshme diaspora'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: fca1a087-4fcd-46ac-adef-d6ee37ee9267
+		summarizeBy: none
+		sourceColumn: Vota te vlefshme diaspora
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Qarku = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\regional_party_results.json")),
+				    Rows = Table.FromRecords(Source[data_main]{0}[data]),
+				    Selected = Table.SelectColumns(Rows, {"v1", "v6", "v8", "v10", "v10_1"}),
+				    Decoded = Table.TransformColumns(Selected, {{"v1", each Text.Upper(Text.Replace(Text.Replace(Text.Replace(Text.Replace(_, "&Euml;", "Ë"), "&euml;", "ë"), "&Ccedil;", "Ç"), "&ccedil;", "ç")), type text}}),
+				    Typed = Table.TransformColumnTypes(Decoded, {{"v6", Int64.Type}, {"v8", Int64.Type}, {"v10", Int64.Type}, {"v10_1", Int64.Type}}),
+				    Renamed = Table.RenameColumns(Typed, {{"v1", "Qarku"}, {"v6", "Zgjedhes ne liste"}, {"v8", "Votues"}, {"v10", "Vota te vlefshme brenda"}, {"v10_1", "Vota te vlefshme diaspora"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3538e75c7b0ebc9b84e4",
+  "displayName": "Analiza gjinore",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920
+}

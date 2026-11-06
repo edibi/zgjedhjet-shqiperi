@@ -1,0 +1,214 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "5db0de729f6cb4c8eaa5",
+  "position": {
+    "x": 20,
+    "y": 575,
+    "z": 4000,
+    "height": 485,
+    "width": 1130,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Grupi"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Grupi",
+              "nativeQueryRef": "Grupi",
+              "displayName": "Subjekti zgjedhor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Vota 2023"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Vota 2023",
+              "nativeQueryRef": "Vota 2023",
+              "displayName": "Vota 2023"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Vota 2025"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Vota 2025",
+              "nativeQueryRef": "Vota 2025",
+              "displayName": "Vota 2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Ndryshimi i votave"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Ndryshimi i votave",
+              "nativeQueryRef": "Ndryshimi i votave",
+              "displayName": "Ndryshimi i votave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "% 2023"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.% 2023",
+              "nativeQueryRef": "% 2023",
+              "displayName": "% 2023"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "% 2025"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.% 2025",
+              "nativeQueryRef": "% 2025",
+              "displayName": "% 2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Ndryshimi (p.p.)"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Ndryshimi (p.p.)",
+              "nativeQueryRef": "Ndryshimi (p.p.)",
+              "displayName": "Ndryshimi (p.p.)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "NjA ne rritje"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.NjA ne rritje",
+              "nativeQueryRef": "NjA ne rritje",
+              "displayName": "NjA në rritje (nga 24)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Rritja me e madhe"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Rritja me e madhe",
+              "nativeQueryRef": "Rritja me e madhe",
+              "displayName": "Rritja më e madhe"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Renia me e madhe"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Renia me e madhe",
+              "nativeQueryRef": "Renia me e madhe",
+              "displayName": "Rënia më e madhe"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Krahasimi 2023-2025"
+                  }
+                },
+                "Property": "% 2025"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rezultatet e subjekteve zgjedhore: 2023 dhe 2025'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

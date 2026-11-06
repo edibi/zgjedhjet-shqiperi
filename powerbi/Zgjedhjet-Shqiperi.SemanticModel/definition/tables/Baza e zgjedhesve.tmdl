@@ -1,0 +1,28 @@
+table 'Baza e zgjedhesve'
+	lineageTag: 8de8d219-38fc-4be8-938b-e4570872fc55
+
+	column Baza
+		dataType: string
+		lineageTag: 0a841e2c-0986-4c8a-a4df-5a0498da1790
+		summarizeBy: none
+		sourceColumn: Baza
+		sortByColumn: Rendi
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rendi
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 27e8c150-2d11-4632-bb4e-439fb9e2cf17
+		summarizeBy: none
+		sourceColumn: Rendi
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Baza e zgjedhesve' = m
+		mode: import
+		source = #table(type table [Baza = text, Rendi = Int64.Type], {{"Rezidentë (INSTAT)", 1}, {"Lista e KQZ", 2}})
+
+	annotation PBI_ResultType = Table
+

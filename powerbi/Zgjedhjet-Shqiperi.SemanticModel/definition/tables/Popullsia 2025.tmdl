@@ -1,0 +1,121 @@
+table 'Popullsia 2025'
+	lineageTag: cbb3e138-ccfc-4c31-9ed3-093600f8384c
+
+	measure 'Shtetas 18+ rezidente' = SUM('Popullsia 2025'[Shtetas_18plus])
+		formatString: #,0
+		lineageTag: 73a09612-3678-464c-9e7c-71bfaaa4f503
+
+	measure 'Gra shtetase 18+ rezidente' = SUM('Popullsia 2025'[Shtetas_femra_18plus])
+		formatString: #,0
+		lineageTag: 59a378d3-5230-465d-b532-940cc43b1cd3
+
+	column Qarku
+		dataType: string
+		lineageTag: 94032975-1606-4a63-8ca9-1095a9703e8f
+		summarizeBy: none
+		sourceColumn: Qarku
+
+		annotation SummarizationSetBy = Automatic
+
+	column Popullsia_2025
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 281d08f6-514c-4a00-95e1-b9985f50a166
+		summarizeBy: none
+		sourceColumn: Popullsia_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meshkuj_2025
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 667ba317-2278-4b25-9b7e-4c522407638d
+		summarizeBy: none
+		sourceColumn: Meshkuj_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column Femra_2025
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 92b35ad0-e95d-47be-a905-5a85f692bff8
+		summarizeBy: none
+		sourceColumn: Femra_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column Te_rritur_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: c9635688-6acc-4576-8f2c-97ea1ae910a9
+		summarizeBy: none
+		sourceColumn: Te_rritur_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meshkuj_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: acc7b0b7-f3b0-4c7a-972c-789ef9aec632
+		summarizeBy: none
+		sourceColumn: Meshkuj_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Femra_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 4708f6d6-18f1-4c66-891e-51e326382645
+		summarizeBy: none
+		sourceColumn: Femra_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shtetas_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 6cb1c5f4-4a1a-460f-818b-04f8b8c99085
+		summarizeBy: none
+		sourceColumn: Shtetas_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shtetas_meshkuj_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 12626d84-63b0-4a98-beaf-c7e0dfbf89d6
+		summarizeBy: none
+		sourceColumn: Shtetas_meshkuj_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shtetas_femra_18plus
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 5df1ab2e-2c0f-4c04-a16e-4bb2cb2a1e1c
+		summarizeBy: none
+		sourceColumn: Shtetas_femra_18plus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Popullsia 2025' = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents(DataFolder & "popullsia\popullsia_2025_qarqe.json")),
+				    Rows = Table.FromRecords(Source[data]),
+				    Typed = Table.TransformColumnTypes(Rows, {{"Qarku", type text}, {"Popullsia_2025", Int64.Type}, {"Meshkuj_2025", Int64.Type}, {"Femra_2025", Int64.Type}, {"Te_rritur_18plus", Int64.Type}, {"Meshkuj_18plus", Int64.Type}, {"Femra_18plus", Int64.Type}, {"Shtetas_18plus", Int64.Type}, {"Shtetas_meshkuj_18plus", Int64.Type}, {"Shtetas_femra_18plus", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

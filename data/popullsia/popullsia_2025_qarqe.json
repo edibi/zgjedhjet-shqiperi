@@ -1,0 +1,161 @@
+{
+ "titulli": "Baza e zgjedhesve rezidente ne Shqiperi, 1 janar 2025",
+ "burimet": [
+  "INSTAT: Popullsia me 1 janar 2025 sipas qarkut dhe gjinise",
+  "INSTAT: Popullsia me 1 janar 2025 sipas grup-moshes dhe gjinise",
+  "INSTAT Census 2023: 2,386,903 shtetas shqiptare nga 2,402,113 rezidente"
+ ],
+ "metoda": {
+  "nen_18": "0-4 + 5-9 + 10-14 + 3/5 e grupit 15-19 (kombetare, sipas gjinise)",
+  "pesha_te_rritur_meshkuj": 0.80544,
+  "pesha_te_rritur_femra": 0.82215,
+  "pesha_shtetas_shqiptare": 0.99367,
+  "kujdes": "Struktura moshore kombetare zbatohet njesoj ne cdo qark"
+ },
+ "data": [
+  {
+   "Qarku": "BERAT",
+   "Popullsia_2025": 138926,
+   "Meshkuj_2025": 68700,
+   "Femra_2025": 70226,
+   "Te_rritur_18plus": 113070,
+   "Meshkuj_18plus": 55334,
+   "Femra_18plus": 57736,
+   "Shtetas_18plus": 112354,
+   "Shtetas_meshkuj_18plus": 54983,
+   "Shtetas_femra_18plus": 57371
+  },
+  {
+   "Qarku": "DIBËR",
+   "Popullsia_2025": 104624,
+   "Meshkuj_2025": 52657,
+   "Femra_2025": 51967,
+   "Te_rritur_18plus": 85137,
+   "Meshkuj_18plus": 42412,
+   "Femra_18plus": 42725,
+   "Shtetas_18plus": 84598,
+   "Shtetas_meshkuj_18plus": 42143,
+   "Shtetas_femra_18plus": 42454
+  },
+  {
+   "Qarku": "DURRËS",
+   "Popullsia_2025": 222999,
+   "Meshkuj_2025": 111812,
+   "Femra_2025": 111187,
+   "Te_rritur_18plus": 181470,
+   "Meshkuj_18plus": 90058,
+   "Femra_18plus": 91412,
+   "Shtetas_18plus": 180321,
+   "Shtetas_meshkuj_18plus": 89488,
+   "Shtetas_femra_18plus": 90833
+  },
+  {
+   "Qarku": "ELBASAN",
+   "Popullsia_2025": 226963,
+   "Meshkuj_2025": 113462,
+   "Femra_2025": 113501,
+   "Te_rritur_18plus": 184701,
+   "Meshkuj_18plus": 91387,
+   "Femra_18plus": 93315,
+   "Shtetas_18plus": 183532,
+   "Shtetas_meshkuj_18plus": 90808,
+   "Shtetas_femra_18plus": 92724
+  },
+  {
+   "Qarku": "FIER",
+   "Popullsia_2025": 233215,
+   "Meshkuj_2025": 116879,
+   "Femra_2025": 116336,
+   "Te_rritur_18plus": 189784,
+   "Meshkuj_18plus": 94139,
+   "Femra_18plus": 95645,
+   "Shtetas_18plus": 188583,
+   "Shtetas_meshkuj_18plus": 93543,
+   "Shtetas_femra_18plus": 95040
+  },
+  {
+   "Qarku": "GJIROKASTËR",
+   "Popullsia_2025": 58456,
+   "Meshkuj_2025": 29457,
+   "Femra_2025": 28999,
+   "Te_rritur_18plus": 47567,
+   "Meshkuj_18plus": 23726,
+   "Femra_18plus": 23841,
+   "Shtetas_18plus": 47266,
+   "Shtetas_meshkuj_18plus": 23576,
+   "Shtetas_femra_18plus": 23691
+  },
+  {
+   "Qarku": "KORÇË",
+   "Popullsia_2025": 168064,
+   "Meshkuj_2025": 84724,
+   "Femra_2025": 83340,
+   "Te_rritur_18plus": 136758,
+   "Meshkuj_18plus": 68240,
+   "Femra_18plus": 68518,
+   "Shtetas_18plus": 135892,
+   "Shtetas_meshkuj_18plus": 67808,
+   "Shtetas_femra_18plus": 68084
+  },
+  {
+   "Qarku": "KUKËS",
+   "Popullsia_2025": 60207,
+   "Meshkuj_2025": 30219,
+   "Femra_2025": 29988,
+   "Te_rritur_18plus": 48994,
+   "Meshkuj_18plus": 24340,
+   "Femra_18plus": 24655,
+   "Shtetas_18plus": 48684,
+   "Shtetas_meshkuj_18plus": 24185,
+   "Shtetas_femra_18plus": 24498
+  },
+  {
+   "Qarku": "LEZHË",
+   "Popullsia_2025": 96384,
+   "Meshkuj_2025": 48146,
+   "Femra_2025": 48238,
+   "Te_rritur_18plus": 78437,
+   "Meshkuj_18plus": 38779,
+   "Femra_18plus": 39659,
+   "Shtetas_18plus": 77941,
+   "Shtetas_meshkuj_18plus": 38533,
+   "Shtetas_femra_18plus": 39408
+  },
+  {
+   "Qarku": "SHKODËR",
+   "Popullsia_2025": 149496,
+   "Meshkuj_2025": 73735,
+   "Femra_2025": 75761,
+   "Te_rritur_18plus": 121676,
+   "Meshkuj_18plus": 59389,
+   "Femra_18plus": 62287,
+   "Shtetas_18plus": 120905,
+   "Shtetas_meshkuj_18plus": 59013,
+   "Shtetas_femra_18plus": 61892
+  },
+  {
+   "Qarku": "TIRANË",
+   "Popullsia_2025": 759981,
+   "Meshkuj_2025": 367099,
+   "Femra_2025": 392882,
+   "Te_rritur_18plus": 618683,
+   "Meshkuj_18plus": 295676,
+   "Femra_18plus": 323007,
+   "Shtetas_18plus": 614766,
+   "Shtetas_meshkuj_18plus": 293804,
+   "Shtetas_femra_18plus": 320962
+  },
+  {
+   "Qarku": "VLORË",
+   "Popullsia_2025": 143999,
+   "Meshkuj_2025": 71827,
+   "Femra_2025": 72172,
+   "Te_rritur_18plus": 117188,
+   "Meshkuj_18plus": 57852,
+   "Femra_18plus": 59336,
+   "Shtetas_18plus": 116446,
+   "Shtetas_meshkuj_18plus": 57486,
+   "Shtetas_femra_18plus": 58960
+  }
+ ]
+}

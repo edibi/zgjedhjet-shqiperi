@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "2d7f40c1e9a6b3581f60",
+  "displayName": "Tooltip: Rezultatet sipas njësisë",
+  "displayOption": "ActualSize",
+  "height": 296,
+  "width": 340,
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}
