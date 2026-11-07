@@ -36,7 +36,7 @@ Faqet **Skenari 2027** në raport dhe skenari në faqen e internetit janë anali
 
 - **Kualicioni SHESHIT** është një emër pune për NISMA-SHB + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar.
 - PS dhe PSD trajtohen si një koalicion.
-- X dhe Y janë përqindje të supozuara të votave që kalojnë nga PS + PSD dhe PD-ASHM.
+- X dhe Y janë përqindje të supozuara të votave që kalojnë nga PS + PSD dhe PD.
 
 ## Burimet
 

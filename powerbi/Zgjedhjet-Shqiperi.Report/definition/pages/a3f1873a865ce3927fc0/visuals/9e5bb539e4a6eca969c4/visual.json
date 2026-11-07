@@ -211,7 +211,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'PD-ASHM'"
+                        "Value": "'PD'"
                       }
                     }
                   }
@@ -498,7 +498,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'PD-ASHM'"
+                        "Value": "'PD'"
                       }
                     }
                   }

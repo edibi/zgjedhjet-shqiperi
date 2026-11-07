@@ -3,7 +3,7 @@
   "name": "6a10c3e7f25d48b19e03",
   "position": {
     "x": 1203.694581280788,
-    "y": 7.980295566502463,
+    "y": 7.9802955665024626,
     "z": 2000,
     "height": 144.97536945812809,
     "width": 426.94581280788174,
@@ -41,7 +41,7 @@
             "numericStart": {
               "expr": {
                 "Literal": {
-                  "Value": "0.3D"
+                  "Value": "0.32D"
                 }
               }
             },
@@ -98,7 +98,7 @@
                         },
                         "Right": {
                           "Literal": {
-                            "Value": "0.3D"
+                            "Value": "0.32D"
                           }
                         }
                       }
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Y: % e votave të PD-ASHM që kalojnë te SHESHI'"
+                  "Value": "'Y: % e votave të PD që kalojnë te SHESHI'"
                 }
               }
             },

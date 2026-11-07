@@ -4183,6 +4183,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Nj.Ad. në rritje (nga 5)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4322,7 +4332,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Diferenca nga rivali kryesor": {
+			          "Hendeku i SHESHIT me PS + PSD": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4332,7 +4342,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Hendeku i SHESHIT me PS + PSD": {
+			          "Diferenca nga rivali kryesor": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4562,6 +4572,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Pjesëmarrja e rezidentëve, Vlorë": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4603,6 +4623,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Rezidentë që nuk votuan, Vlorë": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4637,6 +4667,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "Nuk votuan": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Nuk votuan sipas listës, Vlorë": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

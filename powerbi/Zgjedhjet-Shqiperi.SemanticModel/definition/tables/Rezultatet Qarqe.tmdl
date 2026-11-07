@@ -101,9 +101,10 @@ table 'Rezultatet Qarqe'
 				    Seats = Table.TransformColumns(Decoded, {{"v6", each if _ = null or _ = "" then 0 else Number.From(_), Int64.Type}}),
 				    Typed = Table.TransformColumnTypes(Seats, {{"v3", type text}, {"v5", Int64.Type}, {"v5_1", Int64.Type}, {"v5_2", Int64.Type}}),
 				    Renamed = Table.RenameColumns(Typed, {{"v1", "Qarku"}, {"v3", "Partia"}, {"v5", "Vota brenda"}, {"v5_1", "Vota nga diaspora"}, {"v5_2", "Vota gjithsej"}, {"v6", "Nr mandatesh"}}),
-				    EmriPartise = Table.ReplaceValue(Renamed, "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"Partia"})
+				    EmriPartise = Table.ReplaceValue(Renamed, "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"Partia"}),
+				    EmriPD = Table.ReplaceValue(EmriPartise, "PD-ASHM", "PD", Replacer.ReplaceValue, {"Partia"})
 				in
-				    EmriPartise
+				    EmriPD
 
 	annotation PBI_ResultType = Table
 

@@ -43,7 +43,7 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 1adc407a-3397-41b5-babe-b3a70fed08e7
 
-	/// Pjesa e votave të PD-ASHM që kalon te Kualicioni SHESHIT. Vlera e parazgjedhur 0%.
+	/// Pjesa e votave të PD që kalon te Kualicioni SHESHIT. Vlera e parazgjedhur 0%.
 	measure 'Skenar Y' = SELECTEDVALUE('Skenari Y'[Y (%)], 0)
 		formatString: 0%
 		displayFolder: Skenari 2027
@@ -54,7 +54,7 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 59debf53-6ed3-4fc1-aa4f-678a1fa1dd41
 
-	measure 'Vota baze PD' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Partia] = "PD-ASHM")
+	measure 'Vota baze PD' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Partia] = "PD")
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: f0c6f4e5-5277-4736-801e-8d2afb791567
@@ -65,7 +65,7 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: fa8e9fb2-fd7d-4c3c-8dcd-81e47b5a29e2
 
-	/// Votat pas kalimit: SHESHI merr X të PS + PSD dhe Y të PD-ASHM; totali i votave nuk ndryshon.
+	/// Votat pas kalimit: SHESHI merr X të PS + PSD dhe Y të PD; totali i votave nuk ndryshon.
 	measure 'Vota skenar' =
 			VAR x = [Skenar X]
 			VAR y = [Skenar Y]
@@ -81,7 +81,7 @@ table 'Votat per Partite sipas QV'
 			                s,
 			                "Kualicioni SHESHIT", v + x * ps + y * pd,
 			                "PS + PSD", v * (1 - x),
-			                "PD-ASHM", v * (1 - y),
+			                "PD", v * (1 - y),
 			                v
 			            )
 			    )
@@ -114,7 +114,7 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 1d561c2d-ee18-4ca6-84a3-55d155b727e5
 
-	measure '% PD skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "PD-ASHM")
+	measure '% PD skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "PD")
 		formatString: 0.0%
 		displayFolder: Skenari 2027
 		lineageTag: b3ede81e-1159-405e-9828-250fc6e1816f
@@ -161,7 +161,7 @@ table 'Votat per Partite sipas QV'
 			VAR ps = [Vota baze PS PSD]
 			VAR pd = [Vota baze PD]
 			VAR b = [Vota baze SHESHI] + y * pd
-			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD"}), CALCULATE([Vota (QV)]))
 			VAR x1 = DIVIDE(ps - b, 2 * ps)
 			VAR x2 = DIVIDE(pd * (1 - y) - b, ps)
 			VAR x3 = DIVIDE(tjeret - b, ps)
@@ -176,7 +176,7 @@ table 'Votat per Partite sipas QV'
 			VAR ps = [Vota baze PS PSD]
 			VAR pd = [Vota baze PD]
 			VAR b = [Vota baze SHESHI] + x * ps
-			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD"}), CALCULATE([Vota (QV)]))
 			VAR y1 = DIVIDE(ps * (1 - x) - b, pd)
 			VAR y2 = DIVIDE(pd - b, 2 * pd)
 			VAR y3 = DIVIDE(tjeret - b, pd)
@@ -204,7 +204,7 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 0a379b42-b1b4-40dd-9144-96203c27e804
 
-	/// Vota që SHESHI fiton në njësi nga X i PS + PSD dhe Y i PD-ASHM.
+	/// Vota që SHESHI fiton në njësi nga X i PS + PSD dhe Y i PD.
 	measure 'Vota nga kalimi (skenar)' = [Vota SHESHI skenar] - [Vota baze SHESHI]
 		formatString: #,0
 		displayFolder: Skenari 2027
@@ -278,7 +278,7 @@ table 'Votat per Partite sipas QV'
 				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Qender Votimi", type text}, {"Partia", type text}, {"Votat", Int64.Type}}),
 				    Reg = Json.Document(File.Contents(DataFolder & "kuvend-2025\raw\regional_party_results.json")),
 				    DiaVotes = Table.FromRecords(List.Transform(Reg[data_main]{1}[data], each
-				        [#"Qender Votimi" = "DIA-" & Text.Upper(Text.Replace(Text.Replace(Text.Replace(Text.Replace([v1], "&Euml;", "Ë"), "&euml;", "ë"), "&Ccedil;", "Ç"), "&ccedil;", "ç")), Partia = if [v3] = "BASHKE" then "L. BASHKE" else [v3], Votat = Number.From([v5_1])])),
+				        [#"Qender Votimi" = "DIA-" & Text.Upper(Text.Replace(Text.Replace(Text.Replace(Text.Replace([v1], "&Euml;", "Ë"), "&euml;", "ë"), "&Ccedil;", "Ç"), "&ccedil;", "ç")), Partia = if [v3] = "BASHKE" then "L. BASHKE" else if [v3] = "PD-ASHM" then "PD" else [v3], Votat = Number.From([v5_1])])),
 				    Combined = Table.Combine({#"Changed Type", DiaVotes}),
 				    Typed = Table.TransformColumnTypes(Combined, {{"Qender Votimi", type text}, {"Partia", type text}, {"Votat", Int64.Type}})
 				in

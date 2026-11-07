@@ -44,7 +44,7 @@ table Dim_Partite
 			SWITCH ( 'Dim_Partite'[Grupi],
 			    "PS + PSD", "#5E3894",
 			    "PS", "#5E3894",
-			    "PD-ASHM", "#00529C",
+			    "PD", "#00529C",
 			    "NISMA-SHB", "#F48221",
 			    "PSD", "#0C5D34",
 			    "MUNDESIA", "#FFC04D",
@@ -72,13 +72,13 @@ table Dim_Partite
 
 		changedProperty = SortByColumn
 
-	column 'Ngjyra e detajuar' = SWITCH ( 'Dim_Partite'[Grupi i detajuar], "PS", "#5E3894", "PSD", "#0C5D34", "PD-ASHM", "#00529C", "MUNDESIA", "#FFC04D", "NISMA-SHB", "#F48221", "L. BASHKE", "#E82D36", "#9E9E9E" )
+	column 'Ngjyra e detajuar' = SWITCH ( 'Dim_Partite'[Grupi i detajuar], "PS", "#5E3894", "PSD", "#0C5D34", "PD", "#00529C", "MUNDESIA", "#FFC04D", "NISMA-SHB", "#F48221", "L. BASHKE", "#E82D36", "#9E9E9E" )
 		dataType: string
 		isHidden
 		lineageTag: e1004dfc-e473-4422-8297-5cb56e60936b
 		summarizeBy: none
 
-	column 'Subjekti skenar Order' = SWITCH ( TRUE (), 'Dim_Partite'[Partia] IN { "NISMA-SHB", "MUNDESIA", "L. BASHKE" }, 1, 'Dim_Partite'[Partia] IN { "PS", "PSD" }, 2, 'Dim_Partite'[Partia] = "PD-ASHM", 3, 4 )
+	column 'Subjekti skenar Order' = SWITCH ( TRUE (), 'Dim_Partite'[Partia] IN { "NISMA-SHB", "MUNDESIA", "L. BASHKE" }, 1, 'Dim_Partite'[Partia] IN { "PS", "PSD" }, 2, 'Dim_Partite'[Partia] = "PD", 3, 4 )
 		dataType: int64
 		isHidden
 		formatString: 0
@@ -103,7 +103,7 @@ table Dim_Partite
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
 				    #"Renamed Columns" = Table.RenameColumns(#"Removed Duplicates",{{"v2", "Order"}, {"v3", "Partia"}}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Order", Int64.Type}, {"Partia", type text}}),
-				    Prioriteti = {"PS", "PD-ASHM", "PSD", "MUNDESIA", "NISMA-SHB", "L. BASHKE"},
+				    Prioriteti = {"PS", "PD", "PSD", "MUNDESIA", "NISMA-SHB", "L. BASHKE"},
 				    #"Added Rank" = Table.AddColumn(#"Changed Type", "Rank", each let p = List.PositionOf(Prioriteti, [Partia]) in if p = -1 then 100 + [Order] else p, Int64.Type),
 				    #"Sorted Rows" = Table.Sort(#"Added Rank", {{"Rank", Order.Ascending}}),
 				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "New Order", 1, 1, Int64.Type),

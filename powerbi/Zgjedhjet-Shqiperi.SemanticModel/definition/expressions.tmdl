@@ -8,9 +8,10 @@ expression 'polling station' =
 		    #"Added Index" = Table.AddIndexColumn(#"Removed Columns", "Index", 0, 1, Int64.Type),
 		    #"Expanded data_main.data" = Table.ExpandListColumn(#"Added Index", "data_main.data"),
 		    #"Expanded data_main.data1" = Table.ExpandRecordColumn(#"Expanded data_main.data", "data_main.data", Record.FieldNames(#"Expanded data_main.data"{0}[data_main.data])),
-		    RenameBashke = Table.ReplaceValue(#"Expanded data_main.data1", "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"v3"})
+		    RenameBashke = Table.ReplaceValue(#"Expanded data_main.data1", "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"v3"}),
+		    RenamePD = Table.ReplaceValue(RenameBashke, "PD-ASHM", "PD", Replacer.ReplaceValue, {"v3"})
 		in
-		    RenameBashke
+		    RenamePD
 	lineageTag: d959c805-3334-492c-835e-33456da79a43
 
 	annotation PBI_NavigationStepName = Navigation

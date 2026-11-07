@@ -3,10 +3,10 @@
   "name": "v7798f8874a5c4d9496d",
   "position": {
     "x": 20,
-    "y": 8.571428571428571,
+    "y": 8.5714285714285712,
     "z": 0,
-    "height": 144.2857142857143,
-    "width": 681.4285714285714,
+    "height": 144.28571428571431,
+    "width": 681.42857142857144,
     "tabOrder": 0
   },
   "visual": {
@@ -31,7 +31,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Bashkia Vlorë, vota të Kuvendit 2025 pa diasporën. Kualicioni SHESHIT = NISMA-SHB + MUNDESIA + L. BASHKE; PS dhe PSD si një koalicion. X dhe Y janë përqindje e votave të vetë PS + PSD dhe PD-ASHM, jo pikë përqindjeje.",
+                    "value": "Bashkia Vlorë, vota të Kuvendit 2025 pa diasporën. Kualicioni SHESHIT = NISMA-SHB + MUNDESIA + L. BASHKE; PS dhe PSD si një koalicion. X dhe Y janë përqindje e votave të vetë PS + PSD dhe PD, jo pikë përqindjeje.",
                     "textStyle": {
                       "fontSize": "11pt",
                       "color": "#f3f2f1"

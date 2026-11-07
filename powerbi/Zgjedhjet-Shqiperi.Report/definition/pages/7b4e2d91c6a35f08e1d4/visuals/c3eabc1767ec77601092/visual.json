@@ -70,6 +70,25 @@
               "displayName": "% e votave"
             }
           ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "Vota subjekti grafik"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.Vota subjekti grafik",
+              "nativeQueryRef": "Vota subjekti grafik",
+              "displayName": "Vota"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -307,7 +326,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'PD-ASHM'"
+                        "Value": "'PD'"
                       }
                     }
                   }

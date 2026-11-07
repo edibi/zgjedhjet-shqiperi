@@ -55,6 +55,16 @@ table 'Krahasimi 2023-2025'
 	measure 'Renia me e madhe' = IF(HASONEVALUE('Krahasimi 2023-2025'[Grupi]), MAXX(TOPN(1, FILTER(ADDCOLUMNS(VALUES('Adresat NjA'[NjA]), "Ndr", [Ndryshimi (p.p.)]), NOT ISBLANK([Ndr])), [Ndr], ASC), [NjA] & " (" & FORMAT([Ndr], "+0.0;-0.0") & ")"))
 		lineageTag: 6e64b40d-9589-40e2-a8ec-2cfd2bbdee02
 
+	/// Votat e subjektit në njësi për secilin vit; injoron slicer-in Subjekti zgjedhor.
+	measure 'Vota subjekti (viti)' = VAR g = SELECTEDVALUE('Grupet tooltip'[Grupi]) VAR detajuar = SELECTEDVALUE('Grupimi i partive'[Grupimi i partive Order], 0) = 1 RETURN IF(detajuar, CALCULATE([Vota krahasim], 'Krahasimi 2023-2025'[Grupi i detajuar] = g), CALCULATE([Vota krahasim], 'Krahasimi 2023-2025'[Grupi] = g))
+		formatString: #,0
+		lineageTag: 36a7c0d8-6558-4559-8dbd-46d8bc929b67
+
+	/// Si Vota subjekti (viti), por ndjek slicer-in Subjekti zgjedhor dhe slicer-in e njësive (numri pas % subjekti grafik).
+	measure 'Vota subjekti grafik' = VAR g = SELECTEDVALUE('Grupet tooltip'[Grupi]) VAR detajuar = SELECTEDVALUE('Grupimi i partive'[Grupimi i partive Order], 0) = 1 VAR zgjedhur = IF(detajuar, g IN VALUES(Dim_Partite[Grupi i detajuar]), g IN VALUES(Dim_Partite[Grupi])) VAR njesite = CALCULATETABLE(VALUES('Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) RETURN IF(zgjedhur, CALCULATE([Vota subjekti (viti)], KEEPFILTERS(TREATAS(njesite, 'Krahasimi 2023-2025'[NjA]))))
+		formatString: #,0
+		lineageTag: b1a273af-b660-43b7-805b-4b4f42718aad
+
 	column Viti
 		dataType: int64
 		formatString: 0
@@ -105,9 +115,10 @@ table 'Krahasimi 2023-2025'
 				    Promoted = Table.Combine({Load("krahasime\krahasimi_tirane_2023_2025.csv"), Load("krahasime\krahasimi_vlore_2023_2025.csv")}),
 				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Grupi", type text}, {"Grupi i detajuar", type text}, {"Vota", Int64.Type}}, "en-US"),
 				    Emri = Table.ReplaceValue(Typed, "NjA ", "Nj.Ad. ", Replacer.ReplaceText, {"Njesia administrative"}),
-				    EmriPartise = Table.ReplaceValue(Emri, "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"Grupi", "Grupi i detajuar"})
+				    EmriPartise = Table.ReplaceValue(Emri, "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"Grupi", "Grupi i detajuar"}),
+				    EmriPD = Table.ReplaceValue(EmriPartise, "PD-ASHM", "PD", Replacer.ReplaceValue, {"Grupi", "Grupi i detajuar"})
 				in
-				    EmriPartise
+				    EmriPD
 
 	annotation PBI_ResultType = Table
 

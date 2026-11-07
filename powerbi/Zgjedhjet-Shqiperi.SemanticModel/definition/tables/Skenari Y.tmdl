@@ -1,4 +1,4 @@
-/// Parametri Y: përqindja e votave të PD-ASHM që kalon te Kualicioni SHESHIT (skenari 2027).
+/// Parametri Y: përqindja e votave të PD që kalon te Kualicioni SHESHIT (skenari 2027).
 table 'Skenari Y'
 	lineageTag: 7fd8d024-baed-463c-a20e-fc3fc60ac919
 
