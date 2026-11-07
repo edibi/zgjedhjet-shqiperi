@@ -62,6 +62,10 @@ def close_simplify(r):
     s = [(round(x, 5), round(y, 5)) for x, y in s]
     if s[0] != s[-1]:
         s.append(s[0])
+    # Power BI's shape map reads an anticlockwise ring as "the whole world minus this area",
+    # so every ring is written clockwise, like the Tirana file
+    if sum(x1 * y2 - x2 * y1 for (x1, y1), (x2, y2) in zip(s, s[1:])) > 0:
+        s.reverse()
     return s
 
 

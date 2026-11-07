@@ -1,10 +1,10 @@
 """Build the 2023 local results and the 2023-2025 comparison for one municipality.
 
-    python data/krahasime/build_krahasime.py Vlorë [--out DIR]
+    python data/krahasime/build_krahasime.py Vlorë [--full] [--out DIR]
 
 Writes (default into the project's data folders):
-  vendore-2023/normalized/<slug>_vendore_2023.csv              mayor and council, by unit and polling station
-  vendore-2023/normalized/<slug>_vendore_2023_permbledhje.csv  voters and ballots, by unit and polling station
+  vendore-2023/normalized/<slug>_vendore_2023.csv              only with --full: mayor and council, by unit and polling station
+  vendore-2023/normalized/<slug>_vendore_2023_permbledhje.csv  only with --full: voters and ballots, by unit and polling station
   krahasime/krahasimi_<slug>_2023_2025.csv                     votes by party group, by unit, 2023 vs 2025
   krahasime/pjesemarrja_<slug>_2023_2025.csv                   voters and registered voters, by unit
 2023 = municipal council (Këshill bashkiak). 2025 = parliament (Kuvendi), inside the country.
@@ -37,7 +37,7 @@ def load(f):
     return json.load(open(os.path.join(RAW23, f), encoding="utf-8"))["data_main"]
 
 
-def build(bashkia, out_norm, out_kr):
+def build(bashkia, out_norm, out_kr, full=False):
     st = open(os.path.join(RAW23, "json_strukture9.js"), encoding="utf-8").read()
     tree = json.loads(st[st.index("{"):st.rindex("}") + 1])
     node = next(b for q in tree["data"] for b in q["child"] if dec(b["bashkia"]) == bashkia)
@@ -86,11 +86,14 @@ def build(bashkia, out_norm, out_kr):
     to_label = {raw_name[u]: label[u] for u in units}
 
     slug = SLUG[bashkia]
-    os.makedirs(out_norm, exist_ok=True); os.makedirs(out_kr, exist_ok=True)
-    with open(os.path.join(out_norm, f"{slug}_vendore_2023.csv"), "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f); w.writerow(["Viti", "Zgjedhja", "Gara", "Niveli", "Bashkia", "Njesia administrative", "Qender Votimi", "Kodi", "Subjekti", "Kandidati", "Vota", "Mandate"]); w.writerows(res)
-    with open(os.path.join(out_norm, f"{slug}_vendore_2023_permbledhje.csv"), "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f); w.writerow(["Gara", "Niveli", "Njesia administrative", "Qender Votimi", "Votues", "Gra votuese", "Vota te vlefshme", "Vota te pavlefshme", "Fleta te kontestuara", "QV"]); w.writerows(summ)
+    os.makedirs(out_kr, exist_ok=True)
+    if full:
+        os.makedirs(out_norm, exist_ok=True)
+    if full:
+        with open(os.path.join(out_norm, f"{slug}_vendore_2023.csv"), "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f); w.writerow(["Viti", "Zgjedhja", "Gara", "Niveli", "Bashkia", "Njesia administrative", "Qender Votimi", "Kodi", "Subjekti", "Kandidati", "Vota", "Mandate"]); w.writerows(res)
+        with open(os.path.join(out_norm, f"{slug}_vendore_2023_permbledhje.csv"), "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f); w.writerow(["Gara", "Niveli", "Njesia administrative", "Qender Votimi", "Votues", "Gra votuese", "Vota te vlefshme", "Vota te pavlefshme", "Fleta te kontestuara", "QV"]); w.writerows(summ)
 
     # ---- comparison: 2023 council vs 2025 parliament, by party group
     G23 = {"PS": ("PS + PSD", "PS"), "PSD": ("PS + PSD", "PSD"), "BF": ("PD-ASHM", "PD-ASHM"), "PD": ("PD-ASHM", "PD-ASHM"),
@@ -133,5 +136,5 @@ def build(bashkia, out_norm, out_kr):
 if __name__ == "__main__":
     b = sys.argv[1]
     out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else None
-    n = build(b, out or os.path.join(DATA, "vendore-2023", "normalized"), out or os.path.join(DATA, "krahasime"))
+    n = build(b, out or os.path.join(DATA, "vendore-2023", "normalized"), out or os.path.join(DATA, "krahasime"), "--full" in sys.argv)
     print(b, "units", n[0], "result rows", n[1])

@@ -1,6 +1,6 @@
 # Zgjedhjet në Shqipëri
 
-Të dhëna të hapura dhe një raport Power BI për zgjedhjet parlamentare të Shqipërisë 2025, me krahasim për Tiranën me zgjedhjet vendore 2023.
+Të dhëna të hapura dhe një raport Power BI për zgjedhjet parlamentare të Shqipërisë 2025, me krahasim për Tiranën dhe Vlorën me zgjedhjet vendore 2023.
 
 *Open data and a Power BI report on Albania's 2025 parliamentary election, with a Tirana comparison against the 2023 local election. The report is in Albanian.*
 
@@ -9,16 +9,14 @@ Të dhëna të hapura dhe një raport Power BI për zgjedhjet parlamentare të S
 | Dosja | Përmbajtja |
 | --- | --- |
 | [`powerbi/`](powerbi/) | Raporti Power BI dhe modeli |
-| [`data/`](data/) | Të dhënat burimore dhe të pastruara, të ndara sipas burimit |
+| [`data/`](data/) | Të dhënat burimore dhe tabelat që lexon raporti, të ndara sipas burimit |
 
 Raporti përfshin:
 
 - Përmbledhjen kombëtare
 - Analizën territoriale
 - Analizën gjinore
-- Hartën zgjedhore të Tiranës
-- Krahasimin 2023–2025
-- Skenarin 2027
+- Për Tiranën dhe Vlorën: hartën zgjedhore, krahasimin 2023–2025, abstenimin dhe Skenarin 2027
 
 ## Si ta hapësh
 
@@ -30,8 +28,7 @@ Raporti përfshin:
 
 Faqja publike e internetit është një repozitor më vete, `zgjedhjet`, në një dosje pranë kësaj (`C:\zgjedhjet`). Ajo ngarkon vetëm `data/site.json` (rreth 32 KB), jo të gjitha të dhënat.
 
-- **Përditësimi i të dhënave:** ekzekuto `python data/build_site_data.py`. Skripti shkruan `site.json` te dosja e faqes dhe ndalon nëse totalet nuk përputhen me shifrat zyrtare. Nëse faqja është diku tjetër, jepi rrugën: `python data/build_site_data.py <dosja-e-faqes>`.
-- **Publikimi dhe prova lokale:** shih README-në e repozitorit të faqes.
+Përditësimi i të dhënave, publikimi dhe prova lokale janë te README-ja e repozitorit të faqes. Faqja lexon të dhënat nga dosja `data/` e këtij projekti.
 
 ## Skenari 2027
 
@@ -48,7 +45,7 @@ Faqet **Skenari 2027** në raport dhe skenari në faqen e internetit janë anali
 | Komisioni Qendror i Zgjedhjeve (KQZ) | Rezultatet e Kuvendit 2025 | [iemis.kqz.gov.al](https://iemis.kqz.gov.al/results2025-finale/?lang=AL&v1=ALL) |
 | Komisioni Qendror i Zgjedhjeve (KQZ) | Rezultatet vendore 2023 | [iemis.kqz.gov.al](https://iemis.kqz.gov.al/results2023/results2023.htm?lang=AL) |
 | INSTAT | Popullsia 2025 dhe Census 2023 | [instat.gov.al](https://www.instat.gov.al/) |
-| OpenStreetMap | Kufijtë e njësive administrative të Tiranës | [openstreetmap.org](https://www.openstreetmap.org/copyright) |
+| OpenStreetMap | Kufijtë e njësive administrative të Tiranës dhe Vlorës | [openstreetmap.org](https://www.openstreetmap.org/copyright) |
 
 Hollësitë e çdo skedari janë te [`data/README.md`](data/README.md).
 
