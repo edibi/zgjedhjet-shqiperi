@@ -23,13 +23,28 @@
                       "Entity": "Dim_Partite"
                     }
                   },
+                  "Property": "Grupi i detajuar"
+                }
+              },
+              "queryRef": "Dim_Partite.Grupi i detajuar",
+              "nativeQueryRef": "PS, PSD të ndara",
+              "active": true,
+              "displayName": "PS, PSD të ndara"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Grupet tooltip"
+                    }
+                  },
                   "Property": "Grupi"
                 }
               },
-              "queryRef": "Dim_Partite.Grupi",
-              "nativeQueryRef": "PS + PSD bashkë",
-              "active": true,
-              "displayName": "PS + PSD bashkë"
+              "queryRef": "Grupet tooltip.Grupi",
+              "nativeQueryRef": "Grupi",
+              "active": false
             }
           ],
           "fieldParameters": [
@@ -319,7 +334,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }
@@ -606,7 +621,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }

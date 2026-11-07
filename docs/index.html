@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zgjedhjet në Shqipëri në shifra</title>
+  <meta name="description" content="Rezultatet e zgjedhjeve parlamentare 2025 në Shqipëri, harta e Tiranës, krahasimi 2023–2025 dhe një skenar hipotetik për 2027.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <a class="skip" href="#main">Kalo te përmbajtja</a>
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#main">Zgjedhjet në Shqipëri</a>
+      <nav aria-label="Seksionet">
+        <a href="#rezultatet">Rezultatet</a>
+        <a href="#qarqet">Qarqet</a>
+        <a href="#tirana">Tirana</a>
+        <a href="#krahasimi">2023–2025</a>
+        <a href="#skenari">Skenari 2027</a>
+        <a href="#burimet">Burimet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">Të dhëna të hapura nga burime publike</p>
+      <h1>Zgjedhjet në Shqipëri në shifra</h1>
+      <p class="lead">Rezultatet e Kuvendit 2025 sipas qarkut, harta e Tiranës, krahasimi me vendoret 2023 dhe një skenar hipotetik për 2027.</p>
+      <div class="tiles" id="hero-tiles"></div>
+    </section>
+
+    <section class="wrap block" id="rezultatet">
+      <h2>Rezultati kombëtar</h2>
+      <p class="sub">Kuvendi 2025, përfshirë votat nga diaspora.</p>
+      <div class="card">
+        <h3>Ndarja e 140 mandateve</h3>
+        <div id="seat-bar" class="seat-bar"></div>
+        <div id="seat-legend" class="legend"></div>
+      </div>
+      <div class="card">
+        <h3>Përqindja e votave</h3>
+        <div id="national-bars" class="bars"></div>
+        <details>
+          <summary>Shiko tabelën me të gjitha subjektet</summary>
+          <div class="table-wrap" id="national-table"></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap block" id="qarqet">
+      <h2>Rezultati sipas qarkut</h2>
+      <p class="sub">Mandatet ndahen në secilin qark, ndaj e njëjta përqindje jep rezultate të ndryshme në qarqe të ndryshme.</p>
+      <div class="controls">
+        <label for="region-select">Qarku</label>
+        <select id="region-select"></select>
+      </div>
+      <div class="card">
+        <h3 id="region-title"></h3>
+        <div id="region-bars" class="bars"></div>
+        <details>
+          <summary>Shiko tabelën e të 12 qarqeve</summary>
+          <div class="table-wrap" id="region-table"></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap block" id="tirana">
+      <h2>Harta e Tiranës</h2>
+      <p class="sub">24 njësitë administrative të Bashkisë Tiranë, Kuvendi 2025, pa diasporën.</p>
+      <div class="controls">
+        <label for="map-select">Trego në hartë</label>
+        <select id="map-select"></select>
+      </div>
+      <div class="card map-grid">
+        <div>
+          <div id="map" class="map"></div>
+          <div id="map-legend" class="legend scale"></div>
+        </div>
+        <aside id="unit-panel" class="panel" aria-live="polite"></aside>
+      </div>
+      <details class="loose">
+        <summary>Shiko tabelën e 24 njësive</summary>
+        <div class="table-wrap" id="unit-table"></div>
+      </details>
+    </section>
+
+    <section class="wrap block" id="krahasimi">
+      <h2>Tirana: 2023 dhe 2025</h2>
+      <p class="sub">Përqindja e votave në Bashkinë Tiranë.</p>
+      <p class="note"><strong>Kujdes:</strong> këto janë dy zgjedhje të ndryshme, këshilli bashkiak 2023 dhe Kuvendi 2025. Lexojeni si drejtim, jo si ndryshim të drejtpërdrejtë. Mundësia nuk kishte listë në 2023.</p>
+      <div class="card">
+        <div class="legend" id="compare-legend"></div>
+        <div id="compare-bars" class="bars paired"></div>
+      </div>
+    </section>
+
+    <section class="wrap block" id="skenari">
+      <h2>Skenari 2027: kush del i pari në Tiranë?</h2>
+      <p class="sub">Ndrysho X dhe Y për të parë çfarë ndodh nëse votuesit kalojnë te Kualicioni Sheshit.</p>
+      <p class="note warn"><strong>Skenar hipotetik.</strong> Nuk është parashikim, sondazh apo rezultat zyrtar. Kualicioni Sheshit është emër pune për NISMA-SHB + Mundësia + L. Bashkë, jo koalicion zyrtar. PS dhe PSD trajtohen si një koalicion. Baza janë votat e Kuvendit 2025 në Bashkinë Tiranë. <a href="#hipotetike">Lexo supozimet</a>.</p>
+      <div class="card sliders">
+        <div class="slider">
+          <label for="x">X: % e votave të PS + PSD që kalojnë te Sheshi</label>
+          <div class="slider-row"><input id="x" type="range" min="0" max="100" step="1" value="0"><output id="x-out" for="x">0%</output></div>
+        </div>
+        <div class="slider">
+          <label for="y">Y: % e votave të PD-ASHM që kalojnë te Sheshi</label>
+          <div class="slider-row"><input id="y" type="range" min="0" max="100" step="1" value="0"><output id="y-out" for="y">0%</output></div>
+        </div>
+        <div class="presets" id="presets" role="group" aria-label="Shembuj"></div>
+      </div>
+      <p id="verdict" class="verdict" aria-live="polite"></p>
+      <div class="tiles six" id="scen-tiles"></div>
+      <div class="two">
+        <div class="card">
+          <h3>Votat në skenar</h3>
+          <div class="legend" id="scen-legend"></div>
+          <div id="scen-bars" class="bars paired"></div>
+        </div>
+        <div class="card">
+          <h3>Kush del i pari në secilën njësi</h3>
+          <div id="scen-map" class="map small"></div>
+          <div id="scen-map-legend" class="legend"></div>
+        </div>
+      </div>
+      <details class="loose">
+        <summary>Shiko tabelën e njësive në këtë skenar</summary>
+        <div class="table-wrap" id="scen-table"></div>
+      </details>
+      <p class="fact"><strong>Për mandatet e Kuvendit:</strong> me votat e 2025, tre partitë si një listë e vetme do të kishin marrë 8 mandate në vend të 4. Të 4 mandatet shtesë vijnë nga Vlora, Fieri, Elbasani dhe Durrësi.</p>
+    </section>
+
+    <section class="wrap block" id="burimet">
+      <h2>Burimet dhe metodologjia</h2>
+      <p class="sub">Si janë ndërtuar shifrat dhe si duhen lexuar.</p>
+
+      <h3>Burimet</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Burimi</th><th>Të dhënat</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://iemis.kqz.gov.al/results2025-finale/?lang=AL&amp;v1=ALL" rel="noopener">KQZ, rezultatet 2025</a></td><td>Vota dhe mandate për Kuvendin 2025, sipas qarkut dhe njësisë</td></tr>
+            <tr><td><a href="https://iemis.kqz.gov.al/results2023/results2023.htm?lang=AL" rel="noopener">KQZ, rezultatet 2023</a></td><td>Vota dhe pjesëmarrje për këshillin bashkiak të Tiranës</td></tr>
+            <tr><td><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a></td><td>Kufijtë e njësive administrative të Tiranës</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="method">
+        <article>
+          <h3>Si janë përpunuar</h3>
+          <ul>
+            <li>Të dhënat merren nga burime publike dhe ruhen të paprekura në dosjet <code>raw</code> të projektit.</li>
+            <li>Për këtë faqe janë mbajtur vetëm përmbledhjet e nevojshme, që faqja të hapet shpejt.</li>
+            <li>Partitë e vogla janë bashkuar te “Të tjerët” në grafikë. Tabela kombëtare i tregon të gjitha.</li>
+            <li>Kufijtë në hartë janë thjeshtuar për shpejtësi dhe nuk janë kufij ligjorë.</li>
+          </ul>
+        </article>
+        <article id="hipotetike">
+          <h3>Çfarë është hipotetike</h3>
+          <ul>
+            <li>Gjithçka te Skenari 2027 është ilustrim mbi votat e 2025, jo parashikim.</li>
+            <li>2027 trajtohet si zgjedhje vendore ku fiton i pari.</li>
+            <li>Votuesit e tre partive supozohet të qëndrojnë 100% te lista e përbashkët.</li>
+            <li>X dhe Y janë përqindje të votave të vetë subjektit, jo pikë përqindjeje, dhe janë të njëjta në çdo njësi.</li>
+            <li>Mosvotuesit dhe votuesit e rinj nuk përfshihen.</li>
+            <li>Simulimi i mandateve përdor metodën d'Hondt, që riprodhon rezultatin real në të 12 qarqet.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Kufizimet</h3>
+          <ul>
+            <li>Krahasimi 2023–2025 lidh zgjedhje të ndryshme, me sjellje të ndryshme të votuesve.</li>
+            <li>Pjesëmarrja llogaritet mbi listën e KQZ-së, që përfshin edhe emigrantët. Ndaj shifra reale mund të jetë më e lartë.</li>
+            <li>Rezultatet në njësi nuk përfshijnë diasporën.</li>
+            <li>Rezultatet zyrtare janë ato të publikuara nga KQZ-ja.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Pavarësia dhe licenca</h3>
+          <ul>
+            <li>Projekt i pavarur, pa lidhje me KQZ-në apo ndonjë subjekt politik.</li>
+            <li>Kodi: MIT. Analiza dhe të dhënat e përpunuara: CC BY 4.0.</li>
+            <li>Të dhënat burimore mbeten nën kushtet e burimit të tyre.</li>
+            <li>Të dhënat e hartës © kontribuuesit e OpenStreetMap, ODbL.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Burimet: KQZ dhe OpenStreetMap. Të dhënat e KQZ-së për 2025 janë të përditësuara më <span id="updated"></span>.</p>
+  </footer>
+
+  <noscript><p class="wrap note">Kjo faqe ka nevojë për JavaScript për të shfaqur grafikët.</p></noscript>
+  <script src="app.js?v=5" defer></script>
+</body>
+</html>

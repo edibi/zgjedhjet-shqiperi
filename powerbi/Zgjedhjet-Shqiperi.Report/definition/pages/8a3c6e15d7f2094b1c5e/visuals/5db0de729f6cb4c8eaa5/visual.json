@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 575,
-    "z": 4000,
+    "z": 5000,
     "height": 485,
     "width": 1130,
-    "tabOrder": 4000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -133,7 +133,7 @@
               },
               "queryRef": "Krahasimi 2023-2025.NjA ne rritje",
               "nativeQueryRef": "NjA ne rritje",
-              "displayName": "NjA në rritje (nga 24)"
+              "displayName": "Nj.Ad. në rritje (nga 24)"
             },
             {
               "field": {

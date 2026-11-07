@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "7c2ef72342407062389e",
   "position": {
-    "x": 1132.0837124658781,
-    "y": 457.72520473157414,
+    "x": 1081.4285714285716,
+    "y": 457.14285714285717,
     "z": 3000,
-    "height": 606.22383985441309,
-    "width": 766.95177434030938,
+    "height": 607.14285714285722,
+    "width": 817.14285714285722,
     "tabOrder": 3000
   },
   "visual": {
@@ -23,12 +23,12 @@
                       "Entity": "Dim_Partite"
                     }
                   },
-                  "Property": "Grupi"
+                  "Property": "Grupi i detajuar"
                 }
               },
-              "queryRef": "Dim_Partite.Grupi",
-              "nativeQueryRef": "PS + PSD bashkë",
-              "displayName": "PS + PSD bashkë"
+              "queryRef": "Dim_Partite.Grupi i detajuar",
+              "nativeQueryRef": "PS, PSD të ndara",
+              "displayName": "PS, PSD të ndara"
             },
             {
               "field": {
@@ -167,6 +167,76 @@
           "selector": {
             "metadata": "Votat per Partite sipas QV.Vota diaspora (QV)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.4778636997342D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Votat per Partite sipas QV.Vota (QV)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.9993670103179D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Rezultatet Qarqe.Mandate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124.07879853876337D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Rezultatet Qarqe.% e mandateve"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "125.76845479354566D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_Partite.Grupi i detajuar"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.81774992502508D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Votat per Partite sipas QV.% diaspora (QV)"
+          }
         }
       ],
       "columnHeaders": [
@@ -176,6 +246,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'growToFit'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }

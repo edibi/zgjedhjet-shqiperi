@@ -11,9 +11,9 @@ TOPOJSON = r"C:\zgjedhjet-shqiperi\data\gjeografi\tirana_njesite_administrative.
 BG, LAND, CITY, EDGE, TEXT = "#1F1F1F", "#3A3A3A", "#4A4A4A", "#6E6D6B", "#F5F5F5"
 COLORS = {
     "PS + PSD": "#5E3894", "PS": "#5E3894", "PSD": "#0C5D34", "PD-ASHM": "#00529C",
-    "MUNDESIA": "#FFC04D", "NISMA-SHB": "#F48221", "BASHKE": "#E82D36", "Te tjeret": "#9E9E9E",
+    "MUNDESIA": "#FFC04D", "NISMA-SHB": "#F48221", "BASHKE": "#E82D36", "L. BASHKE": "#E82D36", "Te tjeret": "#9E9E9E",
 }
-ORDER = ["PS + PSD", "PS", "PSD", "PD-ASHM", "MUNDESIA", "NISMA-SHB", "BASHKE", "Te tjeret"]
+ORDER = ["PS + PSD", "PS", "PSD", "PD-ASHM", "MUNDESIA", "NISMA-SHB", "BASHKE", "L. BASHKE", "Te tjeret"]
 K = math.cos(math.radians(41.33))
 
 UNIT, LON, LAT = "NjA", "Longitude", "Latitude"
@@ -21,15 +21,15 @@ vote_col = next(c for c in dataset.columns if c.startswith("Vota"))
 group_col = next(c for c in dataset.columns if c not in (UNIT, LON, LAT, vote_col))
 
 topo = json.load(open(TOPOJSON, encoding="utf-8"))
-shapes = {g["id"]: topo["arcs"][g["arcs"][0][0]] for g in topo["objects"]["njesite"]["geometries"]}
+shapes = {g["id"].replace("NjA ", "Nj.Ad. ", 1): topo["arcs"][g["arcs"][0][0]] for g in topo["objects"]["njesite"]["geometries"]}
 
 
 def short(name):
-    return name.replace("NjA ", "")
+    return name.replace("Nj.Ad. ", "").replace("NjA ", "")
 
 
 def is_city(name):
-    return name.startswith("NjA")
+    return name.startswith(("Nj.Ad.", "NjA"))
 
 
 units = []

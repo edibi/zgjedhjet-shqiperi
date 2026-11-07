@@ -59,9 +59,10 @@ table 'Pjesemarrja 2023-2025'
 				let
 				    Source = Csv.Document(File.Contents(DataFolder & "krahasime\pjesemarrja_tirane_2023_2025.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Votues", Int64.Type}, {"Zgjedhes", Int64.Type}}, "en-US")
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Votues", Int64.Type}, {"Zgjedhes", Int64.Type}}, "en-US"),
+				    Emri = Table.ReplaceValue(Typed, "NjA ", "Nj.Ad. ", Replacer.ReplaceText, {"Njesia administrative"})
 				in
-				    Typed
+				    Emri
 
 	annotation PBI_ResultType = Table
 

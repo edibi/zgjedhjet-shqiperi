@@ -44,7 +44,7 @@ table 'Grupimi i partive'
 		source =
 				{
 				    ("PS + PSD kualicion", NAMEOF('Dim_Partite'[Grupi]), 0),
-				    ("PS dhe PSD", NAMEOF('Dim_Partite'[Grupi i detajuar]), 1)
+				    ("PS, PSD të ndara", NAMEOF('Dim_Partite'[Grupi i detajuar]), 1)
 				}
 
 	annotation PBI_Id = fa4ab28192a84365a13c3c19cd74d19b

@@ -23,7 +23,7 @@ table 'Grupet tooltip'
 
 	partition 'Grupet tooltip' = calculated
 		mode: import
-		source = DATATABLE("Grupi", STRING, "Order", INTEGER, { {"PS + PSD", 0}, {"PS", 1}, {"PSD", 2}, {"PD-ASHM", 3}, {"MUNDESIA", 4}, {"NISMA-SHB", 5}, {"BASHKE", 6}, {"Te tjeret", 7} })
+		source = DATATABLE("Grupi", STRING, "Order", INTEGER, { {"PS + PSD", 0}, {"PS", 1}, {"PSD", 2}, {"PD-ASHM", 3}, {"MUNDESIA", 4}, {"NISMA-SHB", 5}, {"L. BASHKE", 6}, {"Te tjeret", 7} })
 
 	annotation PBI_Id = bf2e70f429db4ce38a898016c92c1758
 

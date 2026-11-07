@@ -34,9 +34,10 @@ table 'Adresat NjA'
 				let
 				    Source = Csv.Document(File.Contents(DataFolder & "gjeografi\adresat_njesia_administrative.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"Njesia administrative", type text}, {"Longitude", type number}, {"Latitude", type number}}, "en-US")
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Njesia administrative", type text}, {"Longitude", type number}, {"Latitude", type number}}, "en-US"),
+				    Emri = Table.ReplaceValue(Typed, "NjA ", "Nj.Ad. ", Replacer.ReplaceText, {"Njesia administrative"})
 				in
-				    Typed
+				    Emri
 
 	annotation PBI_ResultType = Table
 

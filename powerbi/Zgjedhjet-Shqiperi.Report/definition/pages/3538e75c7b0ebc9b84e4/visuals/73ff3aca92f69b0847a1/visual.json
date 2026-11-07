@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "73ff3aca92f69b0847a1",
   "position": {
-    "x": 10,
-    "y": 676.66666666666674,
+    "x": 10.874817469799549,
+    "y": 621.67706535687421,
     "z": 8000,
-    "height": 378.33333333333337,
-    "width": 1881.6666666666667,
+    "height": 433.180229213682,
+    "width": 1881.3434222753219,
     "tabOrder": 8000
   },
   "visual": {
@@ -189,16 +189,53 @@
               "Qenderat e votimit.Bashkia"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Bashkia"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
             "queryRefs": [
               "Qenderat e votimit.Qender Votimi"
             ],
-            "isCollapsed": true
+            "isCollapsed": true,
+            "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'TIRANË'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Tiranë'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -206,6 +243,26 @@
         {
           "properties": {
             "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "expandCollapseButtonsSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
@@ -231,6 +288,32 @@
               "expr": {
                 "Literal": {
                   "Value": "'Hendeku gjinor: Qark › Bashki › QV'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

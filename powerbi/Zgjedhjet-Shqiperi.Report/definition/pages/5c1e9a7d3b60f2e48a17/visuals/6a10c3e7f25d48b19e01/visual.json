@@ -3,10 +3,10 @@
   "name": "6a10c3e7f25d48b19e01",
   "position": {
     "x": 20,
-    "y": 8.57,
+    "y": 8.5714285714285712,
     "z": 0,
-    "height": 92.857142857142861,
-    "width": 1880,
+    "height": 144.28571428571431,
+    "width": 681.42857142857144,
     "tabOrder": 0
   },
   "visual": {
@@ -31,9 +31,8 @@
               {
                 "textRuns": [
                   {
-                    "value": "Bashkia Tiranë, vota të Kuvendit 2025 pa diasporën. Kualicioni Sheshit = NISMA-SHB + MUNDESIA + BASHKE; PS dhe PSD si një koalicion. X dhe Y janë përqindje e votave të vetë PS + PSD dhe PD-ASHM, jo pikë përqindjeje.",
+                    "value": "Bashkia Tiranë, vota të Kuvendit 2025 pa diasporën. Kualicioni Sheshit = NISMA-SHB + MUNDESIA + L. BASHKE; PS dhe PSD si një koalicion. X dhe Y janë përqindje e votave të vetë PS + PSD dhe PD-ASHM, jo pikë përqindjeje.",
                     "textStyle": {
-                      "fontWeight": "normal",
                       "fontSize": "11pt",
                       "color": "#f3f2f1"
                     }

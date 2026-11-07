@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "aadeee50aa8394ad9730",
   "position": {
-    "x": 20,
-    "y": 121.66666666666667,
+    "x": 19.692307692307693,
+    "y": 121.43589743589743,
     "z": 1000,
-    "height": 635,
-    "width": 920,
+    "height": 635.07692307692309,
+    "width": 1248.8205128205129,
     "tabOrder": 1000
   },
   "visual": {
@@ -73,7 +73,8 @@
               },
               "queryRef": "Qenderat e votimit.Gjeografia.NjA",
               "nativeQueryRef": "Gjeografia NjA",
-              "active": false
+              "active": false,
+              "displayName": "Nj.Ad."
             },
             {
               "field": {
@@ -107,12 +108,12 @@
                       "Entity": "Dim_Partite"
                     }
                   },
-                  "Property": "Grupi"
+                  "Property": "Grupi i detajuar"
                 }
               },
-              "queryRef": "Dim_Partite.Grupi",
-              "nativeQueryRef": "PS + PSD bashkë",
-              "displayName": "PS + PSD bashkë"
+              "queryRef": "Dim_Partite.Grupi i detajuar",
+              "nativeQueryRef": "PS, PSD të ndara",
+              "displayName": "PS, PSD të ndara"
             }
           ],
           "fieldParameters": [
@@ -383,7 +384,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }
@@ -670,7 +671,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }
@@ -736,7 +737,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Shpërndarja e votave: Qark › Bashki › QV'"
+                  "Value": "'Shpërndarja e votave: Qarku › Bashkia › Nj.Ad. > QV'"
                 }
               }
             }

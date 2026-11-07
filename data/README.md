@@ -16,7 +16,11 @@ Të dhënat janë të ndara sipas burimit. Dosjet `raw/` ruajnë përgjigjet ori
 | --- | --- | --- |
 | `tirana_njesite_administrative.topojson` | Kufijtë e 24 njësive administrative të Bashkisë Tiranë | OpenStreetMap |
 | `adresat_njesia_administrative.csv` | Qendrat e njësive, të llogaritura nga kufijtë | OpenStreetMap |
-| `qv_adresat.csv` | Adresat e qendrave të votimit | Burimi duhet konfirmuar |
+| `qv_adresat.csv` | Adresat e qendrave të votimit | Burim publik |
+
+## Faqja e internetit
+
+`build_site_data.py` krijon `docs/data/site.json`, të vetmin skedar të dhënash që ngarkon faqja. Ai mban vetëm rezultatet kombëtare, 12 qarqet, 24 njësitë e Tiranës dhe kufijtë e thjeshtuar të hartës.
 
 ## Shënime
 

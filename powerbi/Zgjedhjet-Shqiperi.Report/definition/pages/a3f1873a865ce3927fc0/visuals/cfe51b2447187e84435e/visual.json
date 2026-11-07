@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "cfe51b2447187e84435e",
   "position": {
-    "x": 1424,
-    "y": 8,
-    "z": 4004,
-    "height": 93.103448275862064,
-    "width": 226.10837438423644,
-    "tabOrder": 4004
+    "x": 925.53846153846155,
+    "y": 8.2051282051282044,
+    "z": 8000,
+    "height": 94,
+    "width": 292,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "listSlicer",
@@ -98,7 +98,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BASHKE'"
+                                "Value": "'Rezidentë (INSTAT)'"
                               }
                             }
                           ]
@@ -122,7 +122,7 @@
                 }
               }
             },
-            "strictSingleSelect": {
+            "restrictToLeafNodes": {
               "expr": {
                 "Literal": {
                   "Value": "false"

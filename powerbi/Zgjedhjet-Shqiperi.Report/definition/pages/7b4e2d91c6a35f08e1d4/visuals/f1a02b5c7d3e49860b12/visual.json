@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f1a02b5c7d3e49860b12",
   "position": {
-    "x": 1500.8955223880596,
-    "y": 8.9552238805970141,
+    "x": 1531,
+    "y": 8,
     "z": 1000,
-    "height": 93.103448275862064,
-    "width": 226.10837438423644,
+    "height": 94,
+    "width": 369,
     "tabOrder": 1000
   },
   "visual": {
@@ -68,6 +68,13 @@
       "general": [
         {
           "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -98,7 +105,21 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BASHKE'"
+                                "Value": "'MUNDESIA'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'NISMA-SHB'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'L. BASHKE'"
                               }
                             }
                           ]
@@ -122,17 +143,17 @@
                 }
               }
             },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "restrictToLeafNodes": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -230,7 +251,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "Baza",
+      "groupName": "Grupi Harta",
       "fieldChanges": true,
       "filterChanges": true
     },

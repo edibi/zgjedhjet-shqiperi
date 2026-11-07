@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "4ce3dc04895b9d07066d",
   "position": {
-    "x": 1664,
+    "x": 1608,
     "y": 8,
-    "z": 4001,
-    "height": 89.196850393700785,
-    "width": 228.28346456692913,
-    "tabOrder": 4001
+    "z": 5000,
+    "height": 94,
+    "width": 292,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "listSlicer",
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Dim_Partite''[Grupi]'"
+                                "Value": "'''Dim_Partite''[Grupi i detajuar]'"
                               }
                             }
                           ]
@@ -109,7 +109,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''Dim_Partite''[Grupi]'"
+                                      "Value": "'''Dim_Partite''[Grupi i detajuar]'"
                                     }
                                   }
                                 ]
@@ -133,7 +133,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "PS + PSD bashkë"
+                            "0": "PS, PSD të ndara"
                           }
                         ]
                       }

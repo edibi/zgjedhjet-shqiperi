@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "39fa365b392945b99055",
   "position": {
-    "x": 960.00000000000011,
-    "y": 121.42857142857143,
+    "x": 1284.9230769230769,
+    "y": 121.43589743589743,
     "z": 2000,
-    "height": 455.71428571428572,
-    "width": 931.42857142857144,
+    "height": 635.07692307692309,
+    "width": 607.17948717948718,
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -73,7 +73,8 @@
               },
               "queryRef": "Qenderat e votimit.Gjeografia.NjA",
               "nativeQueryRef": "Gjeografia NjA",
-              "active": false
+              "active": false,
+              "displayName": "Nj.Ad."
             },
             {
               "field": {
@@ -107,12 +108,12 @@
                       "Entity": "Dim_Partite"
                     }
                   },
-                  "Property": "Grupi"
+                  "Property": "Grupi i detajuar"
                 }
               },
-              "queryRef": "Dim_Partite.Grupi",
-              "nativeQueryRef": "PS + PSD bashkë",
-              "displayName": "PS + PSD bashkë"
+              "queryRef": "Dim_Partite.Grupi i detajuar",
+              "nativeQueryRef": "PS, PSD të ndara",
+              "displayName": "PS, PSD të ndara"
             }
           ],
           "fieldParameters": [
@@ -363,7 +364,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }
@@ -650,7 +651,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }

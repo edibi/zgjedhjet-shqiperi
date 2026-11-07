@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "1d837ca2628339a77c58",
   "position": {
-    "x": 1146.2686567164178,
-    "y": 8.9552238805970141,
+    "x": 1146,
+    "y": 8,
     "z": 4000,
-    "height": 93.134328358208947,
-    "width": 302.68656716417911,
+    "height": 94,
+    "width": 369,
     "tabOrder": 4000
   },
   "visual": {
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Dim_Partite''[Grupi]'"
+                                "Value": "'''Dim_Partite''[Grupi i detajuar]'"
                               }
                             }
                           ]
@@ -109,7 +109,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''Dim_Partite''[Grupi]'"
+                                      "Value": "'''Dim_Partite''[Grupi i detajuar]'"
                                     }
                                   }
                                 ]
@@ -133,7 +133,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "PS + PSD kualicion"
+                            "0": "PS, PSD të ndara"
                           }
                         ]
                       }
@@ -486,23 +486,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ed95f7687aba127d0cb4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Grupimi i partive"
-              }
-            },
-            "Property": "Grupimi i partive"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

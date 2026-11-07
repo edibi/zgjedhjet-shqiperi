@@ -73,6 +73,54 @@ table 'Qenderat e votimit'
 		formatString: #,0
 		lineageTag: 9d7c6ea8-f87f-4c7e-8be1-54df82ef0202
 
+	/// Votuesit në qendrat e votimit brenda vendit.
+	measure 'Votues ne Shqiperi' = CALCULATE([Votues gjithsej], KEEPFILTERS('Qenderat e votimit'[Vendi i votimit] = "Në Shqipëri"))
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 172fb4ce-952a-4577-be2b-23cfa7eb846a
+
+	/// Zgjedhësit në listat e KQZ-së për qendrat brenda vendit; përfshin emigrantët.
+	measure 'Zgjedhes ne liste (brenda vendit)' = CALCULATE([Zgjedhes (lista KQZ)], KEEPFILTERS('Qenderat e votimit'[Vendi i votimit] = "Në Shqipëri"))
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 00db69b6-2f30-41cc-a2ce-ede543b62bef
+
+	/// Zgjedhës në listë që nuk votuan. Përfshin emigrantët, ndaj e tepron abstenimin real.
+	measure 'Nuk votuan (lista)' = [Zgjedhes ne liste (brenda vendit)] - [Votues ne Shqiperi]
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 0293db35-8aa1-49c6-b7f3-e84acdc25378
+
+	/// Vlerësim: shtetas 18+ që jetojnë në Shqipëri (INSTAT 2025) minus votuesit brenda vendit.
+	measure 'Nuk votuan (rezidente)' = [Zgjedhes rezidente] - [Votues ne Shqiperi]
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 4fadc5a7-0cdb-40fc-9c26-7e271484e676
+
+	/// Diferenca mes listës brenda vendit dhe shtetasve 18+ që jetojnë në Shqipëri.
+	measure 'Emigrante ne liste (vleresim)' = [Zgjedhes ne liste (brenda vendit)] - [Zgjedhes rezidente]
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 2b02bbd6-b675-4705-9feb-1a34c72b9334
+
+	/// Votuesit brenda vendit si pjesë e shtetasve 18+ që jetojnë në Shqipëri.
+	measure 'Pjesemarrja e rezidenteve' = DIVIDE([Votues ne Shqiperi], [Zgjedhes rezidente])
+		formatString: 0.0%
+		displayFolder: Abstenimi
+		lineageTag: 7a62f6ee-f99f-47ff-bfe5-2ec3930274d9
+
+	/// Votuesit brenda vendit si pjesë e listës së KQZ-së.
+	measure 'Pjesemarrja (lista)' = DIVIDE([Votues ne Shqiperi], [Zgjedhes ne liste (brenda vendit)])
+		formatString: 0.0%
+		displayFolder: Abstenimi
+		lineageTag: 844b25aa-0294-4405-8025-078718b1ec9d
+
+	/// Zgjedhës që nuk votuan, të peshuar me mbështetjen e Sheshit krahasuar me mesataren e zgjedhur.
+	measure 'Pikezimi i fushates' = [Nuk votuan (lista)] * DIVIDE([% Sheshi 2025], CALCULATE([% Sheshi 2025], ALLSELECTED('Qenderat e votimit')))
+		formatString: #,0
+		displayFolder: Abstenimi
+		lineageTag: 6eae7537-db7d-4a64-a877-e353d18f9c19
+
 	column Qarku
 		dataType: string
 		lineageTag: 57787dd1-aee1-4d5b-98c8-ebb879925b76
@@ -264,7 +312,7 @@ table 'Qenderat e votimit'
 				    ResW = Table.AddColumn(Res, "Zgjedhese gra rezidente (vleresim)", each if [Bashkia] = "Diaspora" then 0 else [Nr total i zgjedhesve gra ne list] * [Shtetas_femra_18plus] / [ListaGraQ], type number),
 				    Vendi = Table.AddColumn(ResW, "Vendi i votimit", each if [Bashkia] = "Diaspora" then "Diaspora" else "Në Shqipëri", type text),
 				    Final = Table.RemoveColumns(Vendi, {"ListaQ", "ListaGraQ", "Shtetas_18plus", "Shtetas_femra_18plus"}),
-				    NjaEmri = Table.ReplaceValue(Final, "Njësia Administrative", "NjA", Replacer.ReplaceText, {"Njesia administrative"})
+				    NjaEmri = Table.ReplaceValue(Final, "Njësia Administrative", "Nj.Ad.", Replacer.ReplaceText, {"Njesia administrative"})
 				in
 				    NjaEmri
 

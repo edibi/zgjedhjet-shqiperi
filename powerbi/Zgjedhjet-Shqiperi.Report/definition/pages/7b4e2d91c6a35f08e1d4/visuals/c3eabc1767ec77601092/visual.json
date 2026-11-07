@@ -29,7 +29,7 @@
               "queryRef": "Adresat NjA.NjA",
               "nativeQueryRef": "NjA",
               "active": true,
-              "displayName": "NjA"
+              "displayName": "Nj.Ad."
             }
           ]
         },
@@ -430,7 +430,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'BASHKE'"
+                        "Value": "'L. BASHKE'"
                       }
                     }
                   }

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ab1388f8dfe48135442d",
+  "position": {
+    "x": 1391.5897435897436,
+    "y": 539.89743589743591,
+    "z": 13000,
+    "height": 520.20512820512818,
+    "width": 508.71794871794873,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qender Votimi"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qender Votimi",
+              "nativeQueryRef": "Qender Votimi",
+              "displayName": "QV"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.NjA",
+              "nativeQueryRef": "NjA",
+              "displayName": "Nj.Ad."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pjesemarrja (lista)"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pjesemarrja (lista)",
+              "nativeQueryRef": "Pjesemarrja (lista)",
+              "displayName": "Pjesëmarrja"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Nuk votuan (lista)"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Nuk votuan (lista)",
+              "nativeQueryRef": "Nuk votuan (lista)",
+              "displayName": "Nuk votuan"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% Sheshi 2025"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
+              "nativeQueryRef": "% Sheshi 2025",
+              "displayName": "Sheshi"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Pikezimi i fushates"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Pikezimi i fushates",
+              "nativeQueryRef": "Pikezimi i fushates",
+              "displayName": "Përparësia"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qenderat e votimit"
+                  }
+                },
+                "Property": "Pikezimi i fushates"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Qendrat e votimit sipas përparësisë së fushatës'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "05f38f4606b347e1b9d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qenderat e votimit"
+              }
+            },
+            "Property": "Bashkia"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "q",
+              "Entity": "Qenderat e votimit",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "q"
+                          }
+                        },
+                        "Property": "Bashkia"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Tiranë'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

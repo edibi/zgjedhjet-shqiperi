@@ -3,8 +3,8 @@ table 'Skenari Y'
 	lineageTag: 7fd8d024-baed-463c-a20e-fc3fc60ac919
 
 	column 'Y (%)'
-		dataType: int64
-		formatString: 0
+		dataType: double
+		formatString: 0%
 		lineageTag: d28e1390-f178-4f7b-b478-9a243df6b11b
 		summarizeBy: none
 		isNameInferred
@@ -19,5 +19,5 @@ table 'Skenari Y'
 
 	partition 'Skenari Y' = calculated
 		mode: import
-		source = SELECTCOLUMNS(GENERATESERIES(0, 100, 1), "Y (%)", [Value])
+		source = SELECTCOLUMNS(GENERATESERIES(0, 100, 1), "Y (%)", [Value] / 100)
 

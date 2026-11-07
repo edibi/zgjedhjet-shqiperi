@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ab0120bdab6956b740c4",
+  "position": {
+    "x": 20,
+    "y": 8,
+    "z": 1000,
+    "height": 84,
+    "width": 1880,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Abstenimi: kush nuk votoi dhe ku duhet bërë fushatë",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Lista e KQZ-së përfshin rreth 1.5 milionë emigrantë, ndaj abstenimi real matet mbi shtetasit 18+ që jetojnë në Shqipëri (INSTAT 2025). Në Bashkinë Tiranë rezerva reale është rreth 106 mijë zgjedhës, më pak se hendeku prej 136 mijë votash: Sheshi ka nevojë edhe për votues nga partitë e tjera.",
+                    "textStyle": {
+                      "fontWeight": "normal",
+                      "fontSize": "11pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

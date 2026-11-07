@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f3a59713d5daea5f78d7",
   "position": {
-    "x": 22.711555959963604,
-    "y": 457.72520473157414,
+    "x": 22.857142857142858,
+    "y": 457.14285714285717,
     "z": 1000,
-    "height": 606.22383985441309,
-    "width": 1095.3958143767061,
+    "height": 607.14285714285722,
+    "width": 1038.5714285714287,
     "tabOrder": 1000
   },
   "visual": {
@@ -23,13 +23,13 @@
                       "Entity": "Dim_Partite"
                     }
                   },
-                  "Property": "Grupi"
+                  "Property": "Grupi i detajuar"
                 }
               },
-              "queryRef": "Dim_Partite.Grupi",
-              "nativeQueryRef": "PS + PSD bashkë",
+              "queryRef": "Dim_Partite.Grupi i detajuar",
+              "nativeQueryRef": "PS, PSD të ndara",
               "active": true,
-              "displayName": "PS + PSD bashkë"
+              "displayName": "PS, PSD të ndara"
             }
           ],
           "fieldParameters": [

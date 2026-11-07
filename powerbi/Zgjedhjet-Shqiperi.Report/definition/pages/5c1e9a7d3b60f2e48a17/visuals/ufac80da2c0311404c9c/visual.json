@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ufac80da2c0311404c9c",
+  "position": {
+    "x": 816,
+    "y": 665,
+    "z": 9000,
+    "height": 392,
+    "width": 1088,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.NjA",
+              "nativeQueryRef": "NjA",
+              "displayName": "Nj.Ad."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "% Sheshi 2025"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
+              "nativeQueryRef": "% Sheshi 2025",
+              "displayName": "Sheshi 2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Vota nga kalimi (skenar)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Vota nga kalimi (skenar)",
+              "nativeQueryRef": "Vota nga kalimi (skenar)",
+              "displayName": "Nga kalimi"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Vota nga abstenuesit (vleresim)"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Vota nga abstenuesit (vleresim)",
+              "nativeQueryRef": "Vota nga abstenuesit (vleresim)",
+              "displayName": "Nga abstenuesit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Potenciali i njesise"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Potenciali i njesise",
+              "nativeQueryRef": "Potenciali i njesise",
+              "displayName": "Potenciali"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Fituesi skenar"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Fituesi skenar",
+              "nativeQueryRef": "Fituesi skenar",
+              "displayName": "I pari"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Votat per Partite sipas QV"
+                    }
+                  },
+                  "Property": "Fokusi i njesise"
+                }
+              },
+              "queryRef": "Votat per Partite sipas QV.Fokusi i njesise",
+              "nativeQueryRef": "Fokusi i njesise",
+              "displayName": "Fokusi"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Votat per Partite sipas QV"
+                  }
+                },
+                "Property": "Potenciali i njesise"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ku duhet përqendruar fushata: njësitë sipas potencialit (ndryshon me X dhe Y)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

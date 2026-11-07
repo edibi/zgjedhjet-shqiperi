@@ -6,7 +6,7 @@
     "y": 8,
     "z": 5000,
     "height": 94,
-    "width": 572,
+    "width": 369,
     "tabOrder": 5000
   },
   "visual": {
@@ -33,7 +33,8 @@
               },
               "queryRef": "Qenderat e votimit.Gjeografia.NjA",
               "nativeQueryRef": "Gjeografia NjA",
-              "active": true
+              "active": true,
+              "displayName": "Nj.Ad."
             },
             {
               "field": {
@@ -238,47 +239,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "724548f7b4a4c90706e5",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Qenderat e votimit"
-                  }
-                },
-                "Hierarchy": "Gjeografia"
-              }
-            },
-            "Level": "NjA"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "fd39340c47497ab2866d",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Qenderat e votimit"
-                  }
-                },
-                "Hierarchy": "Gjeografia"
-              }
-            },
-            "Level": "Qender Votimi"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

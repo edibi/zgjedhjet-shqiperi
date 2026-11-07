@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "21cc0e8e0aefa4556d81",
   "position": {
-    "x": 20,
-    "y": 8.5714285714285712,
+    "x": 19.937165361299172,
+    "y": 7.2498783131996989,
     "z": 0,
-    "height": 94.285714285714292,
-    "width": 342.85714285714289,
+    "height": 94.248418071596078,
+    "width": 396.93083764768352,
     "tabOrder": 0
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Analiza gjinore",
+                    "value": "Analiza gjinore 2025",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "20pt",

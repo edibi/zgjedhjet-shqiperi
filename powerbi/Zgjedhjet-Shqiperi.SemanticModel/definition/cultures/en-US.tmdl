@@ -210,6 +210,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "QV": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -294,6 +304,16 @@ cultureInfo en-US
 			          "grupi i detajuar": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "PS, PSD të ndara": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -362,7 +382,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Njësia": {
+			          "Nj.Ad.": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2183,16 +2203,6 @@ cultureInfo en-US
 			          "grupi": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "PS + PSD bashkë": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -3857,7 +3867,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "NjA": {
+			          "Nj.Ad.": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4165,7 +4175,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "NjA në rritje (nga 24)": {
+			          "Nj.Ad. në rritje (nga 24)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4299,16 +4309,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
-			        },
-			        {
-			          "Sheshi skenar": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -4332,7 +4332,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Diferenca (vota)": {
+			          "Hendeku i Sheshit me PS + PSD": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4350,19 +4350,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "NjA ku Sheshi del i pari"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Njësi ku Sheshi del i pari": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "votat_per_partite_sipas_qv.x_minimale_teksti": {
 			      "Definition": {
@@ -4371,19 +4359,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "X minimale teksti"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "X e nevojshme (me këtë Y)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "votat_per_partite_sipas_qv.y_minimale_teksti": {
 			      "Definition": {
@@ -4392,19 +4368,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Y minimale teksti"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Y e nevojshme (me këtë X)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "votat_per_partite_sipas_qv.skenar": {
 			      "Definition": {
@@ -4445,6 +4409,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Sheshi": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4455,19 +4429,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "% PS PSD skenar"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "PS + PSD skenar": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "votat_per_partite_sipas_qv.pd_skenar": {
 			      "Definition": {
@@ -4476,19 +4438,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "% PD skenar"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "PD-ASHM skenar": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "votat_per_partite_sipas_qv.fituesi_skenar": {
 			      "Definition": {
@@ -4522,6 +4472,307 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "Subjekti": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.zgjedhes_ne_liste_brenda_vendit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Zgjedhes ne liste (brenda vendit)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Zgjedhës në listë, brenda vendit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.emigrante_ne_liste_vleresim": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Emigrante ne liste (vleresim)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Emigrantë në listë (vlerësim)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.pjesemarrja_e_rezidenteve": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Pjesemarrja e rezidenteve"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pjesëmarrja e rezidentëve, Shqipëri": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Pjesëmarrja e rezidentëve, Tiranë": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Pjesëmarrja e rezidentëve": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.nuk_votuan_rezidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Nuk votuan (rezidente)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rezidentë që nuk votuan, Shqipëri": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Rezidentë që nuk votuan, Tiranë": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Rezidentë që nuk votuan": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.nuk_votuan_lista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Nuk votuan (lista)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nuk votuan sipas listës, Tiranë": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Nuk votuan sipas listës": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Nuk votuan": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.pjesemarrja_lista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Pjesemarrja (lista)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pjesëmarrja (lista e KQZ)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Pjesëmarrja": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "qenderat_e_votimit.pikezimi_i_fushates": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Qenderat e votimit",
+			          "ConceptualProperty": "Pikezimi i fushates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Përparësia": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "votat_per_partite_sipas_qv.vota_nga_kalimi_skenar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Votat per Partite sipas QV",
+			          "ConceptualProperty": "Vota nga kalimi (skenar)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nga kalimi": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "votat_per_partite_sipas_qv.vota_nga_abstenuesit_vleresim": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Votat per Partite sipas QV",
+			          "ConceptualProperty": "Vota nga abstenuesit (vleresim)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nga abstenuesit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "votat_per_partite_sipas_qv.potenciali_i_njesise": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Votat per Partite sipas QV",
+			          "ConceptualProperty": "Potenciali i njesise"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Potenciali": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "votat_per_partite_sipas_qv.fokusi_i_njesise": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Votat per Partite sipas QV",
+			          "ConceptualProperty": "Fokusi i njesise"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fokusi": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

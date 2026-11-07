@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a0b1c2d3e4f5061728a4",
   "position": {
-    "x": 960,
+    "x": 761,
     "y": 8,
     "z": 7000,
-    "height": 96,
-    "width": 168,
+    "height": 94,
+    "width": 369,
     "tabOrder": 7000
   },
   "visual": {
@@ -98,7 +98,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BASHKE'"
+                                "Value": "2025L"
                               }
                             }
                           ]
@@ -118,11 +118,18 @@
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "restrictToLeafNodes": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -475,28 +482,10 @@
       ]
     },
     "syncGroup": {
-      "groupName": "Baza",
+      "groupName": "Viti",
       "fieldChanges": true,
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "eb8ef6ce9223e29e969e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Viti"
-              }
-            },
-            "Property": "Viti"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

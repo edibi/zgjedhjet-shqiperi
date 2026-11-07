@@ -73,7 +73,8 @@
               },
               "queryRef": "Qenderat e votimit.Gjeografia.NjA",
               "nativeQueryRef": "Gjeografia NjA",
-              "active": false
+              "active": false,
+              "displayName": "Nj.Ad."
             },
             {
               "field": {
@@ -266,7 +267,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Pjesëmarrja në votime: Qark › Bashki › QV'"
+                  "Value": "'Pjesëmarrja në votime: Qarku › Bashkia › Nj.Ad. > QV'"
                 }
               }
             }

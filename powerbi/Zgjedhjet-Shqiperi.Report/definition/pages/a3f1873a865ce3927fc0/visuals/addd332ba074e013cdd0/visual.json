@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "addd332ba074e013cdd0",
   "position": {
-    "x": 376,
-    "y": 8,
-    "z": 4002,
-    "height": 88,
-    "width": 600,
-    "tabOrder": 4002
+    "x": 375.79487179487177,
+    "y": 8.2051282051282044,
+    "z": 6000,
+    "height": 93.538461538461533,
+    "width": 507.07692307692309,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "listSlicer",
@@ -73,7 +73,8 @@
               },
               "queryRef": "Qenderat e votimit.Gjeografia.NjA",
               "nativeQueryRef": "Gjeografia NjA",
-              "active": false
+              "active": false,
+              "displayName": "Nj.Ad."
             },
             {
               "field": {
@@ -209,7 +210,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Qarku › Bashkia › QV'"
+                  "Value": "'Qarku › Bashkia › Nj.Ad. > QV'"
                 }
               }
             },
