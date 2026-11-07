@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "v38314d6dc72449f6be1",
+  "position": {
+    "x": 20,
+    "y": 8.571428571428571,
+    "z": 0,
+    "height": 92.85714285714286,
+    "width": 1130,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Si performuan subjektet zgjedhore në Vlorë: 2023–2025",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Vlora. Vendore 2023 (këshilli bashkiak) dhe Kuvend 2025: janë zgjedhje të ndryshme. 2023: PD-ASHM = BF + PD. MUNDESIA, NISMA-SHB dhe L. BASHKE nuk kishin listë në Vlorë në 2023; për kryetar garuan vetëm PS dhe BF.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

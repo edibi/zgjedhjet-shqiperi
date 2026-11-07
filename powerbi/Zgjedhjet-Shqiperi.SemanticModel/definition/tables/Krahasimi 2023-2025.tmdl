@@ -101,8 +101,8 @@ table 'Krahasimi 2023-2025'
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents(DataFolder & "krahasime\krahasimi_tirane_2023_2025.csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
-				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Load = (f as text) => Table.PromoteHeaders(Csv.Document(File.Contents(DataFolder & f), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]), [PromoteAllScalars = true]),
+				    Promoted = Table.Combine({Load("krahasime\krahasimi_tirane_2023_2025.csv"), Load("krahasime\krahasimi_vlore_2023_2025.csv")}),
 				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Njesia administrative", type text}, {"Grupi", type text}, {"Grupi i detajuar", type text}, {"Vota", Int64.Type}}, "en-US"),
 				    Emri = Table.ReplaceValue(Typed, "NjA ", "Nj.Ad. ", Replacer.ReplaceText, {"Njesia administrative"}),
 				    EmriPartise = Table.ReplaceValue(Emri, "BASHKE", "L. BASHKE", Replacer.ReplaceValue, {"Grupi", "Grupi i detajuar"})

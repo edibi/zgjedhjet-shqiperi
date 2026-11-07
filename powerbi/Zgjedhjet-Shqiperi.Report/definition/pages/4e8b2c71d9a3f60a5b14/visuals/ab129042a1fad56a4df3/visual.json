@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "ab129042a1fad56a4df3",
   "position": {
-    "x": 713.84615384615381,
+    "x": 713.8461538461538,
     "y": 344.61538461538464,
     "z": 12000,
-    "height": 715.48717948717945,
+    "height": 715.4871794871794,
     "width": 662.974358974359,
     "tabOrder": 12000
   },
@@ -292,6 +292,59 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "595045fe5bfe429ba8b9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Adresat NjA"
+              }
+            },
+            "Property": "Bashkia"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "Adresat NjA",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "a"
+                          }
+                        },
+                        "Property": "Bashkia"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Tiranë'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

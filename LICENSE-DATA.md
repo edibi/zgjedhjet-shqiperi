@@ -1,6 +1,6 @@
 # Licenca e të dhënave dhe e raportit
 
-Kjo licencë mbulon vetëm punën origjinale të këtij projekti: raportin Power BI, prezantimin, dokumentimin dhe të dhënat e përpunuara.
+Kjo licencë mbulon vetëm punën origjinale të këtij projekti: raportin Power BI, dokumentimin dhe të dhënat e përpunuara.
 
 Kjo punë licencohet me [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Mund ta përdorësh dhe ndryshosh lirisht, edhe për qëllime tregtare, nëse përmend autorin dhe këtë projekt.
 

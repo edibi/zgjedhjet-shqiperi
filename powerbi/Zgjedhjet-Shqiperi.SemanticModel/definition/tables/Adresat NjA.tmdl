@@ -28,13 +28,21 @@ table 'Adresat NjA'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Bashkia
+		dataType: string
+		lineageTag: 693e0041-4e4c-4b0e-82f9-a02e8de8e48b
+		summarizeBy: none
+		sourceColumn: Bashkia
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Adresat NjA' = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents(DataFolder & "gjeografi\adresat_njesia_administrative.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents(DataFolder & "gjeografi\adresat_njesia_administrative.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"Njesia administrative", type text}, {"Longitude", type number}, {"Latitude", type number}}, "en-US"),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Njesia administrative", type text}, {"Longitude", type number}, {"Latitude", type number}, {"Bashkia", type text}}, "en-US"),
 				    Emri = Table.ReplaceValue(Typed, "NjA ", "Nj.Ad. ", Replacer.ReplaceText, {"Njesia administrative"})
 				in
 				    Emri

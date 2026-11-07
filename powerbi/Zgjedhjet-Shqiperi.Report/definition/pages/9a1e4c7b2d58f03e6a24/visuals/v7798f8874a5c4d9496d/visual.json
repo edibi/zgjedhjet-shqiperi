@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "v7798f8874a5c4d9496d",
+  "position": {
+    "x": 20,
+    "y": 8.571428571428571,
+    "z": 0,
+    "height": 144.2857142857143,
+    "width": 681.4285714285714,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Skenari 2027: a del Kualicioni SHESHIT i pari në Vlorë?",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Bashkia Vlorë, vota të Kuvendit 2025 pa diasporën. Kualicioni SHESHIT = NISMA-SHB + MUNDESIA + L. BASHKE; PS dhe PSD si një koalicion. X dhe Y janë përqindje e votave të vetë PS + PSD dhe PD-ASHM, jo pikë përqindjeje.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

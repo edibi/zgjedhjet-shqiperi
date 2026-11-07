@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "8a3c6e15d7f2094b1c5e",
-  "displayName": "Krahasimi 2023–2025",
+  "displayName": "Krahasimi 2023–2025 – Tiranë",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
@@ -21,5 +21,62 @@
       "target": "5db0de729f6cb4c8eaa5",
       "type": "NoFilter"
     }
-  ]
+  ],
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b8e6de7fd8b84a0da97a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Adresat NjA"
+              }
+            },
+            "Property": "Bashkia"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "Adresat NjA",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "a"
+                          }
+                        },
+                        "Property": "Bashkia"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Tiranë'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

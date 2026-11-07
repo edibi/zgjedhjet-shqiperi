@@ -8,7 +8,7 @@ Të dhëna të hapura dhe një raport Power BI për zgjedhjet parlamentare të S
 
 | Dosja | Përmbajtja |
 | --- | --- |
-| [`powerbi/`](powerbi/) | Raporti Power BI, modeli, skripti i hartës dhe prezantimi |
+| [`powerbi/`](powerbi/) | Raporti Power BI dhe modeli |
 | [`data/`](data/) | Të dhënat burimore dhe të pastruara, të ndara sipas burimit |
 
 Raporti përfshin:
@@ -35,7 +35,7 @@ Faqja publike e internetit është një repozitor më vete, `zgjedhjet`, në nj�
 
 ## Skenari 2027
 
-Faqja **Skenari 2027** në raport, skenari në faqen e internetit dhe prezantimi te [`powerbi/prezantimi/`](powerbi/prezantimi/) janë analizë hipotetike mbi votat e 2025, jo parashikim dhe jo rezultate zyrtare.
+Faqet **Skenari 2027** në raport dhe skenari në faqen e internetit janë analizë hipotetike mbi votat e 2025, jo parashikim dhe jo rezultate zyrtare.
 
 - **Kualicioni SHESHIT** është një emër pune për NISMA-SHB + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar.
 - PS dhe PSD trajtohen si një koalicion.
