@@ -4822,6 +4822,27 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "krahasimi_20232025.vota_subjekti_grafik": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Krahasimi 2023-2025",
+			          "ConceptualProperty": "Vota subjekti grafik"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vota": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
