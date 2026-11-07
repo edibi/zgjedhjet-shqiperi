@@ -115,8 +115,8 @@ table 'Qenderat e votimit'
 		displayFolder: Abstenimi
 		lineageTag: 844b25aa-0294-4405-8025-078718b1ec9d
 
-	/// Zgjedhës që nuk votuan, të peshuar me mbështetjen e Sheshit krahasuar me mesataren e zgjedhur.
-	measure 'Pikezimi i fushates' = [Nuk votuan (lista)] * DIVIDE([% Sheshi 2025], CALCULATE([% Sheshi 2025], ALLSELECTED('Qenderat e votimit')))
+	/// Zgjedhës që nuk votuan, të peshuar me mbështetjen e SHESHIT krahasuar me mesataren e zgjedhur.
+	measure 'Pikezimi i fushates' = [Nuk votuan (lista)] * DIVIDE([% SHESHI 2025], CALCULATE([% SHESHI 2025], ALLSELECTED('Qenderat e votimit')))
 		formatString: #,0
 		displayFolder: Abstenimi
 		lineageTag: 6eae7537-db7d-4a64-a877-e353d18f9c19

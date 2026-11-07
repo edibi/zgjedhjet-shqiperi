@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6a10c3e7f25d48b19e04",
   "position": {
-    "x": 1682.8571428571429,
-    "y": 8.5714285714285712,
+    "x": 1650.591133004926,
+    "y": 7.9802955665024626,
     "z": 3000,
-    "height": 144.28571428571431,
-    "width": 221.42857142857144,
+    "height": 144.97536945812809,
+    "width": 254.03940886699507,
     "tabOrder": 3000
   },
   "visual": {
@@ -28,7 +28,7 @@
               },
               "queryRef": "Votat per Partite sipas QV.Verdikti",
               "nativeQueryRef": "Verdikti",
-              "displayName": "A del Sheshi i pari?"
+              "displayName": "A del SHESHI i pari?"
             }
           ]
         }
@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'A del Sheshi i pari?'"
+                  "Value": "'A del SHESHI i pari?'"
                 }
               }
             }

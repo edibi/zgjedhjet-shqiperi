@@ -4259,7 +4259,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "A del Sheshi i pari?": {
+			          "A del SHESHI i pari?": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4274,13 +4274,13 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Votat per Partite sipas QV",
-			          "ConceptualProperty": "Vota Sheshi skenar"
+			          "ConceptualProperty": "Vota SHESHI skenar"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Votat e Sheshit": {
+			          "Votat e SHESHIT": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4295,13 +4295,13 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Votat per Partite sipas QV",
-			          "ConceptualProperty": "% Sheshi skenar"
+			          "ConceptualProperty": "% SHESHI skenar"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "% e Sheshit": {
+			          "% e SHESHIT": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4316,7 +4316,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Votat per Partite sipas QV",
-			          "ConceptualProperty": "Diferenca e Sheshit"
+			          "ConceptualProperty": "Diferenca e SHESHIT"
 			        }
 			      },
 			      "State": "Generated",
@@ -4332,7 +4332,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Hendeku i Sheshit me PS + PSD": {
+			          "Hendeku i SHESHIT me PS + PSD": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4347,7 +4347,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Votat per Partite sipas QV",
-			          "ConceptualProperty": "NjA ku Sheshi del i pari"
+			          "ConceptualProperty": "NjA ku SHESHI del i pari"
 			        }
 			      },
 			      "State": "Generated"
@@ -4395,13 +4395,13 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Votat per Partite sipas QV",
-			          "ConceptualProperty": "% Sheshi 2025"
+			          "ConceptualProperty": "% SHESHI 2025"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Sheshi 2025": {
+			          "SHESHI 2025": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4411,7 +4411,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Sheshi": {
+			          "SHESHI": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

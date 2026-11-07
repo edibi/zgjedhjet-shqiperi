@@ -69,7 +69,7 @@ for x in T:
 tl = sum(x["list"] for x in T); tv = sum(x["voters"] for x in T); tsh = sum(x["sheshi"] for x in T); tval = sum(x["valid"] for x in T)
 print(f"\n=== TIRANA (Bashkia)  stations {len(T)}  k(residents/list, Tirana qark) {kT:.3f}")
 print(f"list {tl:,} voters {tv:,} turnout {tv/tl:.1%}  list non-voters {tl-tv:,}  resident est {tl*kT:,.0f} resident non-voters {tl*kT-tv:,.0f}")
-print(f"Sheshi share {tsh/tval:.1%}")
+print(f"SHESHI share {tsh/tval:.1%}")
 
 U = defaultdict(lambda: defaultdict(float))
 for x in T:
@@ -81,18 +81,18 @@ print("--- units, by resident non-voters")
 rows = []
 for name, u in sorted(U.items(), key=lambda kv: -kv[1]["nonv_res"]):
     rows.append(name)
-    print(f"{name:16} st {int(u['n']):3}  list {int(u['list']):>7,}  turnout {u['voters']/u['list']:5.1%}  non-voters(list) {int(u['nonv_list']):>7,}  (res) {int(u['nonv_res']):>7,}  share of city non-voters {u['nonv_list']/(tl-tv):5.1%}  Sheshi {u['sheshi']/u['valid']:5.1%}")
+    print(f"{name:16} st {int(u['n']):3}  list {int(u['list']):>7,}  turnout {u['voters']/u['list']:5.1%}  non-voters(list) {int(u['nonv_list']):>7,}  (res) {int(u['nonv_res']):>7,}  share of city non-voters {u['nonv_list']/(tl-tv):5.1%}  SHESHI {u['sheshi']/u['valid']:5.1%}")
 
-# station level: priority = large pool and above-average Sheshi share
+# station level: priority = large pool and above-average SHESHI share
 avg = tsh / tval
 for x in T:
     x["turnout"] = x["voters"] / x["list"] if x["list"] else 0
     x["sh_share"] = x["sheshi"] / x["valid"] if x["valid"] else 0
     x["score"] = x["nonv_list"] * (x["sh_share"] / avg)
 top = sorted(T, key=lambda x: -x["score"])[:25]
-print("--- top 25 stations: non-voters weighted by Sheshi affinity")
+print("--- top 25 stations: non-voters weighted by SHESHI affinity")
 for x in top:
-    print(f"{x['qv']}  {x['unit']:14} list {x['list']:>5}  turnout {x['turnout']:5.1%}  non-voters {x['nonv_list']:>5}  Sheshi {x['sh_share']:5.1%}")
+    print(f"{x['qv']}  {x['unit']:14} list {x['list']:>5}  turnout {x['turnout']:5.1%}  non-voters {x['nonv_list']:>5}  SHESHI {x['sh_share']:5.1%}")
 by_unit = defaultdict(int)
 for x in sorted(T, key=lambda x: -x["score"])[:100]:
     by_unit[x["unit"]] += 1

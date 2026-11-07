@@ -1,15 +1,22 @@
-"""Builds docs/data/site.json, the only data file the website loads.
+"""Builds data/site.json for the website, the only data file the site loads.
 
-Run from anywhere:  python data/build_site_data.py
+The website lives in its own repository, in a folder next to this one
+(zgjedhjet/ beside zgjedhjet-shqiperi/).
+
+Run from anywhere:  python data/build_site_data.py [path/to/website]
 """
 import csv
 import json
 import math
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
-OUT = os.path.join(ROOT, "docs", "data", "site.json")
+SITE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(ROOT), "zgjedhjet")
+if not os.path.isfile(os.path.join(SITE, "index.html")):
+    sys.exit("Website folder not found: " + SITE + ". Pass its path: python data/build_site_data.py <folder>")
+OUT = os.path.join(SITE, "data", "site.json")
 
 SHORT = {"PS": "PS", "PD-ASHM": "PD-ASHM", "NISMA-SHB": "Shqipëria Bëhet", "PSD": "PSD",
          "MUNDESIA": "Mundësia", "BASHKE": "L. Bashkë"}

@@ -3,10 +3,10 @@
   "name": "1f7c9a3e5b28d0e4a6c1",
   "position": {
     "x": 20,
-    "y": 8,
+    "y": 8.5714285714285712,
     "z": 0,
-    "height": 94,
-    "width": 760,
+    "height": 92.857142857142861,
+    "width": 1130,
     "tabOrder": 0
   },
   "visual": {
@@ -33,7 +33,6 @@
                   {
                     "value": "Tirana. Vendore 2023 (këshilli bashkiak) dhe Kuvend 2025: janë zgjedhje të ndryshme. 2023: PD-ASHM = BF + PD; NISMA-SHB = NTH. MUNDESIA nuk kishte listë në 2023.",
                     "textStyle": {
-                      "fontWeight": "normal",
                       "fontSize": "11pt",
                       "color": "#f3f2f1"
                     }

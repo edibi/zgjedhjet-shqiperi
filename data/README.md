@@ -20,7 +20,7 @@ Të dhënat janë të ndara sipas burimit. Dosjet `raw/` ruajnë përgjigjet ori
 
 ## Faqja e internetit
 
-`build_site_data.py` krijon `docs/data/site.json`, të vetmin skedar të dhënash që ngarkon faqja. Ai mban vetëm rezultatet kombëtare, 12 qarqet, 24 njësitë e Tiranës dhe kufijtë e thjeshtuar të hartës.
+`build_site_data.py` krijon `data/site.json` te repozitori i faqes (`../zgjedhjet`), të vetmin skedar të dhënash që ngarkon faqja. Ai mban vetëm rezultatet kombëtare, 12 qarqet, 24 njësitë e Tiranës dhe kufijtë e thjeshtuar të hartës.
 
 ## Shënime
 

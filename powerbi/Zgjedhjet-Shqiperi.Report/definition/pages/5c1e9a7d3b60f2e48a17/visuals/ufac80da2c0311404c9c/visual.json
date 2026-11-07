@@ -38,12 +38,12 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "% Sheshi 2025"
+                  "Property": "% SHESHI 2025"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
-              "nativeQueryRef": "% Sheshi 2025",
-              "displayName": "Sheshi 2025"
+              "queryRef": "Votat per Partite sipas QV.% SHESHI 2025",
+              "nativeQueryRef": "% SHESHI 2025",
+              "displayName": "SHESHI 2025"
             },
             {
               "field": {

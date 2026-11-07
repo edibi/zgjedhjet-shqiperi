@@ -82,12 +82,12 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "% Sheshi 2025"
+                  "Property": "% SHESHI 2025"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
-              "nativeQueryRef": "% Sheshi 2025",
-              "displayName": "Sheshi 2025"
+              "queryRef": "Votat per Partite sipas QV.% SHESHI 2025",
+              "nativeQueryRef": "% SHESHI 2025",
+              "displayName": "SHESHI 2025"
             }
           ]
         }
@@ -164,7 +164,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sheshi 2025'"
+                  "Value": "'SHESHI 2025'"
                 }
               }
             }
@@ -186,7 +186,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Njësitë: pjesëmarrja dhe mbështetja për Sheshin (madhësia = rezidentë që nuk votuan)'"
+                  "Value": "'Njësitë: pjesëmarrja dhe mbështetja për SHESHIN (madhësia = rezidentë që nuk votuan)'"
                 }
               }
             }

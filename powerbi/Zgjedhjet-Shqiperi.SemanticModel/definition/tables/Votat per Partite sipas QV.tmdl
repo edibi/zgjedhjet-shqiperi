@@ -37,13 +37,13 @@ table 'Votat per Partite sipas QV'
 		formatString: 0.0%
 		lineageTag: 9a590c9e-f708-4d6a-903d-7820752e97d8
 
-	/// Pjesa e votave të PS + PSD që kalon te Kualicioni Sheshit. Vlera e parazgjedhur 0%.
+	/// Pjesa e votave të PS + PSD që kalon te Kualicioni SHESHIT. Vlera e parazgjedhur 0%.
 	measure 'Skenar X' = SELECTEDVALUE('Skenari X'[X (%)], 0)
 		formatString: 0%
 		displayFolder: Skenari 2027
 		lineageTag: 1adc407a-3397-41b5-babe-b3a70fed08e7
 
-	/// Pjesa e votave të PD-ASHM që kalon te Kualicioni Sheshit. Vlera e parazgjedhur 0%.
+	/// Pjesa e votave të PD-ASHM që kalon te Kualicioni SHESHIT. Vlera e parazgjedhur 0%.
 	measure 'Skenar Y' = SELECTEDVALUE('Skenari Y'[Y (%)], 0)
 		formatString: 0%
 		displayFolder: Skenari 2027
@@ -60,12 +60,12 @@ table 'Votat per Partite sipas QV'
 		lineageTag: f0c6f4e5-5277-4736-801e-8d2afb791567
 
 	/// Votat 2025 të NISMA-SHB + MUNDESIA + L. BASHKE.
-	measure 'Vota baze Sheshi' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+	measure 'Vota baze SHESHI' = CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite), Dim_Partite[Subjekti skenar] = "Kualicioni SHESHIT")
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: fa8e9fb2-fd7d-4c3c-8dcd-81e47b5a29e2
 
-	/// Votat pas kalimit: Sheshi merr X të PS + PSD dhe Y të PD-ASHM; totali i votave nuk ndryshon.
+	/// Votat pas kalimit: SHESHI merr X të PS + PSD dhe Y të PD-ASHM; totali i votave nuk ndryshon.
 	measure 'Vota skenar' =
 			VAR x = [Skenar X]
 			VAR y = [Skenar Y]
@@ -79,7 +79,7 @@ table 'Votat per Partite sipas QV'
 			        RETURN
 			            SWITCH(
 			                s,
-			                "Kualicioni Sheshit", v + x * ps + y * pd,
+			                "Kualicioni SHESHIT", v + x * ps + y * pd,
 			                "PS + PSD", v * (1 - x),
 			                "PD-ASHM", v * (1 - y),
 			                v
@@ -94,17 +94,17 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 2839fc7a-7025-47fc-bd9d-07e8601696d8
 
-	measure '% Sheshi 2025' = DIVIDE([Vota baze Sheshi], CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite)))
+	measure '% SHESHI 2025' = DIVIDE([Vota baze SHESHI], CALCULATE([Vota (QV)], REMOVEFILTERS(Dim_Partite)))
 		formatString: 0.0%
 		displayFolder: Skenari 2027
 		lineageTag: 0d4d1f55-85bb-4af0-b4fd-fb71bfb0e234
 
-	measure 'Vota Sheshi skenar' = CALCULATE([Vota skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+	measure 'Vota SHESHI skenar' = CALCULATE([Vota skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni SHESHIT")
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: 40d15457-e8dc-4d30-9545-353502400864
 
-	measure '% Sheshi skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni Sheshit")
+	measure '% SHESHI skenar' = CALCULATE([% skenar], REMOVEFILTERS(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] = "Kualicioni SHESHIT")
 		formatString: 0.0%
 		displayFolder: Skenari 2027
 		lineageTag: 0b1fedb9-4e76-4067-9fae-e6435f79b4bc
@@ -119,49 +119,49 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: b3ede81e-1159-405e-9828-250fc6e1816f
 
-	/// Subjekti me më shumë vota përveç Sheshit.
+	/// Subjekti me më shumë vota përveç SHESHIT.
 	measure 'Kundershtari kryesor' =
-			VAR t = ADDCOLUMNS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit"), "@v", [Vota skenar])
+			VAR t = ADDCOLUMNS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni SHESHIT"), "@v", [Vota skenar])
 			RETURN MAXX(TOPN(1, t, [@v], DESC), Dim_Partite[Subjekti skenar])
 		displayFolder: Skenari 2027
 		lineageTag: a4fec957-553a-43d1-8ef2-47098f148bbc
 
-	measure 'Vota kundershtari' = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit"), [Vota skenar])
+	measure 'Vota kundershtari' = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni SHESHIT"), [Vota skenar])
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: 08189afd-04fe-42f1-8462-aab2350a9672
 
-	/// Votat e Sheshit minus votat e kundërshtarit kryesor. Pozitive = Sheshi i pari.
-	measure 'Diferenca e Sheshit' = [Vota Sheshi skenar] - [Vota kundershtari]
+	/// Votat e SHESHIT minus votat e kundërshtarit kryesor. Pozitive = SHESHI i pari.
+	measure 'Diferenca e SHESHIT' = [Vota SHESHI skenar] - [Vota kundershtari]
 		formatString: +#,0;-#,0;0
 		displayFolder: Skenari 2027
 		lineageTag: e990c081-d689-44da-b5ae-3fcafe9bd65f
 
-	measure 'Renditja e Sheshit' =
-			VAR b = [Vota Sheshi skenar]
-			RETURN 1 + COUNTROWS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni Sheshit" && [Vota skenar] >= b))
+	measure 'Renditja e SHESHIT' =
+			VAR b = [Vota SHESHI skenar]
+			RETURN 1 + COUNTROWS(FILTER(ALL(Dim_Partite[Subjekti skenar]), Dim_Partite[Subjekti skenar] <> "Kualicioni SHESHIT" && [Vota skenar] >= b))
 		formatString: 0
 		displayFolder: Skenari 2027
 		lineageTag: e7760025-8f6e-4da1-86f1-0fdb6a008c25
 
-	measure 'Fituesi skenar' = IF([Diferenca e Sheshit] > 0, "Kualicioni Sheshit", [Kundershtari kryesor])
+	measure 'Fituesi skenar' = IF([Diferenca e SHESHIT] > 0, "Kualicioni SHESHIT", [Kundershtari kryesor])
 		displayFolder: Skenari 2027
 		lineageTag: 4f5c3fb6-7d04-457e-82e8-04605f7d51ca
 
-	/// Sa njësi administrative fiton Sheshi, nga totali i njësive në filtër.
-	measure 'NjA ku Sheshi del i pari' =
-			VAR n = COUNTROWS(FILTER(VALUES('Qenderat e votimit'[NjA]), [Diferenca e Sheshit] > 0))
+	/// Sa njësi administrative fiton SHESHI, nga totali i njësive në filtër.
+	measure 'NjA ku SHESHI del i pari' =
+			VAR n = COUNTROWS(FILTER(VALUES('Qenderat e votimit'[NjA]), [Diferenca e SHESHIT] > 0))
 			RETURN COALESCE(n, 0) & " nga " & DISTINCTCOUNT('Qenderat e votimit'[NjA])
 		displayFolder: Skenari 2027
 		lineageTag: e94c9ea3-0860-4e5a-91e1-b7578a199c7a
 
-	/// X më e vogël që e çon Sheshin të parin me Y-në aktuale.
+	/// X më e vogël që e çon SHESHIN të parin me Y-në aktuale.
 	measure 'X minimale' =
 			VAR y = [Skenar Y]
 			VAR ps = [Vota baze PS PSD]
 			VAR pd = [Vota baze PD]
-			VAR b = [Vota baze Sheshi] + y * pd
-			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni Sheshit", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR b = [Vota baze SHESHI] + y * pd
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
 			VAR x1 = DIVIDE(ps - b, 2 * ps)
 			VAR x2 = DIVIDE(pd * (1 - y) - b, ps)
 			VAR x3 = DIVIDE(tjeret - b, ps)
@@ -170,13 +170,13 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 2d5e0dea-127a-409b-b4c6-44020c50ea84
 
-	/// Y më e vogël që e çon Sheshin të parin me X-in aktual. Mbi 100% = e pamundur.
+	/// Y më e vogël që e çon SHESHIN të parin me X-in aktual. Mbi 100% = e pamundur.
 	measure 'Y minimale' =
 			VAR x = [Skenar X]
 			VAR ps = [Vota baze PS PSD]
 			VAR pd = [Vota baze PD]
-			VAR b = [Vota baze Sheshi] + x * ps
-			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni Sheshit", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
+			VAR b = [Vota baze SHESHI] + x * ps
+			VAR tjeret = MAXX(FILTER(ALL(Dim_Partite[Subjekti skenar]), NOT Dim_Partite[Subjekti skenar] IN {"Kualicioni SHESHIT", "PS + PSD", "PD-ASHM"}), CALCULATE([Vota (QV)]))
 			VAR y1 = DIVIDE(ps * (1 - x) - b, pd)
 			VAR y2 = DIVIDE(pd - b, 2 * pd)
 			VAR y3 = DIVIDE(tjeret - b, pd)
@@ -194,24 +194,24 @@ table 'Votat per Partite sipas QV'
 		lineageTag: 97405fe0-6680-4d46-ae8f-c85e97b6c550
 
 	measure Verdikti =
-			VAR d = [Diferenca e Sheshit]
+			VAR d = [Diferenca e SHESHIT]
 			VAR r = [Kundershtari kryesor]
-			RETURN IF(d > 0, "PO: Kualicioni Sheshit del i pari, " & FORMAT(d, "#,0") & " vota mbi " & r, "JO: Kualicioni Sheshit del i " & [Renditja e Sheshit] & "-ti, " & FORMAT(-d, "#,0") & " vota pas " & r)
+			RETURN IF(d > 0, "PO: Kualicioni SHESHIT del i pari, " & FORMAT(d, "#,0") & " vota mbi " & r, "JO: Kualicioni SHESHIT del i " & [Renditja e SHESHIT] & "-ti, " & FORMAT(-d, "#,0") & " vota pas " & r)
 		displayFolder: Skenari 2027
 		lineageTag: d49ef7de-24a6-453d-8bde-55438fbfb2c1
 
-	measure 'Ngjyra Verdikti' = IF([Diferenca e Sheshit] > 0, "#2E9E6B", "#D64550")
+	measure 'Ngjyra Verdikti' = IF([Diferenca e SHESHIT] > 0, "#2E9E6B", "#D64550")
 		displayFolder: Skenari 2027
 		lineageTag: 0a379b42-b1b4-40dd-9144-96203c27e804
 
-	/// Vota që Sheshi fiton në njësi nga X i PS + PSD dhe Y i PD-ASHM.
-	measure 'Vota nga kalimi (skenar)' = [Vota Sheshi skenar] - [Vota baze Sheshi]
+	/// Vota që SHESHI fiton në njësi nga X i PS + PSD dhe Y i PD-ASHM.
+	measure 'Vota nga kalimi (skenar)' = [Vota SHESHI skenar] - [Vota baze SHESHI]
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: 7b481dce-528f-4c5e-b015-f5891951cf33
 
-	/// Rezidentë që nuk votuan, shumëzuar me përqindjen aktuale të Sheshit në njësi.
-	measure 'Vota nga abstenuesit (vleresim)' = [Nuk votuan (rezidente)] * [% Sheshi 2025]
+	/// Rezidentë që nuk votuan, shumëzuar me përqindjen aktuale të SHESHIT në njësi.
+	measure 'Vota nga abstenuesit (vleresim)' = [Nuk votuan (rezidente)] * [% SHESHI 2025]
 		formatString: #,0
 		displayFolder: Skenari 2027
 		lineageTag: a7b76aa1-7926-4c2a-99bd-48c90694ff56
@@ -222,12 +222,12 @@ table 'Votat per Partite sipas QV'
 		displayFolder: Skenari 2027
 		lineageTag: 9a86d300-9fdf-4673-a180-d5f93f5b5b39
 
-	/// Çfarë të bëhet në njësi, sipas mbështetjes për Sheshin dhe rezervës së abstenuesve krahasuar me mesataren.
+	/// Çfarë të bëhet në njësi, sipas mbështetjes për SHESHIN dhe rezervës së abstenuesve krahasuar me mesataren.
 	measure 'Fokusi i njesise' =
 			IF(
 			    HASONEVALUE('Qenderat e votimit'[NjA]),
-			    VAR sh = [% Sheshi 2025]
-			    VAR shAvg = CALCULATE([% Sheshi 2025], ALLSELECTED('Qenderat e votimit'[NjA]))
+			    VAR sh = [% SHESHI 2025]
+			    VAR shAvg = CALCULATE([% SHESHI 2025], ALLSELECTED('Qenderat e votimit'[NjA]))
 			    VAR pool = [Nuk votuan (rezidente)]
 			    VAR poolAvg = AVERAGEX(ALLSELECTED('Qenderat e votimit'[NjA]), [Nuk votuan (rezidente)])
 			    RETURN SWITCH(TRUE(),

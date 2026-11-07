@@ -85,8 +85,8 @@ table Dim_Partite
 		lineageTag: 9a52dc3d-062c-465b-8cc1-44aacf6907df
 		summarizeBy: none
 
-	/// Skenari 2027: NISMA-SHB, MUNDESIA dhe L. BASHKE si Kualicioni Sheshit; PS dhe PSD si një koalicion.
-	column 'Subjekti skenar' = SWITCH ( TRUE (), 'Dim_Partite'[Partia] IN { "NISMA-SHB", "MUNDESIA", "L. BASHKE" }, "Kualicioni Sheshit", 'Dim_Partite'[Partia] IN { "PS", "PSD" }, "PS + PSD", 'Dim_Partite'[Partia] IN { "ADR", "AKSH", "DZH", "KEA", "LA" }, "Te tjeret", 'Dim_Partite'[Partia] )
+	/// Skenari 2027: NISMA-SHB, MUNDESIA dhe L. BASHKE si Kualicioni SHESHIT; PS dhe PSD si një koalicion.
+	column 'Subjekti skenar' = SWITCH ( TRUE (), 'Dim_Partite'[Partia] IN { "NISMA-SHB", "MUNDESIA", "L. BASHKE" }, "Kualicioni SHESHIT", 'Dim_Partite'[Partia] IN { "PS", "PSD" }, "PS + PSD", 'Dim_Partite'[Partia] IN { "ADR", "AKSH", "DZH", "KEA", "LA" }, "Te tjeret", 'Dim_Partite'[Partia] )
 		dataType: string
 		lineageTag: 297bfac7-ab02-49e3-828e-5ed0f1aba70b
 		summarizeBy: none

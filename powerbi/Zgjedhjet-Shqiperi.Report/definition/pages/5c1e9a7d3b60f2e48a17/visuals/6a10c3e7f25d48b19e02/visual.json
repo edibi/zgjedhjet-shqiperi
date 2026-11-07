@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6a10c3e7f25d48b19e02",
   "position": {
-    "x": 750,
-    "y": 8.5714285714285712,
+    "x": 750.14778325123154,
+    "y": 7.9802955665024626,
     "z": 1000,
-    "height": 144,
-    "width": 448,
+    "height": 144.97536945812809,
+    "width": 434.92610837438423,
     "tabOrder": 1000
   },
   "visual": {
@@ -138,7 +138,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'X: % e votave të PS + PSD që kalojnë te Sheshi'"
+                  "Value": "'X: % e votave të PS + PSD që kalojnë te SHESHI'"
                 }
               }
             }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6a10c3e7f25d48b19e10",
   "position": {
-    "x": 34.857142857142861,
-    "y": 180.85714285714315,
+    "x": 34.581280788177338,
+    "y": 180.88669950738915,
     "z": 4000,
-    "height": 96,
-    "width": 160,
+    "height": 95.763546798029552,
+    "width": 180.88669950738915,
     "tabOrder": 4000
   },
   "visual": {
@@ -23,12 +23,12 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "Vota Sheshi skenar"
+                  "Property": "Vota SHESHI skenar"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.Vota Sheshi skenar",
-              "nativeQueryRef": "Vota Sheshi skenar",
-              "displayName": "Votat e Sheshit"
+              "queryRef": "Votat per Partite sipas QV.Vota SHESHI skenar",
+              "nativeQueryRef": "Vota SHESHI skenar",
+              "displayName": "Votat e SHESHIT"
             }
           ]
         }
@@ -76,7 +76,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Votat e Sheshit'"
+                  "Value": "'Votat e SHESHIT'"
                 }
               }
             }

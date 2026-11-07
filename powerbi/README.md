@@ -6,7 +6,7 @@
 | `Zgjedhjet-Shqiperi.Report/` | Faqet dhe vizualet e raportit |
 | `Zgjedhjet-Shqiperi.SemanticModel/` | Modeli, tabelat dhe matjet |
 | `skripte/` | Skripti Python i hartës së Tiranës dhe një pamje e tij |
-| `prezantimi/` | Prezantimi për Kualicionin Sheshit |
+| `prezantimi/` | Prezantimi për Kualicionin SHESHIT |
 
 ## Nëse projekti është në një dosje tjetër
 

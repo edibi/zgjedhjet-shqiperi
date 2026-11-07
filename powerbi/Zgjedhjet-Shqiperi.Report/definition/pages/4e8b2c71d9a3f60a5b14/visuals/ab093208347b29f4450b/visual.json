@@ -23,12 +23,12 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "Diferenca e Sheshit"
+                  "Property": "Diferenca e SHESHIT"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.Diferenca e Sheshit",
-              "nativeQueryRef": "Diferenca e Sheshit",
-              "displayName": "Hendeku i Sheshit me PS + PSD"
+              "queryRef": "Votat per Partite sipas QV.Diferenca e SHESHIT",
+              "nativeQueryRef": "Diferenca e SHESHIT",
+              "displayName": "Hendeku i SHESHIT me PS + PSD"
             }
           ]
         }
@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Hendeku i Sheshit me PS + PSD'"
+                  "Value": "'Hendeku i SHESHIT me PS + PSD'"
                 }
               }
             }

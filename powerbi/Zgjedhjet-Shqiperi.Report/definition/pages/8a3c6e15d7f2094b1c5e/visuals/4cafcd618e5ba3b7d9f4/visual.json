@@ -3,9 +3,9 @@
   "name": "4cafcd618e5ba3b7d9f4",
   "position": {
     "x": 20,
-    "y": 120,
+    "y": 120.00000000000001,
     "z": 3000,
-    "height": 440,
+    "height": 585.71428571428578,
     "width": 640,
     "tabOrder": 3000
   },
@@ -51,25 +51,6 @@
             }
           ]
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Krahasimi 2023-2025"
-                    }
-                  },
-                  "Property": "% krahasim"
-                }
-              },
-              "queryRef": "Krahasimi 2023-2025.% krahasim",
-              "nativeQueryRef": "% krahasim",
-              "displayName": "% e votave"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
             {
@@ -86,6 +67,25 @@
               "queryRef": "Krahasimi 2023-2025.Vota krahasim",
               "nativeQueryRef": "Vota krahasim",
               "displayName": "Vota të vlefshme"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Krahasimi 2023-2025"
+                    }
+                  },
+                  "Property": "% krahasim"
+                }
+              },
+              "queryRef": "Krahasimi 2023-2025.% krahasim",
+              "nativeQueryRef": "% krahasim",
+              "displayName": "% e votave"
             }
           ]
         }

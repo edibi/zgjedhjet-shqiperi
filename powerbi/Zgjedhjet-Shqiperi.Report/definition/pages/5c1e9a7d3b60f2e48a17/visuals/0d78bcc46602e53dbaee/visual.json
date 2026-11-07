@@ -42,11 +42,11 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "% Sheshi 2025"
+                  "Property": "% SHESHI 2025"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.% Sheshi 2025",
-              "nativeQueryRef": "% Sheshi 2025"
+              "queryRef": "Votat per Partite sipas QV.% SHESHI 2025",
+              "nativeQueryRef": "% SHESHI 2025"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "% Sheshi skenar"
+                  "Property": "% SHESHI skenar"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.% Sheshi skenar",
-              "nativeQueryRef": "% Sheshi skenar"
+              "queryRef": "Votat per Partite sipas QV.% SHESHI skenar",
+              "nativeQueryRef": "% SHESHI skenar"
             },
             {
               "field": {
@@ -116,11 +116,11 @@
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },
-                  "Property": "Diferenca e Sheshit"
+                  "Property": "Diferenca e SHESHIT"
                 }
               },
-              "queryRef": "Votat per Partite sipas QV.Diferenca e Sheshit",
-              "nativeQueryRef": "Diferenca e Sheshit"
+              "queryRef": "Votat per Partite sipas QV.Diferenca e SHESHIT",
+              "nativeQueryRef": "Diferenca e SHESHIT"
             }
           ]
         }
@@ -251,7 +251,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ku del i pari Sheshi, sipas njësisë administrative'"
+                  "Value": "'Ku del i pari SHESHI, sipas njësisë administrative'"
                 }
               }
             }

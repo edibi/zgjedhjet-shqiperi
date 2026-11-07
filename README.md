@@ -10,7 +10,6 @@ Të dhëna të hapura dhe një raport Power BI për zgjedhjet parlamentare të S
 | --- | --- |
 | [`powerbi/`](powerbi/) | Raporti Power BI, modeli, skripti i hartës dhe prezantimi |
 | [`data/`](data/) | Të dhënat burimore dhe të pastruara, të ndara sipas burimit |
-| [`docs/`](docs/) | Faqja publike e internetit, e publikuar me GitHub Pages |
 
 Raporti përfshin:
 
@@ -29,17 +28,16 @@ Raporti përfshin:
 
 ## Faqja e internetit
 
-Dosja `docs/` është një faqe statike, pa server dhe pa varësi të jashtme. Ajo ngarkon vetëm `docs/data/site.json` (rreth 32 KB), jo të gjitha të dhënat.
+Faqja publike e internetit është një repozitor më vete, `zgjedhjet`, në një dosje pranë kësaj (`C:\zgjedhjet`). Ajo ngarkon vetëm `data/site.json` (rreth 32 KB), jo të gjitha të dhënat.
 
-- **Publikimi:** te GitHub, hap **Settings > Pages** dhe zgjidh **Deploy from a branch**, degën `main` dhe dosjen `/docs`.
-- **Përditësimi i të dhënave:** ekzekuto `python data/build_site_data.py`. Skripti ndalon nëse totalet nuk përputhen me shifrat zyrtare.
-- **Provë lokale:** ekzekuto `python -m http.server 8000 --directory docs` dhe hap `http://localhost:8000`.
+- **Përditësimi i të dhënave:** ekzekuto `python data/build_site_data.py`. Skripti shkruan `site.json` te dosja e faqes dhe ndalon nëse totalet nuk përputhen me shifrat zyrtare. Nëse faqja është diku tjetër, jepi rrugën: `python data/build_site_data.py <dosja-e-faqes>`.
+- **Publikimi dhe prova lokale:** shih README-në e repozitorit të faqes.
 
 ## Skenari 2027
 
 Faqja **Skenari 2027** në raport, skenari në faqen e internetit dhe prezantimi te [`powerbi/prezantimi/`](powerbi/prezantimi/) janë analizë hipotetike mbi votat e 2025, jo parashikim dhe jo rezultate zyrtare.
 
-- **Kualicioni Sheshit** është një emër pune për NISMA-SHB + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar.
+- **Kualicioni SHESHIT** është një emër pune për NISMA-SHB + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar.
 - PS dhe PSD trajtohen si një koalicion.
 - X dhe Y janë përqindje të supozuara të votave që kalojnë nga PS + PSD dhe PD-ASHM.
 
