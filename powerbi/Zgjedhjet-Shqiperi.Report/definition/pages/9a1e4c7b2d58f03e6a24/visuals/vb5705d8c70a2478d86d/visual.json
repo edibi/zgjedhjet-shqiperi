@@ -50,6 +50,36 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2021-2025"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2021-2025",
+              "nativeQueryRef": "Pedersen 2021-2025",
+              "displayName": "Pedersen 21→25"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2023-2025"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2023-2025",
+              "nativeQueryRef": "Pedersen 2023-2025",
+              "displayName": "Pedersen 23→25"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Votat per Partite sipas QV"
                     }
                   },

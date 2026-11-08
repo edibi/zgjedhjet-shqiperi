@@ -10,7 +10,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DataFolder","polling station","Qenderat e votimit","Votat per Partite sipas QV","admin_unit_party_results","Dim_Partite","Dim_Qarku","Rezultatet Qarqe","Popullsia 2025","Baza e zgjedhesve","Adresat NjA","Krahasimi 2023-2025","Pjesemarrja 2023-2025"]
+annotation PBI_QueryOrder = ["DataFolder","polling station","Qenderat e votimit","Votat per Partite sipas QV","admin_unit_party_results","Dim_Partite","Dim_Qarku","Rezultatet Qarqe","Popullsia 2025","Baza e zgjedhesve","Adresat NjA","Krahasimi 2023-2025","Pjesemarrja 2023-2025","Levizshmeria"]
 
 annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
 
@@ -32,6 +32,7 @@ ref table 'Pjesemarrja 2023-2025'
 ref table Dim_Viti
 ref table 'Skenari X'
 ref table 'Skenari Y'
+ref table Levizshmeria
 
 ref cultureInfo en-US
 

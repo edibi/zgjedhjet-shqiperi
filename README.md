@@ -16,6 +16,7 @@ Raporti përfshin:
 - Përmbledhjen kombëtare
 - Analizën territoriale
 - Analizën gjinore
+- Lëvizshmërinë e votuesve (indeksi i Pedersenit) 2021→2025 dhe 2023→2025 për çdo qark, bashki dhe njësi administrative
 - Për Tiranën dhe Vlorën: hartën zgjedhore, krahasimin 2023–2025, abstenimin dhe Skenarin 2027
 
 ## Si ta hapësh

@@ -1,0 +1,43 @@
+{
+  "source": "https://iemis.kqz.gov.al/results2021/results2021.htm",
+  "retrieved": "2026-11-08",
+  "embedded_updated_at": "18/06/2021-11:04",
+  "files": [
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/results/json_all.txt",
+      "file": "json_all.txt",
+      "bytes": 1789,
+      "sha256": "c77446646dfc034005477429f8dbb11f441d2ad1638af5e267803592f0a14add"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/results/json_bashkia.txt",
+      "file": "json_bashkia.txt",
+      "bytes": 76895,
+      "sha256": "9d4f97360fd1930f749ef6dcebc75023153d07666a740ff05a89169c6d835402"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/results/json_njesia.txt",
+      "file": "json_njesia.txt",
+      "bytes": 443415,
+      "sha256": "731188c0711f67b1284419279d3882bb1828db13183dba79eb24d1a7f15b2bb3"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/results/json_qarku.txt",
+      "file": "json_qarku.txt",
+      "bytes": 15457,
+      "sha256": "9c3c1e52ec88c40748a07d05182604d9f1cdad8fe2105fd19fa4ca7714aaa805"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/results/json_qv.txt",
+      "file": "json_qv.txt",
+      "bytes": 2983253,
+      "sha256": "9337f0fb605d553e7eac9d3383066adaa9baf613095ccf6737bc3c3abc3798f0"
+    },
+    {
+      "url": "https://iemis.kqz.gov.al/results2021/input/json_strukture.txt",
+      "file": "json_strukture.txt",
+      "bytes": 414200,
+      "sha256": "4fc22cb2436380a119d2413090a4f6fe4a9c01be20f74babe64ce4691d2120f3"
+    }
+  ]
+}

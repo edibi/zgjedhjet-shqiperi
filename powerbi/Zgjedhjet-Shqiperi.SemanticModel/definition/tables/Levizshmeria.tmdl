@@ -1,0 +1,102 @@
+/// Votat sipas grupit të partive dhe njësisë administrative, gjithë Shqipëria: Kuvendi 2021, Këshilli bashkiak 2023, Kuvendi 2025 (brenda vendit).
+/// Burimi: data/krahasime/levizshmeria_vota_2021_2023_2025.csv (build_levizshmeria.py). Grupet: PS, PSD, PD (2021: PD-AN + LSI; 2023: BF + PD), NISMA-SHB (NTH), MUNDESIA, BASHKE, Te tjeret.
+table Levizshmeria
+	lineageTag: aeb37a6b-143a-4dc9-a39f-d865e28e16df
+
+	/// Indeksi i Pedersenit 2021→2025: 0,5 × Σ|ndryshimi i përqindjes| së grupeve, në pikë përqindjeje (0–100). Ndjek çdo nivel gjeografik (Qarku, Bashkia, Nj.Ad.).
+	measure 'Pedersen 2021-2025' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2021), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2025)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(g, ABS(DIVIDE([@b], tb) - DIVIDE([@a], ta))))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: 0e1a34f9-1a84-4385-80e8-caef7f379c31
+
+	/// Pjesa e indeksit 2021→2025 që vjen nga grupet pa asnjë votë në atë zonë në 2021 (subjektet e reja aty).
+	measure 'Pedersen 2021-2025 nga subjektet e reja' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2021), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2025)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(FILTER(g, [@a] = 0), DIVIDE([@b], tb)))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: b0faf0bc-c1b4-47e3-a836-e3fa5f16579d
+
+	/// Indeksi i Pedersenit 2023→2025: 0,5 × Σ|ndryshimi i përqindjes| së grupeve, në pikë përqindjeje (0–100). Ndjek çdo nivel gjeografik (Qarku, Bashkia, Nj.Ad.).
+	measure 'Pedersen 2023-2025' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2023), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2025)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(g, ABS(DIVIDE([@b], tb) - DIVIDE([@a], ta))))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: c2f45b45-ddd1-48d7-a27e-3dd9e564f4f2
+
+	/// Pjesa e indeksit 2023→2025 që vjen nga grupet pa asnjë votë në atë zonë në 2023 (subjektet e reja aty).
+	measure 'Pedersen 2023-2025 nga subjektet e reja' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2023), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2025)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(FILTER(g, [@a] = 0), DIVIDE([@b], tb)))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: b5c72704-c6fc-490e-bc01-9743906495c9
+
+	/// Indeksi i Pedersenit 2021→2023: 0,5 × Σ|ndryshimi i përqindjes| së grupeve, në pikë përqindjeje (0–100). Ndjek çdo nivel gjeografik (Qarku, Bashkia, Nj.Ad.).
+	measure 'Pedersen 2021-2023' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2021), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2023)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(g, ABS(DIVIDE([@b], tb) - DIVIDE([@a], ta))))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: b0bff5e7-0c5a-443e-8483-e686097b087a
+
+	/// Pjesa e indeksit 2021→2023 që vjen nga grupet pa asnjë votë në atë zonë në 2021 (subjektet e reja aty).
+	measure 'Pedersen 2021-2023 nga subjektet e reja' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR g = CALCULATETABLE(ADDCOLUMNS(VALUES('Levizshmeria'[Grupi]), "@a", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2021), "@b", CALCULATE(SUM('Levizshmeria'[Vota]), 'Levizshmeria'[Viti] = 2023)), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Viti])) VAR ta = SUMX(g, [@a]) VAR tb = SUMX(g, [@b]) RETURN IF(ta > 0 && tb > 0, 50 * SUMX(FILTER(g, [@a] = 0), DIVIDE([@b], tb)))
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: fc7a2b5c-d667-472e-993d-9acf4f64ca6c
+
+	column Viti
+		dataType: int64
+		formatString: 0
+		lineageTag: e665680d-b9ec-4ff1-af85-1789f073cd47
+		summarizeBy: none
+		sourceColumn: Viti
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qarku
+		dataType: string
+		lineageTag: 7326b2da-725d-43ce-8047-dccf64b28164
+		summarizeBy: none
+		sourceColumn: Qarku
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bashkia
+		dataType: string
+		lineageTag: c5f62815-c823-4147-a43c-d8abaa4466ef
+		summarizeBy: none
+		sourceColumn: Bashkia
+
+		annotation SummarizationSetBy = Automatic
+
+	column NjA
+		dataType: string
+		lineageTag: fa23c4ac-fc4a-47b1-92b0-208574cbacc0
+		summarizeBy: none
+		sourceColumn: Njesia administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupi
+		dataType: string
+		lineageTag: 7ca29142-eb33-457b-8777-301b8be8a0d2
+		summarizeBy: none
+		sourceColumn: Grupi
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vota
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3e195979-e066-4e86-951b-c004535fd4f6
+		summarizeBy: none
+		sourceColumn: Vota
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Levizshmeria = m
+		mode: import
+		source =
+				let
+				    Promoted = Table.PromoteHeaders(Csv.Document(File.Contents(DataFolder & "krahasime\levizshmeria_vota_2021_2023_2025.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Viti", Int64.Type}, {"Qarku", type text}, {"Bashkia", type text}, {"Njesia administrative", type text}, {"Grupi", type text}, {"Vota", Int64.Type}}, "en-US"),
+				    Emri = Table.ReplaceValue(Typed, "Njësia Administrative", "Nj.Ad.", Replacer.ReplaceText, {"Njesia administrative"})
+				in
+				    Emri
+
+	annotation PBI_ResultType = Table
