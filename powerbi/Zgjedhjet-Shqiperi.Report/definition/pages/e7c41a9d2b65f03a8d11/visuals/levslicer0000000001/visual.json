@@ -1,0 +1,282 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "levslicer0000000001",
+  "position": {
+    "x": 460,
+    "y": 8,
+    "z": 6000,
+    "height": 93.538461538461533,
+    "width": 507.07692307692309,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Qarku"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Qarku",
+              "nativeQueryRef": "Gjeografia Qarku",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Bashkia"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Bashkia",
+              "nativeQueryRef": "Gjeografia Bashkia",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.NjA",
+              "nativeQueryRef": "Gjeografia NjA",
+              "active": false,
+              "displayName": "Nj.Ad."
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qenderat e votimit"
+                        }
+                      },
+                      "Hierarchy": "Gjeografia"
+                    }
+                  },
+                  "Level": "Qender Votimi"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Gjeografia.Qender Votimi",
+              "nativeQueryRef": "Gjeografia Qender Votimi",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Gjeografia.Qarku"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Gjeografia.Bashkia"
+            ],
+            "isCollapsed": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Gjeografia.NjA"
+            ],
+            "isCollapsed": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Gjeografia.Qender Votimi"
+            ],
+            "isCollapsed": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "dropdownMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "fixedHeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "23L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Qarku › Bashkia › Nj.Ad. > QV'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Qarku",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

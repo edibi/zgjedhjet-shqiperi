@@ -1,36 +1,20 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
-  "name": "levizshmeria0matrix1",
+  "name": "levtop10000000001",
   "position": {
-    "x": 1285,
-    "y": 437,
-    "z": 9500,
-    "height": 625,
-    "width": 607,
-    "tabOrder": 9500
+    "x": 636,
+    "y": 607,
+    "z": 400,
+    "height": 455,
+    "width": 620,
+    "tabOrder": 400
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "barChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Qenderat e votimit"
-                    }
-                  },
-                  "Property": "Qarku"
-                }
-              },
-              "queryRef": "Qenderat e votimit.Qarku",
-              "nativeQueryRef": "Qarku",
-              "active": true,
-              "displayName": "Qarku"
-            },
             {
               "field": {
                 "Column": {
@@ -44,28 +28,12 @@
               },
               "queryRef": "Qenderat e votimit.Bashkia",
               "nativeQueryRef": "Bashkia",
-              "active": false,
+              "active": true,
               "displayName": "Bashkia"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Qenderat e votimit"
-                    }
-                  },
-                  "Property": "NjA"
-                }
-              },
-              "queryRef": "Qenderat e votimit.NjA",
-              "nativeQueryRef": "Nj.Ad.",
-              "active": false,
-              "displayName": "Nj.Ad."
             }
           ]
         },
-        "Values": {
+        "Tooltips": {
           "projections": [
             {
               "field": {
@@ -79,8 +47,27 @@
                 }
               },
               "queryRef": "Levizshmeria.Pedersen 2021-2025",
-              "nativeQueryRef": "Pedersen 2021-2025",
-              "displayName": "21→25"
+              "nativeQueryRef": "Indeksi 2021→2025",
+              "displayName": "Indeksi 2021→2025"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2021-2025 nga kalimi"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2021-2025 nga kalimi",
+              "nativeQueryRef": "Mes partive të vjetra",
+              "displayName": "Mes partive të vjetra"
             },
             {
               "field": {
@@ -94,38 +81,8 @@
                 }
               },
               "queryRef": "Levizshmeria.Pedersen 2021-2025 nga subjektet e reja",
-              "nativeQueryRef": "Pedersen 2021-2025 nga subjektet e reja",
-              "displayName": "të rinjtë 21→25"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Levizshmeria"
-                    }
-                  },
-                  "Property": "Pedersen 2023-2025"
-                }
-              },
-              "queryRef": "Levizshmeria.Pedersen 2023-2025",
-              "nativeQueryRef": "Pedersen 2023-2025",
-              "displayName": "23→25"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Levizshmeria"
-                    }
-                  },
-                  "Property": "Pedersen 2023-2025 nga subjektet e reja"
-                }
-              },
-              "queryRef": "Levizshmeria.Pedersen 2023-2025 nga subjektet e reja",
-              "nativeQueryRef": "Pedersen 2023-2025 nga subjektet e reja",
-              "displayName": "të rinjtë 23→25"
+              "nativeQueryRef": "Te partitë e reja",
+              "displayName": "Te partitë e reja"
             }
           ]
         }
@@ -145,67 +102,104 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {
-      "grid": [
+      "labels": [
         {
           "properties": {
-            "textSize": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
-            "rowPadding": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "'Top'"
                 }
               }
             }
           }
         }
       ],
-      "columnHeaders": [
+      "categoryAxis": [
         {
           "properties": {
-            "wordWrap": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "rowHeaders": [
+      "valueAxis": [
         {
           "properties": {
-            "expandCollapseButtonsSize": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "subTotals": [
+      "dataPoint": [
         {
           "properties": {
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#7A8BA0'"
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "Levizshmeria.Pedersen 2021-2025 nga kalimi"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFC04D'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Levizshmeria.Pedersen 2021-2025 nga subjektet e reja"
           }
         }
       ]
@@ -224,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Lëvizshmëria e votuesve (indeksi i Pedersenit): Qark › Bashki › Nj.Ad.'"
+                  "Value": "'10 bashkitë më të lëvizshme, 2021 → 2025'"
                 }
               }
             }
@@ -244,20 +238,47 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Pikë përqindjeje që ndërruan grup partie: 0 = asgjë, 100 = të gjitha. 2021 dhe 2025 Kuvendi, 2023 Këshilli bashkiak. Të rinjtë = pjesa nga subjektet që s’kishin vota aty.'"
+                  "Value": "'Gjatësia e shiritit = indeksi. Ngjyra tregon nga erdhi lëvizja.'"
                 }
               }
             }
           }
         }
       ],
-      "spacing": [
+      "visualHeader": [
         {
           "properties": {
-            "spaceAbovePlotArea": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "true"
+                }
+              }
+            },
+            "showTooltipButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeaderTooltip": [
+        {
+          "properties": {
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Text'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Gri: vota që lëvizën mes partive që ishin edhe në 2021 (p.sh. nga PD te PS). Portokalli: vota që shkuan te partitë e reja (Mundësia, L. Bashkë). Shumë portokalli = votuesit janë të hapur ndaj partive të reja.'"
                 }
               }
             }

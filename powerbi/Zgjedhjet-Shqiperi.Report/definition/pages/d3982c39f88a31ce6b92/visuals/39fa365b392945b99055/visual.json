@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "39fa365b392945b99055",
   "position": {
-    "x": 1285,
-    "y": 121,
+    "x": 1284.9230769230769,
+    "y": 121.43589743589743,
     "z": 2000,
-    "height": 300,
-    "width": 607,
+    "height": 635.07692307692309,
+    "width": 607.17948717948718,
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -112,7 +112,7 @@
                 }
               },
               "queryRef": "Dim_Partite.Grupi i detajuar",
-              "nativeQueryRef": "PS, PSD të ndara",
+              "nativeQueryRef": "Grupi i detajuar",
               "displayName": "PS, PSD të ndara"
             }
           ],

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e7c41a9d2b65f03a8d11",
+  "displayName": "Lëvizshmëria e votuesve",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920
+}

@@ -39,6 +39,18 @@ table Levizshmeria
 		displayFolder: Lëvizshmëria
 		lineageTag: fc7a2b5c-d667-472e-993d-9acf4f64ca6c
 
+	/// Pjesa e indeksit 2021→2025 nga vota që lëvizën mes partive që ishin aty edhe në 2021 (totali − subjektet e reja).
+	measure 'Pedersen 2021-2025 nga kalimi' = [Pedersen 2021-2025] - [Pedersen 2021-2025 nga subjektet e reja]
+		formatString: 0.0
+		displayFolder: Lëvizshmëria
+		lineageTag: 88891234-040c-43a4-b6b5-f1963e32c28f
+
+	/// Përqindja e grupit të partive në vitin e zgjedhur, për zonën e zgjedhur në slicer-in e gjeografisë.
+	measure '% e grupit (lëvizshmëria)' = VAR njesite = CALCULATETABLE(SUMMARIZE('Qenderat e votimit', 'Qenderat e votimit'[Bashkia], 'Qenderat e votimit'[NjA]), REMOVEFILTERS(Dim_Viti)) VAR v = CALCULATE(SUM('Levizshmeria'[Vota]), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA])) VAR tot = CALCULATE(SUM('Levizshmeria'[Vota]), TREATAS(njesite, 'Levizshmeria'[Bashkia], 'Levizshmeria'[NjA]), REMOVEFILTERS('Levizshmeria'[Grupi])) RETURN DIVIDE(v, tot)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Lëvizshmëria
+		lineageTag: 32578199-53ef-4eb1-9522-83ccd91cb50e
+
 	column Viti
 		dataType: int64
 		formatString: 0
@@ -100,3 +112,4 @@ table Levizshmeria
 				    Emri
 
 	annotation PBI_ResultType = Table
+

@@ -1,0 +1,277 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "levguide0000000001",
+  "position": {
+    "x": 20,
+    "y": 393,
+    "z": 200,
+    "height": 669,
+    "width": 600,
+    "tabOrder": 200
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Si ta lexoni",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#f3f2f1",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indeksi i Pedersenit tregon sa vota ndërruan grup partie nga një zgjedhje te tjetra, në pikë përqindjeje. 0 = të gjithë votuan njësoj. 100 = ndryshoi gjithçka.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Shembull: 12 do të thotë që rreth 12 vota në 100 shkuan te një parti tjetër.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Sa e lartë është?",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#f3f2f1",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "0–5 shumë e qëndrueshme",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "5–10 e qëndrueshme",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "10–15 normale (Shqipëria 2021→2025: 12,0)",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "15–20 e lartë",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "mbi 20 shumë e lartë",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Partitë e reja",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#f3f2f1",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pjesa e indeksit që shkoi te partitë që s'kishin kandiduar aty në zgjedhjen e parë. Pjesa tjetër është lëvizje mes partive të vjetra (PS, PD, PSD, Nisma).",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pse 2023→2025 del më i lartë?",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#f3f2f1",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2023 ishin zgjedhje vendore. Njerëzit votojnë ndryshe për bashkinë sesa për Kuvendin. Krahasimi i drejtë është 2021→2025.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Kujdes",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#f3f2f1",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indeksi mat ndryshimin neto. Nuk tregon kush votoi për kë: KQZ publikon vetëm totalet për çdo parti.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Grupet, njësoj çdo vit: PS · PSD · PD (2021: PD + LSI; 2023: BF + PD) · Nisma / Shqipëria Bëhet · Mundësia · L. Bashkë · të tjerët.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#f3f2f1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

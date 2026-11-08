@@ -1,0 +1,513 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "levizshmeria0matrix1",
+  "position": {
+    "x": 1272,
+    "y": 121,
+    "z": 9500,
+    "height": 941,
+    "width": 628,
+    "tabOrder": 9500
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qarku"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Qarku",
+              "nativeQueryRef": "Qarku",
+              "active": true,
+              "displayName": "Qarku"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Bashkia"
+                }
+              },
+              "queryRef": "Qenderat e votimit.Bashkia",
+              "nativeQueryRef": "Bashkia",
+              "active": true,
+              "displayName": "Bashkia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "NjA"
+                }
+              },
+              "queryRef": "Qenderat e votimit.NjA",
+              "nativeQueryRef": "Nj.Ad.",
+              "active": true,
+              "displayName": "Nj.Ad."
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2021-2025"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2021-2025",
+              "nativeQueryRef": "Pedersen 2021-2025",
+              "displayName": "21→25"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2021-2025 nga subjektet e reja"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2021-2025 nga subjektet e reja",
+              "nativeQueryRef": "Pedersen 2021-2025 nga subjektet e reja",
+              "displayName": "të rinjtë 21→25"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2023-2025"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2023-2025",
+              "nativeQueryRef": "Pedersen 2023-2025",
+              "displayName": "23→25"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Levizshmeria"
+                    }
+                  },
+                  "Property": "Pedersen 2023-2025 nga subjektet e reja"
+                }
+              },
+              "queryRef": "Levizshmeria.Pedersen 2023-2025 nga subjektet e reja",
+              "nativeQueryRef": "Pedersen 2023-2025 nga subjektet e reja",
+              "displayName": "të rinjtë 23→25"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Levizshmeria"
+                  }
+                },
+                "Property": "Pedersen 2021-2025"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Qarku"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Qarku"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.Bashkia"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qenderat e votimit"
+                    }
+                  },
+                  "Property": "Bashkia"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Qenderat e votimit.NjA"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'VLORË'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Vlorë'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'TIRANË'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Tiranë'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "expandCollapseButtonsSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Indeksi sipas Qark › Bashki › Nj.Ad.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Klikoni ⊞ për të hapur bashkitë dhe njësitë. Renditur nga më e lëvizshmja (2021→2025).'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showTooltipButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeaderTooltip": [
+        {
+          "properties": {
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Text'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SI LEXOHET\nIndeksi i Pedersenit tregon sa vota ndërruan parti nga një zgjedhje te tjetra, në pikë përqindjeje.\n0 = të gjithë votuan njësoj si herën e parë. 100 = ndryshoi gjithçka.\nShembull: Fier 19,0 do të thotë që rreth 19 vota në 100 shkuan te një grup tjetër partie.\n\nKOLONAT\n21→25: Kuvendi 2021 → Kuvendi 2025. Krahasimi më i besueshëm, sepse është i njëjti lloj zgjedhjeje.\ntë rinjtë 21→25: pjesa e kësaj lëvizjeje që shkoi te partitë që s''kishin kandiduar aty në 2021 (Mundësia, L. Bashkë). Është gjysma e përqindjes së tyre: Vlorë 8,8% → 4,4.\n23→25: Këshilli bashkiak 2023 → Kuvendi 2025. Përzien zgjedhje vendore me parlamentare, prandaj del më i lartë (p.sh. Kukës 67). Përdoreni me kujdes.\ntë rinjtë 23→25: pjesa nga partitë pa asnjë votë aty në 2023.\nTotali − të rinjtë = vota që lëvizën mes partive të vjetra (PS, PD, PSD, Nisma).\n\nSA E LARTË ËSHTË?\n0–5 shumë e qëndrueshme · 5–10 e qëndrueshme · 10–15 normale (Shqipëria 12,0) · 15–20 e lartë · mbi 20 shumë e lartë.\n\nÇFARË DO TË THOTË\nE lartë + të rinjtë të lartë: votuesit u kanë dhënë shans partive të reja. Terren i mirë për SHESHIN (p.sh. qyteti i Vlorës).\nE lartë + të rinjtë të ulët: votuesit lëvizin, por vetëm mes PS dhe PD (p.sh. Fier, Delvinë).\nE ulët: votuesit janë besnikë ndaj partisë së tyre; më e vështirë për t''i fituar.\n\nGrupet e partive, njësoj çdo vit: PS, PSD, PD (2021: PD + LSI; 2023: BF + PD), Nisma / Shqipëria Bëhet, Mundësia, L. Bashkë, të tjerët. Klikoni ⊞ për të hapur bashkitë dhe njësitë.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "01701d00d289ee3a57ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qenderat e votimit"
+              }
+            },
+            "Property": "Qarku"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "41e67da579eb7a9b706a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qenderat e votimit"
+              }
+            },
+            "Property": "Bashkia"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "325831126901488d3394",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qenderat e votimit"
+              }
+            },
+            "Property": "NjA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "63687fac16bca90046d8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Levizshmeria"
+              }
+            },
+            "Property": "Pedersen 2021-2025"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1964db854491054226ae",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Levizshmeria"
+              }
+            },
+            "Property": "Pedersen 2021-2025 nga subjektet e reja"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "796a50a3be02a058165b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Levizshmeria"
+              }
+            },
+            "Property": "Pedersen 2023-2025"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "67e0163c84200d88006a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Levizshmeria"
+              }
+            },
+            "Property": "Pedersen 2023-2025 nga subjektet e reja"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

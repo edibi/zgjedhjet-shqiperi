@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 1007.7746738905171,
-            "y": 598.04499888275393
+            "y": 616.79499888275393
           },
           "nodeIndex": "admin_unit_party_results",
           "nodeLineageTag": "a71c33d7-eb25-4f67-9afd-05d7a94430a9",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 662.69974578123015,
-            "y": 37.5
+            "y": 56.25
           },
           "nodeIndex": "Qenderat e votimit",
           "nodeLineageTag": "0ceed427-4d14-4268-8b0b-8f426a8bf1f4",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 157.6533908325089,
-            "y": 42.721620545711232
+            "y": 61.471620545711232
           },
           "nodeIndex": "Votat per Partite sipas QV",
           "nodeLineageTag": "c03c47d5-b5e6-4262-b751-e7357a468e33",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 0,
-            "y": 392.71129106443783
+            "y": 411.46129106443783
           },
           "nodeIndex": "Dim_Partite",
           "nodeLineageTag": "10edf8e0-2df9-4945-9a2d-bb86ec6bb82c",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1159.9080587086162,
-            "y": 225.10244291938884
+            "y": 243.85244291938884
           },
           "nodeIndex": "Dim_Qarku",
           "nodeLineageTag": "cae381e5-71bd-4e8b-a61b-15dc0635a0a9",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 318.52986063509195,
-            "y": 751.93907035592963
+            "y": 770.68907035592963
           },
           "nodeIndex": "Rezultatet Qarqe",
           "nodeLineageTag": "3c38c053-f669-4e15-9e55-099ad93246bd",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1443.9080587086162,
-            "y": 510.61926260380949
+            "y": 529.36926260380949
           },
           "nodeIndex": "Baza e zgjedhesve",
           "nodeLineageTag": "8de8d219-38fc-4be8-938b-e4570872fc55",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 1727.9080587086162,
-            "y": 424.61926260380949
+            "y": 443.36926260380949
           },
           "nodeIndex": "Popullsia 2025",
           "nodeLineageTag": "cbb3e138-ccfc-4c31-9ed3-093600f8384c",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 2011.9080587086162,
-            "y": 498.61926260380949
+            "y": 517.36926260380949
           },
           "nodeIndex": "Grupimi i partive",
           "nodeLineageTag": "e8d35dff-2137-4031-8b86-40dbc70d3b7d",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 2579.9080587086164,
-            "y": 510.61926260380949
+            "y": 529.36926260380949
           },
           "nodeIndex": "Grupet tooltip",
           "nodeLineageTag": "095296ed-08f1-4a8d-88bf-0d9712cd66aa",
@@ -141,7 +141,7 @@
         {
           "location": {
             "x": 3198.0928098892464,
-            "y": 420.42421169892083
+            "y": 439.17421169892083
           },
           "nodeIndex": "Dim_Viti",
           "nodeLineageTag": "3733cd6f-0576-422a-9be3-d7abbfbd05bc",
@@ -154,7 +154,7 @@
         {
           "location": {
             "x": 3482.269698123976,
-            "y": 383.74920433135571
+            "y": 402.49920433135571
           },
           "nodeIndex": "Krahasimi 2023-2025",
           "nodeLineageTag": "25024a55-9014-4fe1-aa77-5bd62600c706",
@@ -167,7 +167,7 @@
         {
           "location": {
             "x": 2913.9080587086164,
-            "y": 365.48932087626326
+            "y": 384.23932087626326
           },
           "nodeIndex": "Pjesemarrja 2023-2025",
           "nodeLineageTag": "08862c1e-b4da-4dba-bc8e-a70f216fecd9",
@@ -180,7 +180,7 @@
         {
           "location": {
             "x": 2295.9080587086164,
-            "y": 498.61926260380949
+            "y": 517.36926260380949
           },
           "nodeIndex": "Adresat NjA",
           "nodeLineageTag": "272dfd95-37f8-4205-b124-82f9299050bc",
@@ -193,7 +193,7 @@
         {
           "location": {
             "x": 3766.269698123976,
-            "y": 449.61926260380949
+            "y": 468.36926260380949
           },
           "nodeIndex": "Skenari X",
           "nodeLineageTag": "0c8e5b40-8a9a-4474-b47a-8e3b91171388",
@@ -206,12 +206,25 @@
         {
           "location": {
             "x": 4050.269698123976,
-            "y": 449.61926260380949
+            "y": 468.36926260380949
           },
           "nodeIndex": "Skenari Y",
           "nodeLineageTag": "7fd8d024-baed-463c-a20e-fc3fc60ac919",
           "size": {
             "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4334.269698123976,
+            "y": 405.86926260380949
+          },
+          "nodeIndex": "Levizshmeria",
+          "nodeLineageTag": "aeb37a6b-143a-4dc9-a39f-d865e28e16df",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0

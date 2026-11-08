@@ -18,8 +18,8 @@ table 'Krahasimi 2023-2025'
 		formatString: 0.0%
 		lineageTag: c4e69936-0b20-45d4-b7c8-8b88553ccaa1
 
-	/// Ndryshimi nga 2023 në 2025 në pikë përqindjeje. Bosh kur subjekti mungon në njërin vit.
-	measure 'Ndryshimi (p.p.)' = IF(NOT ISBLANK([% 2023]) && NOT ISBLANK([% 2025]), ([% 2025] - [% 2023]) * 100)
+	/// Ndryshimi nga 2023 në 2025 në pikë përqindjeje. Subjekti që mungon në një vit numërohet 0% (p.sh. Mundësia në 2023); bosh vetëm kur njësia s'ka vota në njërin vit.
+	measure 'Ndryshimi (p.p.)' = VAR t23 = CALCULATE([Vota krahasim], REMOVEFILTERS(Dim_Viti), REMOVEFILTERS('Krahasimi 2023-2025'[Grupi]), 'Krahasimi 2023-2025'[Viti] = 2023) VAR t25 = CALCULATE([Vota krahasim], REMOVEFILTERS(Dim_Viti), REMOVEFILTERS('Krahasimi 2023-2025'[Grupi]), 'Krahasimi 2023-2025'[Viti] = 2025) RETURN IF(t23 > 0 && t25 > 0, ([% 2025] - [% 2023]) * 100)
 		formatString: +0.0;-0.0;0.0
 		lineageTag: 5fffa194-b2c0-4122-bf1f-3ffabb01f3a9
 

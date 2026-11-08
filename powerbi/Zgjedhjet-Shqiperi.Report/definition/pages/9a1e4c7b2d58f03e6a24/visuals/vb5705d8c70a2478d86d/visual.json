@@ -205,6 +205,46 @@
             }
           }
         }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showTooltipButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeaderTooltip": [
+        {
+          "properties": {
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Text'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SI LEXOHET KJO TABELË\nÇdo rresht është një njësi administrative. Tabela tregon ku ia vlen më shumë të punojë SHESHI.\n\nSHESHI 2025: përqindja që morën së bashku Shqipëria Bëhet, Mundësia dhe L. Bashkë në 2025.\nPedersen 21→25: sa vota ndërruan parti nga Kuvendi 2021 te Kuvendi 2025 (0 = asgjë, 100 = gjithçka; Shqipëria 12,0). Sa më i lartë, aq më pak besnikë janë votuesit, pra më të lehtë për t''u bindur.\nPedersen 23→25: e njëjta, nga zgjedhjet vendore 2023 te Kuvendi 2025. Del më i lartë sepse krahason dy lloje zgjedhjesh; përdoreni vetëm për të krahasuar njësitë me njëra-tjetrën.\nNga kalimi: votat që fiton SHESHI në këtë njësi nëse X% e votuesve të PS+PSD dhe Y% e PD kalojnë te SHESHI (rrëshqitësit X dhe Y lart).\nNga abstenuesit: vlerësim. Banorët që nuk votuan në 2025 × përqindja e SHESHIT në atë njësi, sikur të votonin si fqinjët e tyre.\nPotenciali: Nga kalimi + Nga abstenuesit, pra sa vota shtesë mund të fitohen këtu.\nI pari: kush del i pari në këtë njësi sipas skenarit.\nFokusi: çfarë të bëhet, duke krahasuar njësinë me mesataren e qytetit:\n· Mobilizo: SHESHI është i fortë dhe ka shumë që s''votuan. Nxirr njerëzit të votojnë.\n· Bind dhe mobilizo: SHESHI është i dobët, por ka shumë që s''votuan. Duhen bindur dhe nxjerrë.\n· Mbaj bazën: SHESHI është i fortë, por pak kanë mbetur pa votuar.\n· Përparësi e ulët: SHESHI i dobët dhe pak rezervë.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
