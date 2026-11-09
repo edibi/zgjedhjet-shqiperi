@@ -35,7 +35,7 @@ Përditësimi i të dhënave, publikimi dhe prova lokale janë te README-ja e re
 
 Faqet **Skenari 2027** në raport dhe skenari në faqen e internetit janë analizë hipotetike mbi votat e 2025, jo parashikim dhe jo rezultate zyrtare.
 
-- **Kualicioni SHESHIT** është një emër pune për NISMA-SHB + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar.
+- **Grupimi SHESHIT** është një emër pune për Aktivistat e Sheshit + Shqipëria Bëhet + MUNDESIA + L. BASHKE. Nuk është koalicion zyrtar. Në votat e 2025 numërohen NISMA-SHB (nga 2027 thjesht Shqipëria Bëhet), MUNDESIA dhe L. BASHKE; Aktivistat e Sheshit nuk kishin listë.
 - PS dhe PSD trajtohen si një koalicion.
 - X dhe Y janë përqindje të supozuara të votave që kalojnë nga PS + PSD dhe PD.
 

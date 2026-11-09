@@ -43,7 +43,7 @@ table 'Grupimi i partive'
 		mode: import
 		source =
 				{
-				    ("PS + PSD kualicion", NAMEOF('Dim_Partite'[Grupi]), 0),
+				    ("PS + PSD bashkë", NAMEOF('Dim_Partite'[Grupi]), 0),
 				    ("PS, PSD të ndara", NAMEOF('Dim_Partite'[Grupi i detajuar]), 1)
 				}
 
